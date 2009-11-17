@@ -1540,24 +1540,25 @@
 
 </UML:Element.presentation><UML:TypedElement.multiplicity>
 <UML:Multiplicity xmi.id="DCE.14682C8B-FCEC-D5A2-8D6B-F71BEF1F433F"/></UML:TypedElement.multiplicity><UML:Attribute.default>
-<UML:Expression xmi.id="DCE.D6F6B59F-627E-1776-6E95-F52B1BFFCCC8"/></UML:Attribute.default></UML:Attribute></UML:Element.ownedElement></UML:Class>
+<UML:Expression xmi.id="DCE.D6F6B59F-627E-1776-6E95-F52B1BFFCCC8"/></UML:Attribute.default></UML:Attribute>
+</UML:Element.ownedElement></UML:Class>
 <UML:Class xmi.id="DCE.73BBFCDA-07CA-2E69-01A5-AD36BAC02169" name="LocalConnection" owner="DCE.FEA820CB-E1D7-01DF-C85E-76463704214B"><UML:Element.presentation>
 
 </UML:Element.presentation><UML:Classifier.generalization>
 <UML:Generalization xmi.id="DCE.9BA81F23-DD68-171F-FFF2-B0755905FD74" specific="DCE.73BBFCDA-07CA-2E69-01A5-AD36BAC02169" general="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6"><UML:Element.presentation>
 
 </UML:Element.presentation></UML:Generalization></UML:Classifier.generalization></UML:Class>
-<UML:Class xmi.id="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6" name="Connection" owner="DCE.FEA820CB-E1D7-01DF-C85E-76463704214B" specialization="DCE.9BA81F23-DD68-171F-FFF2-B0755905FD74 DCE.FA7BF603-94C3-8BB9-D2E0-1A9C56C99311"><UML:Element.presentation>
+<UML:Class xmi.id="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6" name="Connection" owner="DCE.FEA820CB-E1D7-01DF-C85E-76463704214B" specialization="DCE.9BA81F23-DD68-171F-FFF2-B0755905FD74 DCE.FA7BF603-94C3-8BB9-D2E0-1A9C56C99311" isAbstract="true"><UML:Element.presentation>
 
 
 </UML:Element.presentation><UML:Element.ownedElement>
-<UML:Operation xmi.id="DCE.F084D35C-DD24-A495-BD2B-D09784FBAF2E" name="connect" owner="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6"><UML:Element.ownedElement>
+<UML:Operation xmi.id="DCE.F084D35C-DD24-A495-BD2B-D09784FBAF2E" name="connect" owner="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6" isAbstract="true"><UML:Element.ownedElement>
 <UML:Parameter xmi.id="DCE.4690A7F2-5219-0B80-585F-7E02B27BDB7B" type="DCE.E0C7E03B-90CA-1D42-1B11-A4F733AA12AF" direction="result" owner="DCE.F084D35C-DD24-A495-BD2B-D09784FBAF2E"><UML:TypedElement.multiplicity>
 <UML:Multiplicity xmi.id="DCE.47A9D145-8C1C-0C5F-D326-7669FEE05B16"/></UML:TypedElement.multiplicity></UML:Parameter></UML:Element.ownedElement><UML:Element.presentation>
 
 
 </UML:Element.presentation></UML:Operation>
-<UML:Operation xmi.id="DCE.2207DBE3-7F6B-1924-26A9-C1CC5133A013" name="disconnect" owner="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6"><UML:Element.ownedElement>
+<UML:Operation xmi.id="DCE.2207DBE3-7F6B-1924-26A9-C1CC5133A013" name="disconnect" owner="DCE.D080A50B-17A1-68D7-41E4-657DB7B5A9D6" isAbstract="true"><UML:Element.ownedElement>
 <UML:Parameter xmi.id="DCE.0CEC67C8-4CD3-8C60-0C37-FE273D1480EF" type="DCE.E0C7E03B-90CA-1D42-1B11-A4F733AA12AF" direction="result" owner="DCE.2207DBE3-7F6B-1924-26A9-C1CC5133A013"><UML:TypedElement.multiplicity>
 <UML:Multiplicity xmi.id="DCE.8F9B362C-4599-5EA1-8987-4185F9BFD344"/></UML:TypedElement.multiplicity></UML:Parameter></UML:Element.ownedElement><UML:Element.presentation>
 
