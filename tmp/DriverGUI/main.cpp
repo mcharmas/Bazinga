@@ -1,10 +1,21 @@
 #include <QtGui/QApplication>
-#include "mainwindow.h"
+#include <QSystemTrayIcon>
+#include <QMenu>
+#include "configwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+	ConfigWindow window;
+	QMenu menu;
+	QSystemTrayIcon trayIcon;
+	if( ! QSystemTrayIcon::isSystemTrayAvailable()) {
+		window.show();
+	} else {
+		menu.addAction("Konfiguracja", &window, SLOT(show()));
+		menu.addAction("Zakoncz", &a, SLOT(quit()));
+		trayIcon.setContextMenu(&menu);
+		trayIcon.show();
+	}
     return a.exec();
 }

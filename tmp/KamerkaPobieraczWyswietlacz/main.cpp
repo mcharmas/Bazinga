@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		}
 		cvShowImage("Kamerara", frame);
 
-		if(cvWaitKey(10) == 27) break;
+		if(cvWaitKey(10) == 'q') break;
 	}
 
 	cvReleaseCapture( &capture);
