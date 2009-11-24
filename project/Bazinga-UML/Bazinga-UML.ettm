@@ -27,11 +27,11 @@
 	<!ATTLIST Irresolvable 
 		   id CDATA #IMPLIED >
 ]--><TypeManagement projectID="DCE.40B2E8B1-7896-E93E-A1D3-7E8212B52A66">
-	<Locations nextID="0">
-	</Locations>
+	<Locations nextID="1">
+	<Location locID="T.0" href=".\Bazinga-UML.etup"/></Locations>
 
    <Types>
-   </Types>
+   <Type id="DCE.5294A126-916F-1262-2C0D-A482A2B98253" location="T.0" name="Unnamed"/></Types>
 
 	<IrresolvableTypes>
 	</IrresolvableTypes>
