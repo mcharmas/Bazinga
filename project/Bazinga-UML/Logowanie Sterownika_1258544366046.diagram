@@ -1,4 +1,4 @@
-<XMI xmi.version="1.2"  xmlns:UML="org.omg.xmi.namespace.UML"  timestamp="18 listopad 2009 13:28:18 CET" >
+<XMI xmi.version="1.2"  xmlns:UML="org.omg.xmi.namespace.UML"  timestamp="24 listopad 2009 16:18:32 CET" >
 <XMI.content>
 <UML:Diagram isVisible="false"  zoom="1.0"  name="Przeplyw danych"  documentation=""  xmi.id="DCE.F3013BC7-3999-B07B-E79D-F4A593499BDE" >
 <UML:GraphElement.position>
@@ -7,7 +7,7 @@
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>1284</XMI.field>
-     <XMI.field>861</XMI.field>
+     <XMI.field>1168</XMI.field>
 </UML:GraphNode.size>
 <UML:Diagram.viewport>
      <XMI.field>0</XMI.field>
@@ -23,6 +23,133 @@
 <UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.F3013BC7-3999-B07B-E79D-F4A593499BDE"  typeinfo="Sequence Diagram" />
 </UML:GraphElement.semanticModel>
 <UML:GraphElement.contained>
+<UML:GraphNode isVisible="false"  xmi.id="DCE.428EDC7D-046B-77AF-E04A-14A5E7D6A6F5" >
+<UML:GraphElement.position>
+     <XMI.field>53</XMI.field>
+     <XMI.field>65</XMI.field>
+</UML:GraphElement.position>
+<UML:GraphNode.size>
+     <XMI.field>103</XMI.field>
+     <XMI.field>689</XMI.field>
+</UML:GraphNode.size>
+<UML:DiagramElement.property>
+<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
+<UML:Property value="4"  key="WIDGET_INDEX" />
+</UML:DiagramElement.property>
+<UML:GraphElement.semanticModel>
+<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
+<UML:Uml2SemanticModelBridge.element>
+<UML:Lifeline xmi.idref="DCE.9F003201-BB8F-3045-6381-F4D838D225A6" />
+</UML:Uml2SemanticModelBridge.element>
+</UML:Uml2SemanticModelBridge>
+</UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+<UML:GraphNode isVisible="false"  xmi.id="DCE.428EDC7D-046B-77AF-E04A-14A5E7D6A6F5" >
+<UML:GraphElement.semanticModel>
+<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.428EDC7D-046B-77AF-E04A-14A5E7D6A6F5"  typeinfo="active" />
+</UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+</UML:GraphElement.contained>
+</UML:GraphNode>
+</UML:GraphElement.contained>
+<UML:GraphElement.anchorage>
+<UML:GraphConnector xmi.id="DCE.B5638231-AF43-F130-448C-9320CEC0509B" >
+<UML:GraphConnector.position>
+     <XMI.field>104</XMI.field>
+     <XMI.field>128</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.E0CF883F-4FB2-2109-A3A3-626164D6D977" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.34BD0AF7-2EF0-2553-7E7A-A6597FB4B2E1" >
+<UML:GraphConnector.position>
+     <XMI.field>104</XMI.field>
+     <XMI.field>199</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.A353121F-6E28-FB36-97EF-BC411F26F646" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.D446A1CD-B905-C9D8-D957-2C3FCCB1CB85" >
+<UML:GraphConnector.position>
+     <XMI.field>104</XMI.field>
+     <XMI.field>272</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.3953971C-CEA9-51B7-536C-BFDC4F135E55" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.7875F2D2-22F3-F5A1-AA1E-A9AC89C1EC95" >
+<UML:GraphConnector.position>
+     <XMI.field>104</XMI.field>
+     <XMI.field>714</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.2C32CE4B-F13B-4F4D-135B-0987C6A298F2" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+</UML:GraphElement.anchorage>
+</UML:GraphNode>
+<UML:GraphNode isVisible="false"  xmi.id="DCE.673A5F15-06A9-C251-D9DD-337A66AEFC15" >
+<UML:GraphElement.position>
+     <XMI.field>1134</XMI.field>
+     <XMI.field>65</XMI.field>
+</UML:GraphElement.position>
+<UML:GraphNode.size>
+     <XMI.field>155</XMI.field>
+     <XMI.field>1108</XMI.field>
+</UML:GraphNode.size>
+<UML:DiagramElement.property>
+<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
+<UML:Property value="5"  key="WIDGET_INDEX" />
+</UML:DiagramElement.property>
+<UML:GraphElement.semanticModel>
+<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
+<UML:Uml2SemanticModelBridge.element>
+<UML:Lifeline xmi.idref="DCE.A0E02B64-ABB2-3CB2-D90E-C8E2E0B1A7EC" />
+</UML:Uml2SemanticModelBridge.element>
+</UML:Uml2SemanticModelBridge>
+</UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+<UML:GraphNode isVisible="false"  xmi.id="DCE.673A5F15-06A9-C251-D9DD-337A66AEFC15" >
+<UML:GraphElement.semanticModel>
+<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.673A5F15-06A9-C251-D9DD-337A66AEFC15"  typeinfo="active" />
+</UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+</UML:GraphElement.contained>
+</UML:GraphNode>
+</UML:GraphElement.contained>
+<UML:GraphElement.anchorage>
+<UML:GraphConnector xmi.id="DCE.89172977-AB88-C917-64B4-54DF97BD34E5" >
+<UML:GraphConnector.position>
+     <XMI.field>1206</XMI.field>
+     <XMI.field>514</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.97264B56-6B1D-1EBD-3616-081015430532" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.76956F2A-35FC-CF75-4733-0B46A29205A9" >
+<UML:GraphConnector.position>
+     <XMI.field>1206</XMI.field>
+     <XMI.field>613</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.0463514A-FAA8-5683-F59B-C43A7B2742C4" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.C6A95E0D-B8C2-45E3-D977-8A1B74D46948" >
+<UML:GraphConnector.position>
+     <XMI.field>1206</XMI.field>
+     <XMI.field>385</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.7AC10E06-E3B8-BD94-DCEB-87DBE918C700" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+</UML:GraphElement.anchorage>
+</UML:GraphNode>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.82DA1B72-19B1-B650-F8F0-61A752AE4541" >
 <UML:GraphElement.position>
      <XMI.field>607</XMI.field>
@@ -45,7 +172,7 @@
 </UML:Uml2SemanticModelBridge>
 </UML:GraphElement.semanticModel>
 <UML:GraphElement.contained>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.22FD1DAD-F716-2E86-7509-1139F36F441C" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.3A0548EE-7171-DB8E-8A32-B625A6076A58" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
@@ -69,7 +196,7 @@
 <UML:GraphElement.contained>
 </UML:GraphElement.contained>
 <UML:GraphElement.dependencies>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.B4C2F66D-C514-AF0D-C427-9F0EA618E974" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.449BB9E9-2F62-1166-F6F0-C7EC9CDEE72E" >
 <UML:GraphElement.position>
      <XMI.field>889</XMI.field>
      <XMI.field>464</XMI.field>
@@ -79,12 +206,12 @@
      <XMI.field>17</XMI.field>
 </UML:GraphNode.size>
 <UML:GraphElement.semanticModel>
-<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.B4C2F66D-C514-AF0D-C427-9F0EA618E974"  typeinfo="MovableLabel" />
+<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.449BB9E9-2F62-1166-F6F0-C7EC9CDEE72E"  typeinfo="MovableLabel" />
 </UML:GraphElement.semanticModel>
 </UML:GraphNode>
 </UML:GraphElement.dependencies>
 </UML:GraphNode>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.DBA5146A-4C0E-8A0A-71BB-1C263ACE73CB" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.38BBCDC2-60F3-E84D-5B28-6BA2EEAFC26D" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>115</XMI.field>
@@ -110,179 +237,6 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 </UML:GraphNode>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.F0B293C4-50A0-3BDD-8BA1-7FC3F6C0B23E" >
-<UML:GraphElement.position>
-     <XMI.field>37</XMI.field>
-     <XMI.field>660</XMI.field>
-</UML:GraphElement.position>
-<UML:GraphNode.size>
-     <XMI.field>659</XMI.field>
-     <XMI.field>201</XMI.field>
-</UML:GraphNode.size>
-<UML:DiagramElement.property>
-<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
-<UML:Property value="4"  key="WIDGET_INDEX" />
-</UML:DiagramElement.property>
-<UML:GraphElement.semanticModel>
-<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
-<UML:Uml2SemanticModelBridge.element>
-<UML:CombinedFragment xmi.idref="DCE.38990863-8F1C-4FF2-9D3E-98EFADE98E24" />
-</UML:Uml2SemanticModelBridge.element>
-</UML:Uml2SemanticModelBridge>
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.2C88009E-9757-7F22-2030-9FFC385039A5" >
-<UML:GraphElement.position>
-     <XMI.field>0</XMI.field>
-     <XMI.field>0</XMI.field>
-</UML:GraphElement.position>
-<UML:GraphNode.size>
-     <XMI.field>657</XMI.field>
-     <XMI.field>30</XMI.field>
-</UML:GraphNode.size>
-<UML:DiagramElement.property>
-<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
-<UML:Property value="4"  key="WIDGET_INDEX" />
-</UML:DiagramElement.property>
-<UML:GraphElement.semanticModel>
-<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
-<UML:Uml2SemanticModelBridge.element>
-<UML:InteractionOperand xmi.idref="DCE.2FECEE27-F778-7A1A-C2BC-33989B1E116A" />
-</UML:Uml2SemanticModelBridge.element>
-</UML:Uml2SemanticModelBridge>
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-</UML:GraphElement.contained>
-</UML:GraphNode>
-</UML:GraphElement.contained>
-</UML:GraphNode>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.428EDC7D-046B-77AF-E04A-14A5E7D6A6F5" >
-<UML:GraphElement.position>
-     <XMI.field>55</XMI.field>
-     <XMI.field>65</XMI.field>
-</UML:GraphElement.position>
-<UML:GraphNode.size>
-     <XMI.field>103</XMI.field>
-     <XMI.field>689</XMI.field>
-</UML:GraphNode.size>
-<UML:DiagramElement.property>
-<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
-<UML:Property value="5"  key="WIDGET_INDEX" />
-</UML:DiagramElement.property>
-<UML:GraphElement.semanticModel>
-<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
-<UML:Uml2SemanticModelBridge.element>
-<UML:Lifeline xmi.idref="DCE.9F003201-BB8F-3045-6381-F4D838D225A6" />
-</UML:Uml2SemanticModelBridge.element>
-</UML:Uml2SemanticModelBridge>
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.428EDC7D-046B-77AF-E04A-14A5E7D6A6F5" >
-<UML:GraphElement.semanticModel>
-<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.428EDC7D-046B-77AF-E04A-14A5E7D6A6F5"  typeinfo="active" />
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-</UML:GraphElement.contained>
-</UML:GraphNode>
-</UML:GraphElement.contained>
-<UML:GraphElement.anchorage>
-<UML:GraphConnector xmi.id="DCE.9D674B8A-CBE6-CEC0-9326-CD4A491BC280" >
-<UML:GraphConnector.position>
-     <XMI.field>106</XMI.field>
-     <XMI.field>128</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.B5A5A736-4182-AED7-59C2-BAECCBFF1A66" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.55A3CD15-004B-037A-0845-6D88904FBA1D" >
-<UML:GraphConnector.position>
-     <XMI.field>106</XMI.field>
-     <XMI.field>199</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.E454D145-E3D6-0F1A-958E-107F8DC84CC7" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.C395C649-F146-D7DF-762C-735A54584663" >
-<UML:GraphConnector.position>
-     <XMI.field>106</XMI.field>
-     <XMI.field>272</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.7734D8BE-C4FD-F5B2-8FBB-07889FF4101A" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.AB4CEDD9-F679-D136-906B-9E3EFAA18BDD" >
-<UML:GraphConnector.position>
-     <XMI.field>106</XMI.field>
-     <XMI.field>714</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.DFA14645-C720-0170-10CE-81AFC2DBE292" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-</UML:GraphElement.anchorage>
-</UML:GraphNode>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.673A5F15-06A9-C251-D9DD-337A66AEFC15" >
-<UML:GraphElement.position>
-     <XMI.field>1129</XMI.field>
-     <XMI.field>60</XMI.field>
-</UML:GraphElement.position>
-<UML:GraphNode.size>
-     <XMI.field>155</XMI.field>
-     <XMI.field>694</XMI.field>
-</UML:GraphNode.size>
-<UML:DiagramElement.property>
-<UML:Property value="MINIMUMSIZE"  key="ResizeMode" />
-<UML:Property value="6"  key="WIDGET_INDEX" />
-</UML:DiagramElement.property>
-<UML:GraphElement.semanticModel>
-<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
-<UML:Uml2SemanticModelBridge.element>
-<UML:Lifeline xmi.idref="DCE.A0E02B64-ABB2-3CB2-D90E-C8E2E0B1A7EC" />
-</UML:Uml2SemanticModelBridge.element>
-</UML:Uml2SemanticModelBridge>
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.673A5F15-06A9-C251-D9DD-337A66AEFC15" >
-<UML:GraphElement.semanticModel>
-<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.673A5F15-06A9-C251-D9DD-337A66AEFC15"  typeinfo="active" />
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-</UML:GraphElement.contained>
-</UML:GraphNode>
-</UML:GraphElement.contained>
-<UML:GraphElement.anchorage>
-<UML:GraphConnector xmi.id="DCE.9A975998-BA55-7080-CE8E-F440B69C2E83" >
-<UML:GraphConnector.position>
-     <XMI.field>1206</XMI.field>
-     <XMI.field>385</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.FAE984ED-5BF5-AB49-97AB-9907B6B59F4A" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.0E812CBD-756F-5866-A2C5-05D62E04C986" >
-<UML:GraphConnector.position>
-     <XMI.field>1206</XMI.field>
-     <XMI.field>613</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.ABA1684C-8095-7641-863B-F13C6C30685E" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.CDD1B1DB-5963-E161-B25E-C131C1386EDC" >
-<UML:GraphConnector.position>
-     <XMI.field>1206</XMI.field>
-     <XMI.field>514</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.649E10FC-AE8A-5EB9-8078-F1D4F53914A1" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-</UML:GraphElement.anchorage>
-</UML:GraphNode>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.1D8E8766-3B7C-58A3-54A6-CB20C091DD88" >
 <UML:GraphElement.position>
      <XMI.field>39</XMI.field>
@@ -304,7 +258,7 @@
 </UML:Uml2SemanticModelBridge>
 </UML:GraphElement.semanticModel>
 <UML:GraphElement.contained>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.E0EA4694-2A2C-E704-501F-AAF7E8F00B26" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.31FDCF26-0B28-DE9B-3C92-DA1AFA8DB52A" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
@@ -327,7 +281,7 @@
 <UML:GraphElement.contained>
 </UML:GraphElement.contained>
 <UML:GraphElement.dependencies>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.B85328F2-FEA1-621A-08BD-50826AD87948" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.F0FBB072-9429-6725-C2E4-EF852739F78E" >
 <UML:GraphElement.position>
      <XMI.field>316</XMI.field>
      <XMI.field>164</XMI.field>
@@ -337,12 +291,12 @@
      <XMI.field>17</XMI.field>
 </UML:GraphNode.size>
 <UML:GraphElement.semanticModel>
-<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.B85328F2-FEA1-621A-08BD-50826AD87948"  typeinfo="MovableLabel" />
+<UML:SimpleSemanticModelElement presentation=""  xmi.id="DCE.F0FBB072-9429-6725-C2E4-EF852739F78E"  typeinfo="MovableLabel" />
 </UML:GraphElement.semanticModel>
 </UML:GraphNode>
 </UML:GraphElement.dependencies>
 </UML:GraphNode>
-<UML:GraphNode isVisible="false"  xmi.id="DCE.FF0C57F1-9395-B3EB-5A36-6CF1B3B5AFE3" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.D0CE4DD8-37BA-9975-9A2E-DB4A39921584" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>89</XMI.field>
@@ -369,12 +323,12 @@
 </UML:GraphNode>
 <UML:GraphNode isVisible="false"  xmi.id="DCE.426AF24D-A9B1-FF0B-37B8-5527DF69FC46" >
 <UML:GraphElement.position>
-     <XMI.field>607</XMI.field>
-     <XMI.field>65</XMI.field>
+     <XMI.field>612</XMI.field>
+     <XMI.field>70</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
      <XMI.field>91</XMI.field>
-     <XMI.field>689</XMI.field>
+     <XMI.field>1086</XMI.field>
 </UML:GraphNode.size>
 <UML:DiagramElement.property>
 <UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
@@ -397,158 +351,118 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 <UML:GraphElement.anchorage>
-<UML:GraphConnector xmi.id="DCE.C694F89A-F723-D905-C24F-B18A35B6050C" >
-<UML:GraphConnector.position>
-     <XMI.field>652</XMI.field>
-     <XMI.field>514</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.649E10FC-AE8A-5EB9-8078-F1D4F53914A1" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.5038F40C-C4F9-165F-3386-5A2111C0A3C5" >
-<UML:GraphConnector.position>
-     <XMI.field>652</XMI.field>
-     <XMI.field>199</XMI.field>
-</UML:GraphConnector.position>
-<UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.E454D145-E3D6-0F1A-958E-107F8DC84CC7" />
-</UML:GraphConnector.graphEdge>
-</UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.CCC490BD-FB80-7316-E4AC-ECCC949F35AC" >
+<UML:GraphConnector xmi.id="DCE.EBA8FB60-7DB9-65F8-D0E4-04B7D120CED6" >
 <UML:GraphConnector.position>
      <XMI.field>652</XMI.field>
      <XMI.field>613</XMI.field>
 </UML:GraphConnector.position>
 <UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.ABA1684C-8095-7641-863B-F13C6C30685E" />
+<UML:GraphEdge xmi.idref="DCE.0463514A-FAA8-5683-F59B-C43A7B2742C4" />
 </UML:GraphConnector.graphEdge>
 </UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.4175C281-623D-E0B6-8ABD-6927817BC5A9" >
+<UML:GraphConnector xmi.id="DCE.974EC70D-A1DC-9090-718C-90B6E443DB44" >
 <UML:GraphConnector.position>
      <XMI.field>652</XMI.field>
      <XMI.field>128</XMI.field>
 </UML:GraphConnector.position>
 <UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.B5A5A736-4182-AED7-59C2-BAECCBFF1A66" />
+<UML:GraphEdge xmi.idref="DCE.E0CF883F-4FB2-2109-A3A3-626164D6D977" />
 </UML:GraphConnector.graphEdge>
 </UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.6D2451C0-9D6E-B11F-476F-8F601149F10C" >
+<UML:GraphConnector xmi.id="DCE.C9C5390F-975B-ABC0-6C04-E6A38515BAC4" >
 <UML:GraphConnector.position>
      <XMI.field>652</XMI.field>
-     <XMI.field>272</XMI.field>
+     <XMI.field>514</XMI.field>
 </UML:GraphConnector.position>
 <UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.7734D8BE-C4FD-F5B2-8FBB-07889FF4101A" />
+<UML:GraphEdge xmi.idref="DCE.97264B56-6B1D-1EBD-3616-081015430532" />
 </UML:GraphConnector.graphEdge>
 </UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.B59B8831-263D-CE7C-ABF1-EC2C540A6F7E" >
+<UML:GraphConnector xmi.id="DCE.3AFF666C-E63C-CC1F-9596-FC2CA4817A47" >
 <UML:GraphConnector.position>
      <XMI.field>652</XMI.field>
      <XMI.field>714</XMI.field>
 </UML:GraphConnector.position>
 <UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.DFA14645-C720-0170-10CE-81AFC2DBE292" />
+<UML:GraphEdge xmi.idref="DCE.2C32CE4B-F13B-4F4D-135B-0987C6A298F2" />
 </UML:GraphConnector.graphEdge>
 </UML:GraphConnector>
-<UML:GraphConnector xmi.id="DCE.A95FBF78-68F8-FB04-4DAE-516CCDA2B045" >
+<UML:GraphConnector xmi.id="DCE.CB61DFE7-5994-3AED-C7EF-1470DB54E20D" >
 <UML:GraphConnector.position>
      <XMI.field>652</XMI.field>
      <XMI.field>385</XMI.field>
 </UML:GraphConnector.position>
 <UML:GraphConnector.graphEdge>
-<UML:GraphEdge xmi.idref="DCE.FAE984ED-5BF5-AB49-97AB-9907B6B59F4A" />
+<UML:GraphEdge xmi.idref="DCE.7AC10E06-E3B8-BD94-DCEB-87DBE918C700" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.949FA1DF-6B3A-1D7C-CDC1-D1B21618D9C2" >
+<UML:GraphConnector.position>
+     <XMI.field>652</XMI.field>
+     <XMI.field>272</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.3953971C-CEA9-51B7-536C-BFDC4F135E55" />
+</UML:GraphConnector.graphEdge>
+</UML:GraphConnector>
+<UML:GraphConnector xmi.id="DCE.932E5A6A-7165-D925-7743-E313D52830CE" >
+<UML:GraphConnector.position>
+     <XMI.field>652</XMI.field>
+     <XMI.field>199</XMI.field>
+</UML:GraphConnector.position>
+<UML:GraphConnector.graphEdge>
+<UML:GraphEdge xmi.idref="DCE.A353121F-6E28-FB36-97EF-BC411F26F646" />
 </UML:GraphConnector.graphEdge>
 </UML:GraphConnector>
 </UML:GraphElement.anchorage>
 </UML:GraphNode>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.ABA1684C-8095-7641-863B-F13C6C30685E" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.F0B293C4-50A0-3BDD-8BA1-7FC3F6C0B23E" >
 <UML:GraphElement.position>
-     <XMI.field>0</XMI.field>
-     <XMI.field>0</XMI.field>
+     <XMI.field>42</XMI.field>
+     <XMI.field>679</XMI.field>
 </UML:GraphElement.position>
-<UML:GraphEdge.waypoints>
-     <XMI.field>
-          <XMI.field>1201</XMI.field>
-          <XMI.field>613</XMI.field>
-     </XMI.field>
-     <XMI.field>
-          <XMI.field>657</XMI.field>
-          <XMI.field>613</XMI.field>
-     </XMI.field>
-</UML:GraphEdge.waypoints>
-<UML:GraphElement.semanticModel>
-<UML:Uml2SemanticModelBridge presentation="Message"  xmi.id="xmi_id" >
-<UML:Uml2SemanticModelBridge.element>
-<UML:Message xmi.idref="DCE.B8519EC5-471B-585B-4500-4426538B838A" />
-</UML:Uml2SemanticModelBridge.element>
-</UML:Uml2SemanticModelBridge>
-</UML:GraphElement.semanticModel>
-<UML:GraphElement.contained>
-<UML:GraphNode isVisible="true"  xmi.id="NEW_TEMP_PEID" >
 <UML:GraphNode.size>
-     <XMI.field>153</XMI.field>
-     <XMI.field>19</XMI.field>
+     <XMI.field>659</XMI.field>
+     <XMI.field>96</XMI.field>
 </UML:GraphNode.size>
 <UML:DiagramElement.property>
-<UML:Property value="Name_EDGE"  key="LABEL_TYPE" />
+<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
+<UML:Property value="2"  key="WIDGET_INDEX" />
 </UML:DiagramElement.property>
 <UML:GraphElement.semanticModel>
-<UML:SimpleSemanticModelElement presentation=""  xmi.id="NEW_TEMP_PEID"  typeinfo="Name" />
-</UML:GraphElement.semanticModel>
-</UML:GraphNode>
-</UML:GraphElement.contained>
-<UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.0E812CBD-756F-5866-A2C5-05D62E04C986" />
-<UML:GraphConnector xmi.idref="DCE.CCC490BD-FB80-7316-E4AC-ECCC949F35AC" />
-</UML:GraphEdge.anchor>
-</UML:GraphEdge>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.E454D145-E3D6-0F1A-958E-107F8DC84CC7" >
-<UML:GraphElement.position>
-     <XMI.field>0</XMI.field>
-     <XMI.field>0</XMI.field>
-</UML:GraphElement.position>
-<UML:GraphEdge.waypoints>
-     <XMI.field>
-          <XMI.field>647</XMI.field>
-          <XMI.field>199</XMI.field>
-     </XMI.field>
-     <XMI.field>
-          <XMI.field>111</XMI.field>
-          <XMI.field>199</XMI.field>
-     </XMI.field>
-</UML:GraphEdge.waypoints>
-<UML:GraphElement.semanticModel>
-<UML:Uml2SemanticModelBridge presentation="Message"  xmi.id="xmi_id" >
+<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
 <UML:Uml2SemanticModelBridge.element>
-<UML:Message xmi.idref="DCE.3D17DAC4-A33F-7C2F-144A-559141DFFEF6" />
+<UML:CombinedFragment xmi.idref="DCE.38990863-8F1C-4FF2-9D3E-98EFADE98E24" />
 </UML:Uml2SemanticModelBridge.element>
 </UML:Uml2SemanticModelBridge>
 </UML:GraphElement.semanticModel>
 <UML:GraphElement.contained>
-<UML:GraphNode isVisible="true"  xmi.id="NEW_TEMP_PEID" >
+<UML:GraphNode isVisible="false"  xmi.id="DCE.4D607A39-84C2-AF14-1C93-A9E0EDDF861E" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphNode.size>
-     <XMI.field>126</XMI.field>
-     <XMI.field>19</XMI.field>
+     <XMI.field>657</XMI.field>
+     <XMI.field>30</XMI.field>
 </UML:GraphNode.size>
 <UML:DiagramElement.property>
-<UML:Property value="Name_EDGE"  key="LABEL_TYPE" />
+<UML:Property value="PREFERREDBOUNDS"  key="ResizeMode" />
+<UML:Property value="2"  key="WIDGET_INDEX" />
 </UML:DiagramElement.property>
 <UML:GraphElement.semanticModel>
-<UML:SimpleSemanticModelElement presentation=""  xmi.id="NEW_TEMP_PEID"  typeinfo="Name" />
+<UML:Uml2SemanticModelBridge presentation=""  xmi.id="xmi_id" >
+<UML:Uml2SemanticModelBridge.element>
+<UML:InteractionOperand xmi.idref="DCE.2FECEE27-F778-7A1A-C2BC-33989B1E116A" />
+</UML:Uml2SemanticModelBridge.element>
+</UML:Uml2SemanticModelBridge>
 </UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+</UML:GraphElement.contained>
 </UML:GraphNode>
 </UML:GraphElement.contained>
-<UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.5038F40C-C4F9-165F-3386-5A2111C0A3C5" />
-<UML:GraphConnector xmi.idref="DCE.55A3CD15-004B-037A-0845-6D88904FBA1D" />
-</UML:GraphEdge.anchor>
-</UML:GraphEdge>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.FAE984ED-5BF5-AB49-97AB-9907B6B59F4A" >
+</UML:GraphNode>
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.7AC10E06-E3B8-BD94-DCEB-87DBE918C700" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
@@ -585,11 +499,11 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 <UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.9A975998-BA55-7080-CE8E-F440B69C2E83" />
-<UML:GraphConnector xmi.idref="DCE.A95FBF78-68F8-FB04-4DAE-516CCDA2B045" />
+<UML:GraphConnector xmi.idref="DCE.C6A95E0D-B8C2-45E3-D977-8A1B74D46948" />
+<UML:GraphConnector xmi.idref="DCE.CB61DFE7-5994-3AED-C7EF-1470DB54E20D" />
 </UML:GraphEdge.anchor>
 </UML:GraphEdge>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.7734D8BE-C4FD-F5B2-8FBB-07889FF4101A" >
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.3953971C-CEA9-51B7-536C-BFDC4F135E55" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
@@ -600,7 +514,7 @@
           <XMI.field>272</XMI.field>
      </XMI.field>
      <XMI.field>
-          <XMI.field>111</XMI.field>
+          <XMI.field>109</XMI.field>
           <XMI.field>272</XMI.field>
      </XMI.field>
 </UML:GraphEdge.waypoints>
@@ -630,18 +544,59 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 <UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.6D2451C0-9D6E-B11F-476F-8F601149F10C" />
-<UML:GraphConnector xmi.idref="DCE.C395C649-F146-D7DF-762C-735A54584663" />
+<UML:GraphConnector xmi.idref="DCE.949FA1DF-6B3A-1D7C-CDC1-D1B21618D9C2" />
+<UML:GraphConnector xmi.idref="DCE.D446A1CD-B905-C9D8-D957-2C3FCCB1CB85" />
 </UML:GraphEdge.anchor>
 </UML:GraphEdge>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.B5A5A736-4182-AED7-59C2-BAECCBFF1A66" >
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.0463514A-FAA8-5683-F59B-C43A7B2742C4" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphEdge.waypoints>
      <XMI.field>
-          <XMI.field>111</XMI.field>
+          <XMI.field>1201</XMI.field>
+          <XMI.field>613</XMI.field>
+     </XMI.field>
+     <XMI.field>
+          <XMI.field>657</XMI.field>
+          <XMI.field>613</XMI.field>
+     </XMI.field>
+</UML:GraphEdge.waypoints>
+<UML:GraphElement.semanticModel>
+<UML:Uml2SemanticModelBridge presentation="Message"  xmi.id="xmi_id" >
+<UML:Uml2SemanticModelBridge.element>
+<UML:Message xmi.idref="DCE.B8519EC5-471B-585B-4500-4426538B838A" />
+</UML:Uml2SemanticModelBridge.element>
+</UML:Uml2SemanticModelBridge>
+</UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+<UML:GraphNode isVisible="true"  xmi.id="NEW_TEMP_PEID" >
+<UML:GraphNode.size>
+     <XMI.field>153</XMI.field>
+     <XMI.field>19</XMI.field>
+</UML:GraphNode.size>
+<UML:DiagramElement.property>
+<UML:Property value="Name_EDGE"  key="LABEL_TYPE" />
+</UML:DiagramElement.property>
+<UML:GraphElement.semanticModel>
+<UML:SimpleSemanticModelElement presentation=""  xmi.id="NEW_TEMP_PEID"  typeinfo="Name" />
+</UML:GraphElement.semanticModel>
+</UML:GraphNode>
+</UML:GraphElement.contained>
+<UML:GraphEdge.anchor>
+<UML:GraphConnector xmi.idref="DCE.76956F2A-35FC-CF75-4733-0B46A29205A9" />
+<UML:GraphConnector xmi.idref="DCE.EBA8FB60-7DB9-65F8-D0E4-04B7D120CED6" />
+</UML:GraphEdge.anchor>
+</UML:GraphEdge>
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.E0CF883F-4FB2-2109-A3A3-626164D6D977" >
+<UML:GraphElement.position>
+     <XMI.field>0</XMI.field>
+     <XMI.field>0</XMI.field>
+</UML:GraphElement.position>
+<UML:GraphEdge.waypoints>
+     <XMI.field>
+          <XMI.field>109</XMI.field>
           <XMI.field>128</XMI.field>
      </XMI.field>
      <XMI.field>
@@ -675,11 +630,52 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 <UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.9D674B8A-CBE6-CEC0-9326-CD4A491BC280" />
-<UML:GraphConnector xmi.idref="DCE.4175C281-623D-E0B6-8ABD-6927817BC5A9" />
+<UML:GraphConnector xmi.idref="DCE.B5638231-AF43-F130-448C-9320CEC0509B" />
+<UML:GraphConnector xmi.idref="DCE.974EC70D-A1DC-9090-718C-90B6E443DB44" />
 </UML:GraphEdge.anchor>
 </UML:GraphEdge>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.649E10FC-AE8A-5EB9-8078-F1D4F53914A1" >
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.2C32CE4B-F13B-4F4D-135B-0987C6A298F2" >
+<UML:GraphElement.position>
+     <XMI.field>0</XMI.field>
+     <XMI.field>0</XMI.field>
+</UML:GraphElement.position>
+<UML:GraphEdge.waypoints>
+     <XMI.field>
+          <XMI.field>109</XMI.field>
+          <XMI.field>714</XMI.field>
+     </XMI.field>
+     <XMI.field>
+          <XMI.field>647</XMI.field>
+          <XMI.field>714</XMI.field>
+     </XMI.field>
+</UML:GraphEdge.waypoints>
+<UML:GraphElement.semanticModel>
+<UML:Uml2SemanticModelBridge presentation="Message"  xmi.id="xmi_id" >
+<UML:Uml2SemanticModelBridge.element>
+<UML:Message xmi.idref="DCE.75F8270B-88C7-4AC7-F723-D2AFE3F1D8D4" />
+</UML:Uml2SemanticModelBridge.element>
+</UML:Uml2SemanticModelBridge>
+</UML:GraphElement.semanticModel>
+<UML:GraphElement.contained>
+<UML:GraphNode isVisible="true"  xmi.id="NEW_TEMP_PEID" >
+<UML:GraphNode.size>
+     <XMI.field>371</XMI.field>
+     <XMI.field>19</XMI.field>
+</UML:GraphNode.size>
+<UML:DiagramElement.property>
+<UML:Property value="Name_EDGE"  key="LABEL_TYPE" />
+</UML:DiagramElement.property>
+<UML:GraphElement.semanticModel>
+<UML:SimpleSemanticModelElement presentation=""  xmi.id="NEW_TEMP_PEID"  typeinfo="Name" />
+</UML:GraphElement.semanticModel>
+</UML:GraphNode>
+</UML:GraphElement.contained>
+<UML:GraphEdge.anchor>
+<UML:GraphConnector xmi.idref="DCE.7875F2D2-22F3-F5A1-AA1E-A9AC89C1EC95" />
+<UML:GraphConnector xmi.idref="DCE.3AFF666C-E63C-CC1F-9596-FC2CA4817A47" />
+</UML:GraphEdge.anchor>
+</UML:GraphEdge>
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.97264B56-6B1D-1EBD-3616-081015430532" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
@@ -716,36 +712,40 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 <UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.C694F89A-F723-D905-C24F-B18A35B6050C" />
-<UML:GraphConnector xmi.idref="DCE.CDD1B1DB-5963-E161-B25E-C131C1386EDC" />
+<UML:GraphConnector xmi.idref="DCE.C9C5390F-975B-ABC0-6C04-E6A38515BAC4" />
+<UML:GraphConnector xmi.idref="DCE.89172977-AB88-C917-64B4-54DF97BD34E5" />
 </UML:GraphEdge.anchor>
 </UML:GraphEdge>
-<UML:GraphEdge isVisible="false"  xmi.id="DCE.DFA14645-C720-0170-10CE-81AFC2DBE292" >
+<UML:GraphEdge isVisible="false"  xmi.id="DCE.A353121F-6E28-FB36-97EF-BC411F26F646" >
 <UML:GraphElement.position>
      <XMI.field>0</XMI.field>
      <XMI.field>0</XMI.field>
 </UML:GraphElement.position>
 <UML:GraphEdge.waypoints>
      <XMI.field>
-          <XMI.field>111</XMI.field>
-          <XMI.field>714</XMI.field>
+          <XMI.field>647</XMI.field>
+          <XMI.field>199</XMI.field>
      </XMI.field>
      <XMI.field>
-          <XMI.field>647</XMI.field>
-          <XMI.field>714</XMI.field>
+          <XMI.field>109</XMI.field>
+          <XMI.field>199</XMI.field>
      </XMI.field>
 </UML:GraphEdge.waypoints>
 <UML:GraphElement.semanticModel>
 <UML:Uml2SemanticModelBridge presentation="Message"  xmi.id="xmi_id" >
 <UML:Uml2SemanticModelBridge.element>
-<UML:Message xmi.idref="DCE.75F8270B-88C7-4AC7-F723-D2AFE3F1D8D4" />
+<UML:Message xmi.idref="DCE.3D17DAC4-A33F-7C2F-144A-559141DFFEF6" />
 </UML:Uml2SemanticModelBridge.element>
 </UML:Uml2SemanticModelBridge>
 </UML:GraphElement.semanticModel>
 <UML:GraphElement.contained>
 <UML:GraphNode isVisible="true"  xmi.id="NEW_TEMP_PEID" >
+<UML:GraphElement.position>
+     <XMI.field>0</XMI.field>
+     <XMI.field>0</XMI.field>
+</UML:GraphElement.position>
 <UML:GraphNode.size>
-     <XMI.field>371</XMI.field>
+     <XMI.field>126</XMI.field>
      <XMI.field>19</XMI.field>
 </UML:GraphNode.size>
 <UML:DiagramElement.property>
@@ -757,8 +757,8 @@
 </UML:GraphNode>
 </UML:GraphElement.contained>
 <UML:GraphEdge.anchor>
-<UML:GraphConnector xmi.idref="DCE.AB4CEDD9-F679-D136-906B-9E3EFAA18BDD" />
-<UML:GraphConnector xmi.idref="DCE.B59B8831-263D-CE7C-ABF1-EC2C540A6F7E" />
+<UML:GraphConnector xmi.idref="DCE.932E5A6A-7165-D925-7743-E313D52830CE" />
+<UML:GraphConnector xmi.idref="DCE.34BD0AF7-2EF0-2553-7E7A-A6597FB4B2E1" />
 </UML:GraphEdge.anchor>
 </UML:GraphEdge>
 </UML:GraphElement.contained>

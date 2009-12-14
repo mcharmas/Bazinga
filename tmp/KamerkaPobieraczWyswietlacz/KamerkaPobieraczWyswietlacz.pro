@@ -16,8 +16,8 @@ TEMPLATE = app
 SOURCES += main.cpp
 
 # Windows:
-#LIBS += -L"C:\Native\OpenCV20\lib" -lcxcore200 -lcv200 -lcvaux200 -lhighgui200 -lml200
-#INCLUDEPATH += C:\Native\OpenCV20\include
+#LIBS += -L "E:\OpenCV2.0\lib" -lcxcore200 -lcv200 -lcvaux200 -lhighgui200 -lml200
+#INCLUDEPATH += E:\OpenCV2.0\include
 
 
 # Linux:
