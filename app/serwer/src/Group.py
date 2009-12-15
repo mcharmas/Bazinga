@@ -1,4 +1,4 @@
-import user
+import User
 import time
 
 class Group():

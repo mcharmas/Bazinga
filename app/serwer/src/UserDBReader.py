@@ -1,9 +1,10 @@
 import sys
+from Logger import SLogger
 """
 klasa zczytuje z pliku baze danych z uzytkownikami
            format linii:   user;;haslo
 """
-class userDBReader():
+class UserDBReader():
 
     userList={}
 
@@ -19,8 +20,8 @@ class userDBReader():
                 else:
                     self.userList[line.partition(";;")[0]]=line.partition(";;")[2].replace('\n','')
         except IOError:
-            sys.stderr.write("error IO")
-            sys.exit(5)
+            SLogger.log("UserDBReader", "getUserList()", "IOError podczas czytania pliku")            
+            raise IOError
 
     def checkUser(self,user,passwd):
         if self.userExists(user):
