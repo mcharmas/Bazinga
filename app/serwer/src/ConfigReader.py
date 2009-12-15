@@ -8,14 +8,10 @@ przed rozpoczeciem czytania, nalezy ustawic plik konfiguracyjny!
 class ConfigReader():
 
 
-    def __init__(self):
-        self.fileName=""         #nazwa pliku konfiguracyjnego
+    def __init__(self,name):
+        self.fileName=name        #nazwa pliku konfiguracyjnego
         self.dataArray={}
         self.lines=""
-
-    # metoda ustawiajaca plik do czytania
-    def setFile(self,name):
-        self.fileName=name
 
     #odczyt z podanego pliku
     def readFromFile(self):

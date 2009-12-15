@@ -6,10 +6,9 @@ klasa zczytuje z pliku baze danych z uzytkownikami
 """
 class UserDBReader():
 
-    userList={}
 
     def __init__(self):
-        pass
+        self.userList={}
 
     def getUserList(self,file):
         try:
