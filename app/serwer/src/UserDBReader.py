@@ -40,7 +40,7 @@ class userDBReader():
     def getUserPasswd(self,user,passwd):
         if self.userList[user]==passwd:
             return True
-        else
+        else:
             return False
 
     def createUser(self,user,passwd):

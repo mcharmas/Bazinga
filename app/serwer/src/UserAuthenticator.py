@@ -1,4 +1,4 @@
-import userdbreader
+import UserDBReader
 """
  autoryzacja uzytkownika
 """
