@@ -1,4 +1,3 @@
-import sys
 from Logger import SLogger
 """
 klasa zczytuje z pliku baze danych z uzytkownikami

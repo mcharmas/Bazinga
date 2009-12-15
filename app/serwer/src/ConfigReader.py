@@ -1,4 +1,5 @@
 import sys
+from Logger import SLogger
 """
 format pliku konfiguracyjnego: 
          klucz;;wartosc         
@@ -23,8 +24,8 @@ class ConfigReader():
                 else:
                     self.dataArray[line.partition(";;")[0]]=line.partition(";;")[2].replace('\n','')
         except IOError:
-            sys.stderr.write("error IO")
-            sys.exit(5)
+            SLogger.log("ConfigReader", "readFromFile()", "IOError podczas czytania pliku")
+            raise IOError
 
 
     def getdataArray(self):
@@ -49,7 +50,8 @@ class ConfigReader():
                 #print "pozycja:" , k,v
                 file.write(k+";;"+v+"\n")
         except IOError:
-            sys.stderr.write("blad podczas zapisu do pliku")
+            SLogger.log("ConfigReader", "saveToFile()", "IOError podczas zapisu do pliku")
+            raise IOError
         file.close()
 
     #zwraca wartosc dla zadanego klucza, badz False, jesli taki klucz nie istnieje
