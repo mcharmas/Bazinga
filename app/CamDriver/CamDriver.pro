@@ -5,7 +5,18 @@ QT += network
 TARGET = CamDriver
 TEMPLATE = app
 SOURCES += main.cpp \
-    configdialog.cpp
-HEADERS += configdialog.h
+    configdialog.cpp \
+    videoinput.cpp \
+    frameretreiver.cpp \
+    imagedisplayer.cpp
+HEADERS += configdialog.h \
+    videoinput.h \
+    frameretreiver.h \
+    imagedisplayer.h
 FORMS += configdialog.ui
 RESOURCES += icons.qrc
+LIBS += -lcxcore \
+    -lcv \
+    -lcvaux \
+    -lhighgui \
+    -lml

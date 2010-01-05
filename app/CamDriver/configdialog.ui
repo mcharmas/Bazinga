@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>614</width>
-    <height>451</height>
+    <width>640</width>
+    <height>417</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
      <item>
       <widget class="QWidget" name="widget" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0">
         <item>
          <widget class="QGroupBox" name="groupBox_4">
           <property name="title">
@@ -30,7 +30,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QWidget" name="widget" native="true">
+            <widget class="ImageDisplayer" name="cameraPreview" native="true">
              <property name="minimumSize">
               <size>
                <width>320</width>
@@ -65,10 +65,19 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>112</width>
-                <height>335</height>
+                <width>114</width>
+                <height>322</height>
                </rect>
               </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QCheckBox" name="checkBox_2">
+                 <property name="text">
+                  <string>Twarze</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </widget>
            </item>
@@ -97,6 +106,14 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ImageDisplayer</class>
+   <extends>QWidget</extends>
+   <header location="global">imagedisplayer.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="icons.qrc"/>
  </resources>
