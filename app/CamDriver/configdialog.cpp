@@ -5,7 +5,7 @@
 #include <QPainter>
 
 ConfigDialog::ConfigDialog(QWidget *parent)
-	: QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL)
+	: QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL)
 {
     ui->setupUi(this);
 }
@@ -48,3 +48,13 @@ void ConfigDialog::retreiveFrame(QImage & image) {
 	tmp->update();
 }
 
+void ConfigDialog::on_facesCheckBox_toggled(bool checked)
+{
+	if(vin) {
+		if(checked) {
+			vin->addObserver(&faceDetector);
+		} else {
+			vin->delObserver(&faceDetector);
+		}
+	}
+}

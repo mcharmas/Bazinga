@@ -8,11 +8,13 @@ SOURCES += main.cpp \
     configdialog.cpp \
     videoinput.cpp \
     frameretreiver.cpp \
-    imagedisplayer.cpp
+    imagedisplayer.cpp \
+    faces.cpp
 HEADERS += configdialog.h \
     videoinput.h \
     frameretreiver.h \
-    imagedisplayer.h
+    imagedisplayer.h \
+    faces.h
 FORMS += configdialog.ui
 RESOURCES += icons.qrc
 LIBS += -lcxcore \

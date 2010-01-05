@@ -41,7 +41,6 @@ private:
 	float frameRate;
 	unsigned long sleepUTime;
 	bool running;
-	uchar *buffer;
 };
 
 #endif // VIDEOINPUT_H

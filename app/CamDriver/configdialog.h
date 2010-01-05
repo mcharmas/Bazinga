@@ -5,19 +5,20 @@
 
 #include "frameretreiver.h"
 #include "videoinput.h"
+#include "faces.h"
 
 namespace Ui
 {
-    class ConfigDialog;
+	class ConfigDialog;
 }
 
 class ConfigDialog : public QDialog, public FrameRetreiver
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    ConfigDialog(QWidget *parent = 0);
-    ~ConfigDialog();
+	ConfigDialog(QWidget *parent = 0);
+	~ConfigDialog();
 
 public slots:
 	void connectCamera();
@@ -26,10 +27,12 @@ public slots:
 private:
 	void retreiveFrame(QImage &);
 
-    Ui::ConfigDialog *ui;
+	Ui::ConfigDialog *ui;
 	VideoInput * vin;
+	Faces faceDetector;
 
 private slots:
+	void on_facesCheckBox_toggled(bool checked);
 	void on_checkBox_toggled(bool checked);
 };
 

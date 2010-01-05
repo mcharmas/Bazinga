@@ -1,8 +1,11 @@
 #include "videoinput.h"
 #include "frameretreiver.h"
+
+#include <QDebug>
+
 using namespace cv;
 
-VideoInput::VideoInput(int frameRate) : vid(0), frameRate(frameRate), running(true), buffer(NULL)
+VideoInput::VideoInput(int frameRate) : vid(0), frameRate(frameRate), running(true)
 {
 	vid >> frame;
 	if(frame.cols != image.width() || frame.rows != image.height()) {
@@ -29,7 +32,7 @@ void VideoInput::run() {
 			(*it)->retreiveFrame(frame);
 		}
 
-		this->usleep(getFrameRate());
+		this->usleep(getSleepUTime());
 	}
 }
 
@@ -48,8 +51,9 @@ void VideoInput::setFrameRate(float frameRate) {
 	if(frameRate < 0) frameRate = -frameRate;
 	if(frameRate == 0) return; // TODO: throw ?
 	this->frameRate = frameRate;
-	sleepUTime = (float) (1000000.0 / frameRate);
+	sleepUTime = 1000000.0 / frameRate;
 	frameRateMutex.unlock();
+	qDebug() << sleepUTime;
 }
 
 float VideoInput::getFrameRate() {
@@ -68,7 +72,8 @@ unsigned long VideoInput::getSleepUTime() {
 
 void VideoInput::addObserver(FrameRetreiver * ft) {
 	observersMutex.lock();
-	observers.append(ft);
+	//observers.append(ft);
+	observers.prepend(ft);
 	observersMutex.unlock();
 }
 
