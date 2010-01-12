@@ -17,10 +17,21 @@ HEADERS += configdialog.h \
     faces.h
 FORMS += configdialog.ui
 RESOURCES += icons.qrc
-LIBS += -L"C:\Native\OpenCV20\lib" \
-	-lcxcore200 \
-	-lcv200 \
-	-lcvaux200 \
-	-lhighgui200 \
-	-lml200
-INCLUDEPATH += "C:\Native\OpenCV20\include"
+
+win32 {
+	LIBS += -L"C:\Native\OpenCV20\lib" \
+		-lcxcore200 \
+		-lcv200 \
+		-lcvaux200 \
+		-lhighgui200 \
+		-lml200
+	INCLUDEPATH += "C:\Native\OpenCV20\include"
+}
+
+unix {
+	LIBS += -lcxcore \
+		-lcv \
+		-lcvaux \
+		-lhighgui \
+		-lml \
+}
