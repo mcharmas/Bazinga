@@ -53,7 +53,7 @@ void VideoInput::setFrameRate(float frameRate) {
 	this->frameRate = frameRate;
 	sleepUTime = 1000000.0 / frameRate;
 	frameRateMutex.unlock();
-	qDebug() << sleepUTime;
+	//qDebug() << sleepUTime;
 }
 
 float VideoInput::getFrameRate() {

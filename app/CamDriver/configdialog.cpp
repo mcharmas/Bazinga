@@ -12,6 +12,10 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 
 ConfigDialog::~ConfigDialog()
 {
+	if(vin) {
+		vin->safelyStop();
+		delete vin;
+	}
     delete ui;
 }
 
