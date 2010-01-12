@@ -8,7 +8,9 @@
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	a.setQuitOnLastWindowClosed(false);
+
+	// TODO: tymczasowo ustawione na true, zmienic na false:
+	a.setQuitOnLastWindowClosed(true);
 	ConfigDialog w;
 
 	QMenu menu;
@@ -16,10 +18,16 @@ int main(int argc, char *argv[])
 	if( QSystemTrayIcon::isSystemTrayAvailable()) {
 		menu.addAction("Konfiguracja", &w, SLOT(show()));
 		menu.addAction("Zakoncz", &a, SLOT(quit()));
+		QObject::connect(&trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), &w, SLOT(show()));
 		trayIcon.setContextMenu(&menu);
 		trayIcon.show();
 	} else {
 		w.show();
 	}
+
+	// TODO: tymczasowo:
+	w.show();
+	//
+
 	return a.exec();
 }

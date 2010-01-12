@@ -17,7 +17,7 @@ ConfigDialog::~ConfigDialog()
 
 void ConfigDialog::connectCamera() {
 	disconnectCamera();
-	vin = new VideoInput(15); // todo ustawianie framerate
+	vin = new VideoInput(25); // todo ustawianie framerate
 	vin->addObserver(this);
 	vin->start();
 }
@@ -42,8 +42,8 @@ void ConfigDialog::on_checkBox_toggled(bool checked)
 
 void ConfigDialog::retreiveFrame(QImage & image) {
 	ImageDisplayer * tmp = this->ui->cameraPreview;
-	tmp->setMinimumWidth(image.width());
-	tmp->setMinimumHeight(image.height());
+	//tmp->setMinimumWidth(image.width());
+	//tmp->setMinimumHeight(image.height());
 	tmp->setImage(&image);
 	tmp->update();
 }

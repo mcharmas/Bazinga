@@ -16,7 +16,11 @@ public:
 
 protected:
 	void paintEvent(QPaintEvent *);
+	void timerEvent(QTimerEvent *);
 	QImage * image;
+
+private:
+	void commonSetup();
 };
 
 #endif // IMAGEDISPLAYER_H
