@@ -21,7 +21,11 @@ void ImageDisplayer::setImage(QImage * image) {
 
 void ImageDisplayer::paintEvent(QPaintEvent * e) {
 	if(image) {
-		this->setMinimumSize(image->size());
+		if (this->width() < image->width() || this->height() < image->height()) {
+			this->setMinimumSize(image->size());
+			this->setMaximumSize(image->size());
+		}
+
 		QPainter paint(this);
 		paint.drawImage(e->rect(), *image);
 	}
