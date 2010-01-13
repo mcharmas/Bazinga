@@ -9,29 +9,28 @@ SOURCES += main.cpp \
     videoinput.cpp \
     frameretreiver.cpp \
     imagedisplayer.cpp \
-    faces.cpp
+    faces.cpp \
+    quadrangles.cpp
 HEADERS += configdialog.h \
     videoinput.h \
     frameretreiver.h \
     imagedisplayer.h \
-    faces.h
+    faces.h \
+    quadrangles.h
 FORMS += configdialog.ui
 RESOURCES += icons.qrc
-
-win32 {
-	LIBS += -L"C:\Native\OpenCV20\lib" \
-		-lcxcore200 \
-		-lcv200 \
-		-lcvaux200 \
-		-lhighgui200 \
-		-lml200
-	INCLUDEPATH += "C:\Native\OpenCV20\include"
+win32 { 
+    LIBS += -L"C:\Native\OpenCV20\lib" \
+        -lcxcore200 \
+        -lcv200 \
+        -lcvaux200 \
+        -lhighgui200 \
+        -lml200
+    INCLUDEPATH += "C:\Native\OpenCV20\include"
 }
+unix:LIBS += -lcxcore \
+    -lcv \
+    -lcvaux \
+    -lhighgui \
+    -lml
 
-unix {
-	LIBS += -lcxcore \
-		-lcv \
-		-lcvaux \
-		-lhighgui \
-		-lml \
-}

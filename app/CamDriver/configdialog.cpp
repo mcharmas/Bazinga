@@ -7,7 +7,7 @@
 #include <QDebug>
 
 ConfigDialog::ConfigDialog(QWidget *parent)
-	: QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL)
+        : QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL), quadranglesDetector(NULL)
 {
     ui->setupUi(this);
 }
@@ -29,7 +29,7 @@ void ConfigDialog::connectCamera() {
 		vin->start();
 	} catch (char* & message) {
 		qDebug() << message;
-		QMessageBox::warning(this, "B³¹d", message);
+		QMessageBox::warning(this, "Bd", message);
 		vin = NULL;
 	}
 }
@@ -69,4 +69,15 @@ void ConfigDialog::on_facesCheckBox_toggled(bool checked)
 			vin->delObserver(&faceDetector);
 		}
 	}
+}
+
+void ConfigDialog::on_quadrangleCheckBox_toggled(bool checked)
+{
+    if(vin) {
+            if(checked) {
+                    vin->addObserver(&quadranglesDetector);
+            } else {
+                    vin->delObserver(&quadranglesDetector);
+            }
+    }
 }

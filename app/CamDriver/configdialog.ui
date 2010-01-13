@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
+    <width>663</width>
     <height>417</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>Konfiguracja Sterownika</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="icons.qrc">
+   <iconset>
     <normaloff>:/tray/icon.png</normaloff>:/tray/icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -65,11 +65,18 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>92</width>
-                <height>315</height>
+                <width>112</width>
+                <height>285</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QCheckBox" name="quadrangleCheckBox">
+                 <property name="text">
+                  <string>Czworokaty</string>
+                 </property>
+                </widget>
+               </item>
                <item>
                 <widget class="QCheckBox" name="facesCheckBox">
                  <property name="text">
@@ -199,9 +206,7 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>
