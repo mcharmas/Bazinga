@@ -3,6 +3,8 @@
 
 #include <QImage>
 #include <QPainter>
+#include <QMessageBox>
+#include <QDebug>
 
 ConfigDialog::ConfigDialog(QWidget *parent)
 	: QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL)
@@ -21,9 +23,15 @@ ConfigDialog::~ConfigDialog()
 
 void ConfigDialog::connectCamera() {
 	disconnectCamera();
-	vin = new VideoInput(25); // todo ustawianie framerate
-	vin->addObserver(this);
-	vin->start();
+	try {
+		vin = new VideoInput(25); // todo ustawianie framerate
+		vin->addObserver(this);
+		vin->start();
+	} catch (char* & message) {
+		qDebug() << message;
+		QMessageBox::warning(this, "B³¹d", message);
+		vin = NULL;
+	}
 }
 
 void ConfigDialog::disconnectCamera() {
