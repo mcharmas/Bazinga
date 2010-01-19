@@ -14,10 +14,8 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
         """
         funkcja obslugujaca request serwera UDP
         """                    
-        data = self.request[0]
-        #sock = self.request[1]
-        print self.client_address[0] + " send: " + data
-        SLogger.log("ThreadedUDPRequestHandler", "handle", "Otrzymano dane: " + data.strip() + " od: " + self.client_address[0])
+        data = self.request[0]            
+        SLogger.log("ThreadedUDPRequestHandler", "handle", "Otrzymano dane: " + data.strip() + " od: " + self.client_address[0])        
                    
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
