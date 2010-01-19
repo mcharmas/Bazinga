@@ -6,9 +6,9 @@ class User:
         self.id = id
         self.login = login
         self.password = password
-        self.group = group        
+        self.group = None        
         self.host = host
-        self.socket = None
+        self.socket = socket
         self.timestamp = time.localtime()        
         
     def sendData(self, data):

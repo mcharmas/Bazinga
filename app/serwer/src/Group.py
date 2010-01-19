@@ -12,7 +12,7 @@ class Group():
     def __init__(self, manager, id=0):
         self.users = []
         self.manager = manager
-        self.timeout = 1
+        self.timeout = 30
         self.id = id
         self.name = "Group("+str(id)+")"
         self.timer = Timer(self.timeout, self.checkTimeouts)        
@@ -33,12 +33,26 @@ class Group():
                 self.users.remove(u)
         self.timer.cancel()
         self.timer = Timer(self.timeout, self.checkTimeouts)
-        self.timer.start()
+        if len(self.users):            
+            self.timer.start()
                
                 
     def addUser(self, user):
         SLogger.log(self.name, "addUser()", "Dodawanie uzytkownika " + user.login)
         self.users.append(user)
+        if not self.timer.isAlive():
+            self.timer.start()
+        
+    def delUser(self, user):
+        SLogger.log(self.name, "delUser()", "Usuwanie uzytkownika bo sam tego chce " + user.login)
+        self.manager.delUser(user.id)
+        self.users.remove(user)
+        
+    def isEmpty(self):
+        if len(self.users):
+            return True
+        return False
+
         
 if __name__ == "__main__":
     g = Group()

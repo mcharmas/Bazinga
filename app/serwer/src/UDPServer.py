@@ -4,18 +4,23 @@
 import threading
 import SocketServer
 from Logger import SLogger
+from Parser import *
 
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
     """
     klasa odpowiedzialna za obsługiwanie requestów serwera UDP
     """
     
+    parser = Parser()
+    
     def handle(self):        
         """
         funkcja obslugujaca request serwera UDP
-        """                    
-        data = self.request[0]            
-        SLogger.log("ThreadedUDPRequestHandler", "handle", "Otrzymano dane: " + data.strip() + " od: " + self.client_address[0])        
+        """
+        data = self.request[0]
+        SLogger.log("ThreadedUDPRequestHandler", "handle", "Cos dostalem i daje parserowi.")        
+        ThreadedUDPRequestHandler.parser.handleData(data, self.client_address)                                        
+                
                    
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
