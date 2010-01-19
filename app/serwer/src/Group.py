@@ -9,8 +9,9 @@ class Group():
     posiada timer sprawdzajacy co timeout bezczynnosc userow po ich timestampach
     po bezczynnosci user jest usuwany (TODO: wysylac odnowienie polaczenia)
     """
-    def __init__(self, id=0):
+    def __init__(self, manager, id=0):
         self.users = []
+        self.manager = manager
         self.timeout = 1
         self.id = id
         self.name = "Group("+str(id)+")"
@@ -28,6 +29,7 @@ class Group():
         for u in self.users:            
             if  time.mktime(t) - time.mktime(u.timestamp) >= self.timeout:            
                 SLogger.log(self.name, "checkTimeouts()", "Usuwanie uzytkownika z powodu bezczynnosci " + u.login)
+                self.manager.delUser(u.id)
                 self.users.remove(u)
         self.timer.cancel()
         self.timer = Timer(self.timeout, self.checkTimeouts)
@@ -40,8 +42,8 @@ class Group():
         
 if __name__ == "__main__":
     g = Group()
-    u1 = User.User("dupa", "Jasio", g, ('localhost',1234), None)
-    u2 = User.User("dupa1", "Jasio1", g, ('localhost',1234), None)
+    u1 = User.User(0, "dupa", "Jasio", g, ('localhost',1234), None)
+    u2 = User.User(1, "dupa1", "Jasio1", g, ('localhost',1234), None)
     u1.update()
     g.addUser(u1)
     time.sleep(5)    

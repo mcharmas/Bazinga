@@ -32,10 +32,21 @@ class Parser:
         SLogger.log(self.classname, "loginDriver", "Dostalem dane do logowania sterownika.")
     
     def loginApplication(self, packet, client):
-        user,passwd = packet.content.split(':')
+        user,passwd,port,token = packet.content.split(':')
+        client[1] = int(port)
         SLogger.log(self.classname, "loginApplication", "Dostalem dane do logowania aplikacji: " + user + ' ' + passwd)        
         correct = self.authenticator.checkUser(user, passwd)
-        
+        if correct:
+            if self.groupManager.hasDriver(user):
+                u = User(0, user, passwd, client)
+                sid = self.groupManager.addUser(u, token)
+                u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SACK, str(sid)).toString())
+            else:
+                u = User(0, user, passwd, client)
+                u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "NO DRIVER").toString())
+        else:
+                u = User(0, user, passwd, client)
+                u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "BAD CREDENTIALS").toString())
     
     def check(self, packet, client):
         SLogger.log(self.classname, "check", "Dostalem request do synchronizacji sesji.")
