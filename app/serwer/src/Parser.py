@@ -3,6 +3,7 @@ from Logger import *
 from User import * 
 from UserAuthenticator import *
 from UserGroupManager import *
+import socket
 
 
 """
@@ -13,6 +14,7 @@ class Parser:
         self.classname = "Parser"
         self.groupManager = UserGroupManager()
         self.authenticator = UserAuthenticator()
+        self.dataSenderSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     
     def handleData(self,data, client):
         p = Packet(data)
@@ -38,14 +40,14 @@ class Parser:
         correct = self.authenticator.checkUser(user, passwd)
         if correct:
             if self.groupManager.hasDriver(user):
-                u = User(0, user, passwd, client)
+                u = User(0, user, passwd, client, self.dataSenderSocket)
                 sid = self.groupManager.addUser(u, token)
                 u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SACK, str(sid)).toString())
             else:
-                u = User(0, user, passwd, client)
+                u = User(0, user, passwd, client, self.dataSenderSocket)
                 u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "NO DRIVER").toString())
         else:
-                u = User(0, user, passwd, client)
+                u = User(0, user, passwd, client, self.dataSenderSocket)
                 u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "BAD CREDENTIALS").toString())
     
     def check(self, packet, client):

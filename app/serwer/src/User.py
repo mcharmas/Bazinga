@@ -2,7 +2,7 @@ import socket
 import time
 
 class User:
-    def __init__(self, id, login, password, group, host):
+    def __init__(self, id, login, password, host, socket):
         self.id = id
         self.login = login
         self.password = password
