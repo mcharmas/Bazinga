@@ -19,7 +19,7 @@ class Group():
         self.timer.start()
         
     def sendData(self,data):
-        SLogger.log(self.name, "checkTimeouts()", "Wysylanie danych.")
+        SLogger.log(self.name, "sendData()", "Wysylanie danych.")
         for u in self.users:
             u.sendData(data)
             

@@ -47,15 +47,22 @@ class Parser:
     def loginDriver(self, packet, client):
         SLogger.log(self.classname, "loginDriver", "Dostalem dane do logowania sterownika.")
         try:
-            user,passwd = packet.content.split(':')
+            user,passwd,port = packet.content.split(':')
+            port = int(port)
         except ValueError:
             SLogger.log(self.classname, "loginDriver", "Blad zawartosci pakietu, olewam")
             return
-                    
+        
+        id = self.groupManager.getUserByLogin(user)
+        if id:
+            self.loginApplication(packet, client)
+            return
+         
         correct = self.authenticator.checkUser(user, passwd)
         if correct:
             SLogger.log(self.classname, "loginDriver", "Fpytke haslo i login, dodaje do driverow.")
-            self.groupManager.addDriver(user)            
+            h = (client[0], port)
+            self.groupManager.addDriver(user, h)            
         else:
             SLogger.log(self.classname, "loginDriver", "Zle haslo i/lub login... Olewam sprawe.")
             
@@ -85,7 +92,9 @@ class Parser:
                 SLogger.log(self.classname, "loginApplication", "Wszystko fpyte, jest driver, odsylam info ze spoko")
                 u = User.User(0, user, passwd, client, self.dataSenderSocket)
                 sid = self.groupManager.addUser(u, token)
-                u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SACK, str(sid)).toString())
+                p = Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SACK, str(sid)).toString()
+                u.sendData(p)
+                u.sendDataToDriver(p)
             else:
                 #moze jest juz zalogowany?
                 id = self.groupManager.getUserByLogin(user)
@@ -99,18 +108,22 @@ class Parser:
                     u.sendData(Packet.packetFromContent(0, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "NO DRIVER").toString())
         else:
                 SLogger.log(self.classname, "loginApplication", "Dupa... zle credentiale.")
-                u = User.User(0, user, passwd, client, self.dataSenderSocket)
-                u.sendData(Packet.packetFromContent(sid, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "BAD CREDENTIALS").toString())
+                u = User.User(0, user, passwd, client, self.dataSenderSocket)                
+                p = Packet.packetFromContent(0, Packet.Sources.SERVER, 0, Packet.Communicates.SDEN, "BAD CREDENTIALS").toString()
+                u.sendData(p)
+
     
     
     def check(self, packet, client):
         SLogger.log(self.classname, "check", "Dostalem request do synchronizacji sesji.")
-        try:
-            self.groupManager.getUser(packet.id).update()
+        
+        u = self.groupManager.getUser(packet.id)
+        if u:
+            u.update()
             p = Packet.packetFromContent(packet.id, Packet.Sources.SERVER, 0, Packet.Communicates.CONFIRM, "")
-            self.groupManager.getUser(packet.id).sendData(p.toString())
+            u.sendData(p.toString())
             SLogger.log(self.classname, "check", "Zupdatowalem i wyslalem confirma...")
-        except:
+        else:     
             SLogger.log(self.classname, "check", "Ups... nie ma takiego  klienta.")
         
     
@@ -124,12 +137,16 @@ class Parser:
     
     def normalContent(self, packet, client):
         SLogger.log(self.classname, "normalContent", "Dostalem normalne dane do popchniecia dalej.")
-        try:
+        u = self.groupManager.getUser(packet.id)
+        if u:
+            u.update()
             packet.source = Packet.Sources.SERVER
-            self.groupManager.getUser(packet.id).group.sendData(packet)
-        except KeyError:
+            packet.repack()
+            u.group.sendData(packet.toString())
+            SLogger.log(self.classname, "normalContent", "Polecialo...")
+        else:
             SLogger.log(self.classname, "normalContent", "UPS Najwyrazniej nie ma takiego klienta.")
-        SLogger.log(self.classname, "normalContent", "Polecialo...")
+
     
         
     

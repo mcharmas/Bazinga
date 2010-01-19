@@ -6,24 +6,25 @@ TODO: wypierdzielac drivery po jakims czasie!
 """
 class UserGroupManager:
     def __init__(self):
-        self.drivers = [] #drivery bez klientow...
+        self.drivers = {} #drivery bez klientow...
         self.users = {} #userzy po sidach
         self.groups = {} #grupy po tokenie
         self.lastSid = 1
         self.name = "UserGroupManager"
         
-    def addDriver(self,username):
+    def addDriver(self,username, host):
         SLogger.log(self.name, "addDriver", "Dodaje driver "+username)
-        self.drivers.append(username)
+        self.drivers[username] = host
         
     def hasDriver(self, username):
-        if username in self.drivers:
-            return True
-        return False
+        if username in self.drivers.keys():
+            return self.drivers[username]
+        return None
     
     def addUser(self, user, token):
         SLogger.log(self.name, "addUser", "Dodaje usera: "+user.login+" do grupy:"+token)        
-        self.drivers.remove(user.login)
+        driverHost = self.drivers.pop(user.login)
+        user.driverHost = driverHost
         user.id = self.lastSid
         self.lastSid+=1 
         
@@ -46,7 +47,10 @@ class UserGroupManager:
             
         
     def getUser(self, id):
-        return self.user[id]
+        try:
+            return self.users[id]
+        except:
+            return None
             
     def getUserByLogin(self, login):
         for u in self.users.values():
