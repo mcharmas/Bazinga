@@ -41,6 +41,7 @@ void Points2::checkSize(CvSize frameSize) {
         currPyramid = cvCreateImage(frameSize, IPL_DEPTH_8U, 1);
         prevPyramid = cvCreateImage(frameSize, IPL_DEPTH_8U, 1);
         currBuffsSize = frameSize;
+        flags = 0;
     }
 }
 
@@ -60,13 +61,13 @@ void Points2::retreiveFrame(cv::Mat & frame) {
     cvCvtColor(tempImage, currGreyImage, CV_BGR2GRAY);
 
     int i, k;
-    int flags = 0;
 
     if( count > 0 )
     {
         cvCalcOpticalFlowPyrLK( prevGreyImage, currGreyImage, prevPyramid, currPyramid,
-            points[0], points[1], count, cvSize(frameSize.width, frameSize.height), 3, status, 0,
+            points[0], points[1], count, cvSize(10,10), 3, status, 0,
             cvTermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS,20,0.03), flags );
+
         flags |= CV_LKFLOW_PYR_A_READY;
         for( i = k = 0; i < count; i++ )
         {
@@ -86,7 +87,8 @@ void Points2::retreiveFrame(cv::Mat & frame) {
                 continue;
 
             points[1][k++] = points[1][i];
-            cvCircle( &frame, cvPointFrom32f(points[1][i]), 3, CV_RGB(0,255,0), -1, 8,0);
+            cv::circle( frame, cvPointFrom32f(points[1][i]), 3, CV_RGB(0,255,0), -1, 8,0);
+
         }
         count = k;
     }
@@ -97,7 +99,7 @@ void Points2::retreiveFrame(cv::Mat & frame) {
         points[1][count++] = cvPointTo32f(pt);
 
         cvFindCornerSubPix( currGreyImage, points[1] + count - 1, 1,
-            cvSize(frameSize.width, frameSize.height), cvSize(-1,-1),
+            cvSize(10,10), cvSize(-1,-1),
             cvTermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS,20,0.03));
         add_remove_pt = 0;
 

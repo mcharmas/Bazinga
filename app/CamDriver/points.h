@@ -19,6 +19,7 @@ private:
     double quality;
     double min_distance;
     char *status;
+    int flags;
 
     CvSize currBuffsSize;
     CvPoint2D32f* points[2], *swap_points;
