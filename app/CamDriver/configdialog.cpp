@@ -7,7 +7,7 @@
 #include <QDebug>
 
 ConfigDialog::ConfigDialog(QWidget *parent)
-        : QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL), quadranglesDetector(NULL)
+        : QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL), quadranglesDetector(NULL), pointsDetector(NULL)
 {
     ui->setupUi(this);
 }
@@ -80,4 +80,16 @@ void ConfigDialog::on_quadrangleCheckBox_toggled(bool checked)
                     vin->delObserver(&quadranglesDetector);
             }
     }
+}
+
+void ConfigDialog::on_pointsCheckBox_toggled(bool checked)
+{
+    if(vin) {
+            if(checked) {
+                    vin->addObserver(&pointsDetector);
+            } else {
+                    vin->delObserver(&pointsDetector);
+            }
+    }
+
 }

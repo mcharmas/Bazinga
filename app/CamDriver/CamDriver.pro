@@ -10,13 +10,15 @@ SOURCES += main.cpp \
     frameretreiver.cpp \
     imagedisplayer.cpp \
     faces.cpp \
-    quadrangles.cpp
+    quadrangles.cpp \
+    points.cpp
 HEADERS += configdialog.h \
     videoinput.h \
     frameretreiver.h \
     imagedisplayer.h \
     faces.h \
-    quadrangles.h
+    quadrangles.h \
+    points.h
 FORMS += configdialog.ui
 RESOURCES += icons.qrc
 win32 { 
@@ -33,4 +35,3 @@ unix:LIBS += -lcxcore \
     -lcvaux \
     -lhighgui \
     -lml
-

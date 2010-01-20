@@ -7,7 +7,7 @@ Quadrangles::Quadrangles(VideoInput *input) : FrameRetreiver(input)
 void Quadrangles::retreiveFrame(cv::Mat & frame) {
     int thresh = 50;
     CvSeq* contours;
-    int i, c, l, N = 11;
+    int i, c, l, N = 1;
 
     IplImage* img = new IplImage(frame);
     CvSize sz = cvSize( img->width & -2, img->height & -2 );
@@ -33,7 +33,7 @@ void Quadrangles::retreiveFrame(cv::Mat & frame) {
     tgray = cvCreateImage( sz, 8, 1 );
 
     // find squares in every color plane of the image+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    for( c = 0; c < 3 ; c++ )
+    for( c = 0; c < 1 ; c++ )
     {
         // extract the c-th color plane
         cvSetImageCOI( timg, c+1 );

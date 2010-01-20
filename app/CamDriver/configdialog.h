@@ -7,6 +7,7 @@
 #include "videoinput.h"
 #include "faces.h"
 #include "quadrangles.h"
+#include "points.h"
 
 namespace Ui
 {
@@ -32,8 +33,10 @@ private:
 	VideoInput * vin;
 	Faces faceDetector;
         Quadrangles quadranglesDetector;
+        Points2 pointsDetector;
 
 private slots:
+        void on_pointsCheckBox_toggled(bool checked);
         void on_quadrangleCheckBox_toggled(bool checked);
         void on_facesCheckBox_toggled(bool checked);
 	void on_checkBox_toggled(bool checked);
