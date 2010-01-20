@@ -1,4 +1,5 @@
 #include "imagedisplayer.h"
+#include "points.h"
 #include <QPainter>
 
 void ImageDisplayer::commonSetup() {
@@ -17,6 +18,11 @@ ImageDisplayer::ImageDisplayer(QGroupBox*& a) : QWidget(a), image(0) {
 
 void ImageDisplayer::setImage(QImage * image) {
 	this->image = image;
+}
+
+void ImageDisplayer::mouseReleaseEvent(QMouseEvent *e)
+{
+    Points2::addPoint(e->pos().x(), e->pos().y());
 }
 
 void ImageDisplayer::paintEvent(QPaintEvent * e) {

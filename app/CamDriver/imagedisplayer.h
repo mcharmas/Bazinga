@@ -5,6 +5,7 @@
 #include <QImage>
 #include <QPaintEvent>
 #include <QGroupBox>
+#include <QMouseEvent>
 
 class ImageDisplayer : public QWidget
 {
@@ -21,6 +22,7 @@ protected:
 
 private:
 	void commonSetup();
+        void mouseReleaseEvent(QMouseEvent *e);
 };
 
 #endif // IMAGEDISPLAYER_H

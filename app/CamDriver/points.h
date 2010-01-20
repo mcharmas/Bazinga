@@ -11,19 +11,22 @@ public:
     Points2(VideoInput* input);
     virtual ~Points2();
     void retreiveFrame(cv::Mat &);
+    static void addPoint( int, int);
+    static CvPoint pt;
+    static int add_remove_pt;
 
 private:
     int count;
     int max_count;
-    int add_remove_pt;
+//    int add_remove_pt;
     double quality;
     double min_distance;
+    bool active;
     char *status;
     int flags;
 
     CvSize currBuffsSize;
     CvPoint2D32f* points[2], *swap_points;
-    CvPoint pt;
 
     IplImage *tempImage;
     IplImage *currGreyImage;

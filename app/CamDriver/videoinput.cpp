@@ -40,6 +40,7 @@ void VideoInput::run() {
 void VideoInput::getFrame() {
 	vid >> frame;
 	cvtColor(frame, frame, CV_BGR2RGB);
+        flip(frame,frame, 1);
 }
 
 void VideoInput::safelyStop() {

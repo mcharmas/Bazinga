@@ -1,18 +1,19 @@
 #include "points.h"
 
-Points2::Points2(VideoInput *input) : FrameRetreiver(input), count(0), max_count(50), add_remove_pt(0), quality(0.01), min_distance(10)
+Points2::Points2(VideoInput *input) : FrameRetreiver(input), count(0), max_count(50), quality(0.01), min_distance(10), active(false)
 {
         currBuffsSize.width = 0;
         currBuffsSize.height = 0;
-        pt.x = 120;
-
-        pt.y = 160;
-        add_remove_pt = 1;
+//        pt.x = 120;
+//
+//        pt.y = 160;
+//        add_remove_pt = 1;
         points[0] = (CvPoint2D32f*)cvAlloc(max_count*sizeof(points[0][0]));
         points[1] = (CvPoint2D32f*)cvAlloc(max_count*sizeof(points[0][0]));
         status = (char*)cvAlloc(max_count);
 
 }
+
 
 Points2::~Points2() {
 
@@ -24,6 +25,17 @@ Points2::~Points2() {
         cvReleaseImage(&prevPyramid);
     }
 }
+
+void Points2::addPoint( int x, int y ){
+    pt.x = x;
+    pt.y = y;
+    add_remove_pt = 1;
+}
+
+CvPoint Points2::pt = cvPoint(0,0);
+//Points2::pt.w = 0;
+//= cvSize(0,0);
+int Points2::add_remove_pt = 0;
 
 void Points2::checkSize(CvSize frameSize) {
 
@@ -65,7 +77,7 @@ void Points2::retreiveFrame(cv::Mat & frame) {
     if( count > 0 )
     {
         cvCalcOpticalFlowPyrLK( prevGreyImage, currGreyImage, prevPyramid, currPyramid,
-            points[0], points[1], count, cvSize(10,10), 3, status, 0,
+            points[0], points[1], count, cvSize(20,20), 3, status, 0,
             cvTermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS,20,0.03), flags );
 
         flags |= CV_LKFLOW_PYR_A_READY;
