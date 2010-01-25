@@ -12,20 +12,31 @@ class BConnection
 {
 public:
 
-    BConnection();
+	BConnection(unsigned char clientType);
 
 protected:
 	/**
+	  connect w trybie klienta
 	  Binduje podany port (listeningPort), laczy sie z serwerem na podanym porcie, loguje na podstawie podanych danych
 	  */
-	int connect(const QString & hostname, quint16 port, QString login, QString password, quint16 listeningPort, QString token);
+	void connect(const QString & address,
+				 quint16 port,
+				 QString login,
+				 QString password,
+				 quint16 listeningPort,
+				 QString token);
+
 	int sendData(BDatagram & data);
 
 	BDatagram * getData();
 
 private:
-	QHostAddress hostAdress;
+	QHostAddress hostAddress;
+	quint16 listeningPort;
+	quint16 hostPort;
 	QUdpSocket socket;
+	int sessid;
+	unsigned char clientType;
 };
 
 #endif // BCONNECTION_H

@@ -8,8 +8,10 @@ TEMPLATE = lib
 DEFINES += CLIENTLIB_LIBRARY
 SOURCES += clientlib.cpp \
     bconnection.cpp \
-    bdatagram.cpp
+    bdatagram.cpp \
+    bconnectionexception.cpp
 HEADERS += clientlib.h \
     ClientLib_global.h \
     bconnection.h \
-    bdatagram.h
+    bdatagram.h \
+    bconnectionexception.h

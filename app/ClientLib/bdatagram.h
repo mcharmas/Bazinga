@@ -7,12 +7,17 @@
 class BDatagram
 {
 public:
-	BDatagram(int sessid, unsigned char source, int timestamp, unsigned char type, QByteArray & data);
-	int sessid;
+	BDatagram(quint32 sessid, unsigned char source, quint32 timestamp, unsigned char type, QByteArray & data);
+	BDatagram(char * dataIn, int size);
+
+	QByteArray * getAllData();
+
+	quint32 sessid;
 	unsigned char source;
-	int timestamp;
+	quint32 timestamp;
 	unsigned char type;
 	QByteArray data;
+
 };
 
 #endif // BDATAGRAM_H

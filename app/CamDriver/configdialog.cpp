@@ -9,7 +9,7 @@
 ConfigDialog::ConfigDialog(QWidget *parent)
         : QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL), quadranglesDetector(NULL), pointsDetector(NULL)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 ConfigDialog::~ConfigDialog()
