@@ -13,6 +13,7 @@ class ConfigReader():
         self.fileName=name        #nazwa pliku konfiguracyjnego
         self.dataArray={}
         self.lines=""
+        self.readFromFile()
 
     #odczyt z podanego pliku
     def readFromFile(self):

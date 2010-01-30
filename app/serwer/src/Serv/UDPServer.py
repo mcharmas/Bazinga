@@ -63,13 +63,3 @@ class UDPServer:
             self.server_thread = None
             SLogger.log(self.name, "shutdown", "serwer wylaczony")        
         SLogger.log(self.name, "shutdown", "serwer wczesniej nie dzialal")
-
-if __name__ == "__main__":
-    """
-    testuje sam serwer
-    """
-    try:
-        s = UDPServer('', 1234)
-        s.start()
-    except KeyboardInterrupt:
-        s.shutdown()
