@@ -1,18 +1,24 @@
 import struct
 
-"""klasa trzymajaca pakiet podzielony na czesci"""
+
 class Packet:
+    """
+    klasa trzymajaca pakiet podzielony na czesci
     
-    """
-    klasa trzymajaca ENUM z typami zrodel
-    """
+    """    
+    
     class Sources:
+        """
+        klasa trzymajaca ENUM z typami zrodel
+        
+        """
         DRIVER, APPLICATION, SERVER = range(3)
        
-    """
-    klasa trzymajca ENUM z typami komunikatow
-    """ 
     class Communicates:
+        """
+        klasa trzymajca ENUM z typami komunikatow
+        
+        """     
         SREQ, SACK, SDEN,CHECK, CONFIRM, UPDATE, CLOSE, OBJECT, OTHER, ERROR = range(10)
 
     """
@@ -20,10 +26,11 @@ class Packet:
     """
     fmt = "!ibibh" #int(id), (byte)source, int(timestamp), byte(command),short(length)
             
-    """
-    konstruktor ktory jak dostanie dane rozklada pakiet na czesci
-    """
-    def __init__(self, data=""):                
+    def __init__(self, data=""):
+        """
+        konstruktor ktory jak dostanie dane rozklada pakiet na czesci
+            
+        """            
         self.data = data
         self.id = ""
         self.source = ""
@@ -35,11 +42,12 @@ class Packet:
             self.id,self.source,self.timestamp,self.command, self.length = struct.unpack(Packet.fmt,data[0:struct.calcsize(Packet.fmt)])
             self.content =  data[struct.calcsize(Packet.fmt):]
         
-    """
-    metoda ktora jest mapowana na funkcje statyczna (packetFromContent)
-    podajemy jej wszystkie pola pakietu a ona generuje pakiet na ich podstawie
-    """
     def packetFromCont(id,source,timestamp,command,content):
+        """
+        statyczna metoda ktora jest mapowana na funkcje statyczna (packetFromContent)
+        podajemy jej wszystkie pola pakietu a ona generuje pakiet na ich podstawie
+        
+        """
         p = Packet()
         p.id = id
         p.source = source
@@ -50,26 +58,30 @@ class Packet:
         p.repack()
         return p
         
-    """
-    funkcja sluzaca do ponownego zapakowania wszystkich danych
-    """
     def repack(self):
+        """
+        funkcja sluzaca do ponownego zapakowania wszystkich danych
+            
+        """
+
         self.data = struct.pack(Packet.fmt,self.id,self.source,self.timestamp,self.command,len(self.content))+self.content
         
     def debug(self):
         return str(self.id)+" "+str(self.source)+" "+str(self.timestamp)+" "+str(self.command)+" "+str(self.length)+" "+self.content
         
-    """
-    funckcja zwracajaca zapakowany pakiet
-    """
     def toString(self):
+        """
+        funckcja zwracajaca zapakowany pakiet
+
+        """
         self.repack()
         return self.data
     
     packetFromContent = staticmethod(packetFromCont)
-                
+  
+if __name__ == "__main__":    
+    dataToSend = "to jest test"
+    p = Packet.packetFromContent(1,2,3,4,dataToSend)
+    p1 = Packet(p.toString())
+    p1.debug()
     
-dataToSend = "to jest test"
-p = Packet.packetFromContent(1,2,3,4,dataToSend)
-p1 = Packet(p.toString())
-p1.debug()

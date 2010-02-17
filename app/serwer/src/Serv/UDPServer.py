@@ -7,15 +7,15 @@ from Logger import SLogger
 from Parser import *
 
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
-    """
-    klasa odpowiedzialna za obsługiwanie requestów serwera UDP
+    """klasa odpowiedzialna za obsługiwanie requestów serwera UDP
+    
     """
     
     parser = Parser()
     
     def handle(self):        
-        """
-        funkcja obslugujaca request serwera UDP
+        """funkcja obslugujaca request serwera UDP
+        
         """
         data = self.request[0]
         SLogger.log("ThreadedUDPRequestHandler", "handle", "Cos dostalem i daje parserowi.")        
@@ -24,15 +24,15 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
                    
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
-    """
-    klasa utworzona sztucznie zeby wymusic serwer na watkach
+    """klasa utworzona sztucznie zeby wymusic serwer na watkach
+    
     """
     pass
 
 
 class UDPServer:
-    """
-    klasa przetrzymująca serwer i główny wątek
+    """klasa przetrzymująca serwer i główny wątek
+    
     """
     def __init__(self, host, port):
         self.name = "UDPServer"
@@ -43,8 +43,8 @@ class UDPServer:
         
 
     def start(self):
-        """
-        startuje serwer, w przypadku gdy juz byl uruchomiony wyrzuca wyjatek Exception("Already started")
+        """startuje serwer, w przypadku gdy juz byl uruchomiony wyrzuca wyjatek Exception("Already started")
+        
         """
         if self.server_thread:
             SLogger.log(self.name, "start", "startowanie nie udane, serwer juz dzialal")
@@ -55,8 +55,8 @@ class UDPServer:
         
     
     def shutdown(self):
-        """
-        wyłącza serwer (jezeli był uruchomiony)
+        """wyłącza serwer (jezeli był uruchomiony)
+        
         """
         if self.server_thread:            
             self.server.shutdown()

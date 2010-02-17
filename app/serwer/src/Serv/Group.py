@@ -4,10 +4,10 @@ from threading import Timer
 from Logger import SLogger
 
 class Group():
-    """
-    grupa przechowujaca userow
+    """grupa przechowujaca userow
     posiada timer sprawdzajacy co timeout bezczynnosc userow po ich timestampach
     po bezczynnosci user jest usuwany (TODO: wysylac odnowienie polaczenia)
+    
     """
     def __init__(self, manager, id=0):
         self.users = []
@@ -19,11 +19,17 @@ class Group():
         self.timer.start()
         
     def sendData(self,data):
+        """ funkcja wysyla dane do wszystkich z grupy
+        
+        """
         SLogger.log(self.name, "sendData()", "Wysylanie danych.")
         for u in self.users:
             u.sendData(data)
             
     def checkTimeouts(self):
+        """ funkcja wywolywana cyklicznie, sprawdzajaca bezczynnosci uzytkownikow
+        
+        """
         SLogger.log(self.name, "checkTimeouts()", "Sprawdzanie bezczynnosci.")
         t = time.localtime()
         for u in self.users:            
@@ -38,17 +44,26 @@ class Group():
                
                 
     def addUser(self, user):
+        """ dodaje usera do grupy
+        
+        """        
         SLogger.log(self.name, "addUser()", "Dodawanie uzytkownika " + user.login)
         self.users.append(user)
         if not self.timer.isAlive():
             self.timer.start()
         
     def delUser(self, user):
+        """ usuwa usera z grupy
+        
+        """
         SLogger.log(self.name, "delUser()", "Usuwanie uzytkownika bo sam tego chce " + user.login)
         self.manager.delUser(user.id)
         self.users.remove(user)
         
     def isEmpty(self):
+        """ sprawdza czy grupa jest pusta
+        
+        """
         if len(self.users):
             return True
         return False

@@ -6,20 +6,23 @@ from UserGroupManager import *
 import socket
 
 
-"""
-klasa parsujaca dane przychodzace do servera
-"""
+
 class Parser:
+    """klasa parsujaca dane przychodzace do servera
+    
+    """
+    
     def __init__(self):        
         self.classname = "Parser"
         self.groupManager = UserGroupManager()
         self.authenticator = UserAuthenticator()
         self.dataSenderSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #wszystko idzie przez ten socket... to chyba nie do konca dorbze
     
-    """
-    to handluje date jak nazwa wskazduje (wywoluje inne funkcje dla poszczegolnych komunikatow i zrodel)
-    """
     def handleData(self,data, client):
+        """Dokonuje podstawowego podzialu danych do przetworzenia dalej. Tutaj wykonywany jest poczatek parsowania pakietu.
+    
+        """
+
         try:                 
             p = Packet(data)            
         except:
@@ -37,14 +40,15 @@ class Parser:
         elif p.command == Packet.Communicates.OBJECT or p.command == Packet.Communicates.OTHER:
             self.normalContent(p, client)
     
-    """
-    oblsuguje logowanie sterownika w bardzo skomplikowany i zawily sposob...
-    1) sprawdza czy dobry login i haslo
-    2) jesli tak - dadaje sie do listy driverow (oczekujace na polaczenie klienta)
-    3) jesli nie to olewa, olewanie jest dobrze
-    TODO: mozna by sprawdzac czy przypadkiem user nie jest zalogowany bo takie cyrki moga sie zdazyc...
-    """                                                       
     def loginDriver(self, packet, client):
+        """oblsuguje logowanie sterownika w bardzo skomplikowany i zawily sposob...
+        1) sprawdza czy dobry login i haslo
+        2) jesli tak - dadaje sie do listy driverow (oczekujace na polaczenie klienta)
+        3) jesli nie to olewa, olewanie jest dobre
+        TODO: mozna by sprawdzac czy przypadkiem user nie jest zalogowany bo takie cyrki moga sie zdazyc...
+        
+        """                                                       
+
         SLogger.log(self.classname, "loginDriver", "Dostalem dane do logowania sterownika.")
         try:
             user,passwd,port = packet.content.split(':')
@@ -67,17 +71,17 @@ class Parser:
             SLogger.log(self.classname, "loginDriver", "Zle haslo i/lub login... Olewam sprawe.")
             
     
-    """
-    obsluguje logowanie klienta w jeszcze bardziej skomplikowany sposob:
-    1)sprawdza login i haslo
-    2)jesli ok:
-            3)sprawdza czy user ma drivera, jesli ok:
-                dodaje do grupy, nadaje sid i wysyla ACK
-              nie ok:
-                wysyla SDEN z info "NO DRIVER" (sprawdzajac czy przypadkiem wczesniej nie byl zalogowany)
-    4) jesli dupne login i haslo to wysyla SDEN z info "BAD CREDENTIALS"
-    """                        
     def loginApplication(self, packet, client):
+        """obsluguje logowanie klienta w jeszcze bardziej skomplikowany sposob:
+        1)sprawdza login i haslo
+        2)jesli ok:
+                3)sprawdza czy user ma drivera, jesli ok:
+                    dodaje do grupy, nadaje sid i wysyla ACK
+                  nie ok:
+                    wysyla SDEN z info "NO DRIVER" (sprawdzajac czy przypadkiem wczesniej nie byl zalogowany)
+        4) jesli dupne login i haslo to wysyla SDEN z info "BAD CREDENTIALS"
+        
+        """                        
         SLogger.log(self.classname, "loginApplication", "Dostalem dane do logowania aplikacji.")
         try:
             user,passwd,port,token = packet.content.split(':')        
@@ -115,6 +119,9 @@ class Parser:
     
     
     def check(self, packet, client):
+        """Obsluguje rzadnie check. Aktualizuje klienta w grupie zeby potwierdzic ciaglosc polaczenia oraz odsyla confirm do klienta.
+        
+        """
         SLogger.log(self.classname, "check", "Dostalem request do synchronizacji sesji.")
         
         u = self.groupManager.getUser(packet.id)
@@ -128,6 +135,9 @@ class Parser:
         
     
     def close(self, packet, client):
+        """ Zakancza sesje z uzytkownikiem usuwajac go rowniez z grupy.
+        
+        """
         SLogger.log(self.classname, "close", "Dostalem request do zakonczenia sesji.")
         try:
             self.groupManager.getUser(packet.id).grup.delUser(self.groupManager.getUser(packet.id)) #to jest brzyyyyyyydkie
@@ -136,6 +146,10 @@ class Parser:
         SLogger.log(self.classname, "close", "I po krzyku.")
     
     def normalContent(self, packet, client):
+        """Obslugiwanie pakietow z normalna zawartoscia czyli do rozeslania dalej.
+        Rozsyla dane po uzytkownikach grupy nadawcy pakietu oraz uaktualnia timestamp z ostatnia aktywnoscia uzytkownika. 
+        
+        """        
         SLogger.log(self.classname, "normalContent", "Dostalem normalne dane do popchniecia dalej.")
         u = self.groupManager.getUser(packet.id)
         if u:

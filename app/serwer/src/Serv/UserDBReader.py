@@ -1,14 +1,21 @@
 from Logger import SLogger
-"""
-klasa zczytuje z pliku baze danych z uzytkownikami
-           format linii:   user;;haslo
-"""
+
 class UserDBReader:
+    """Klasa zczytuje z pliku baze danych z uzytkownikami
+    format linii:   user;;haslo
+    Plik musi znajdowac sie w katalogu z ktorego odpalamy serwer.
+    TODO: dodac mozliwosc przekazania pliku konfiguracyjnego jako parametr i zmienic domysle polozenie
+    
+    """
+    
     def __init__(self):
         self.userList={}
         self.getUserList('users.conf')
 
     def getUserList(self,file):
+        """pobiera z pliku liste uzytkownikow
+        
+        """
         try:
             lines=open(file).readlines()
             for line in lines:
@@ -21,6 +28,9 @@ class UserDBReader:
             raise IOError
 
     def checkUser(self,user,passwd):
+        """sprawdza czy login i haslo uzytkownika sie zgadzaja oraz pod warunkiem ze uzytkownik istnieje
+        
+        """        
         SLogger.log("UserDBReader", "checkUser()", "sprawdzam usera: " + user + " haslo: ***")
         if self.userExists(user):
             if self.getUserPasswd(user,passwd):
@@ -33,20 +43,20 @@ class UserDBReader:
             return False
 
     def userExists(self,user):
+        """sprwadza czy uzytkownik w bazie istnieje
+        
+        """
         if user in self.userList:
             return True
         else:
             return False
 
     def getUserPasswd(self,user,passwd):
+        """sprawdza czy nazwa uzytkownika i haslo zgadzaja sie bez kontroli czy uzytkownik istnieje
+        
+        """
         if self.userList[user]==passwd:
             return True
         else:
             return False
-
-    def createUser(self,user,passwd):
-        pass
-
-    def setUserPasswd(self,user,passwd):
-        pass
 

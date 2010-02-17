@@ -1,13 +1,14 @@
 import sys
 from Logger import SLogger
+
+class ConfigReader():
 """
 format pliku konfiguracyjnego: 
          klucz;;wartosc         
 
 przed rozpoczeciem czytania, nalezy ustawic plik konfiguracyjny!
-"""
-class ConfigReader():
 
+"""
 
     def __init__(self,name):
         self.fileName=name        #nazwa pliku konfiguracyjnego
@@ -15,8 +16,11 @@ class ConfigReader():
         self.lines=""
         self.readFromFile()
 
-    #odczyt z podanego pliku
+    
     def readFromFile(self):
+        """odczyt z podanego pliku
+        
+        """
         try:
             lines=open(self.fileName).readlines()
             for line in lines:
@@ -32,10 +36,12 @@ class ConfigReader():
     def getdataArray(self):
         return self.dataArray
 
-    #ustawia zadana wartosc dla klucza.
-    #jesli klucz istnial wczesniej, zostanie nadpisany, jesli nie zostanei utworzony
-    #po tej operacji, plik konfiguracyjny zostanie nadpisany
     def setConfigItem(self,key,value):
+        """ustawia zadana wartosc dla klucza.
+        jesli klucz istnial wczesniej, zostanie nadpisany, jesli nie zostanei utworzony
+        po tej operacji, plik konfiguracyjny zostanie nadpisany
+        
+        """
         print"SET: ", key,"=>", value
         if key in self.dataArray:
             self.dataArray[key]=value
@@ -43,8 +49,11 @@ class ConfigReader():
             self.dataArray[key]=value
         self.saveToFile()
 
-    #zapis stanu tablicy do pliku
+    
     def saveToFile(self):
+        """zapis stanu tablicy do pliku
+        
+        """
         try:
             file=open(self.fileName, 'w')
             for k,v in self.dataArray.items():
@@ -54,9 +63,11 @@ class ConfigReader():
             SLogger.log("ConfigReader", "saveToFile()", "IOError podczas zapisu do pliku")
             raise IOError
         file.close()
-
-    #zwraca wartosc dla zadanego klucza, badz False, jesli taki klucz nie istnieje
+    
     def getConfigItem(self, key):
+        """zwraca wartosc dla zadanego klucza, badz False, jesli taki klucz nie istnieje
+        
+        """
         if key in self.dataArray:
             return self.dataArray[key]
         else:
