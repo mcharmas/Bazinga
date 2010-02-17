@@ -2,13 +2,13 @@ import sys
 from Logger import SLogger
 
 class ConfigReader():
-"""
-format pliku konfiguracyjnego: 
-         klucz;;wartosc         
-
-przed rozpoczeciem czytania, nalezy ustawic plik konfiguracyjny!
-
-"""
+    """
+    format pliku konfiguracyjnego: 
+             klucz;;wartosc         
+    
+    przed rozpoczeciem czytania, nalezy ustawic plik konfiguracyjny!
+    
+    """
 
     def __init__(self,name):
         self.fileName=name        #nazwa pliku konfiguracyjnego

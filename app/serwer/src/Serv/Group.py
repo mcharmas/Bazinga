@@ -79,4 +79,3 @@ if __name__ == "__main__":
     u2.update()  
     g.addUser(u2)
     time.sleep(2)
-      
