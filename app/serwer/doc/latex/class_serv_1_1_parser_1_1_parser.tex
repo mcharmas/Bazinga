@@ -1,0 +1,154 @@
+\hypertarget{class_serv_1_1_parser_1_1_parser}{
+\section{Serv::Parser::Parser Class Reference}
+\label{class_serv_1_1_parser_1_1_parser}\index{Serv::Parser::Parser@{Serv::Parser::Parser}}
+}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_8627f07c762983eff029ad167a021e38}{
+def \textbf{\_\-\_\-init\_\-\_\-}}
+\label{class_serv_1_1_parser_1_1_parser_8627f07c762983eff029ad167a021e38}
+
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_060ed5ba3cbf55b63ecc3f3aa006da04}{handleData}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_e092cef5abd35ec04fa61e71377e1303}{loginDriver}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_ec3286787a7c8642127416c77e1c2c8f}{loginApplication}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_93e284233267c2db61d20d9239fed4c8}{check}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_b6aa6195abf7a68df644640a8e4fd263}{close}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_dc1da4d6ff7eb9dbc114f8a426274aa0}{normalContent}
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_98309dc29b98b9dbbaba8175bc6fce00}{
+\textbf{classname}}
+\label{class_serv_1_1_parser_1_1_parser_98309dc29b98b9dbbaba8175bc6fce00}
+
+\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_8e8fc28fb138a84f24593294eba5a237}{
+\textbf{groupManager}}
+\label{class_serv_1_1_parser_1_1_parser_8e8fc28fb138a84f24593294eba5a237}
+
+\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_59f3263667252c32bbe04baf2db0c12e}{
+\textbf{authenticator}}
+\label{class_serv_1_1_parser_1_1_parser_59f3263667252c32bbe04baf2db0c12e}
+
+\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_db376d9d8d99afa93fa43b3ca8153e9f}{
+\textbf{dataSenderSocket}}
+\label{class_serv_1_1_parser_1_1_parser_db376d9d8d99afa93fa43b3ca8153e9f}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\footnotesize\begin{verbatim}klasa parsujaca dane przychodzace do servera
+
+\end{verbatim}
+\normalsize
+ 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_serv_1_1_parser_1_1_parser_93e284233267c2db61d20d9239fed4c8}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!check@{check}}
+\index{check@{check}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::check ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_93e284233267c2db61d20d9239fed4c8}
+
+
+
+
+\footnotesize\begin{verbatim}Obsluguje rzadnie check. Aktualizuje klienta w grupie zeby potwierdzic ciaglosc polaczenia oraz odsyla confirm do klienta.
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_b6aa6195abf7a68df644640a8e4fd263}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!close@{close}}
+\index{close@{close}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::close ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_b6aa6195abf7a68df644640a8e4fd263}
+
+
+
+
+\footnotesize\begin{verbatim}Zakancza sesje z uzytkownikiem usuwajac go rowniez z grupy.
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_060ed5ba3cbf55b63ecc3f3aa006da04}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!handleData@{handleData}}
+\index{handleData@{handleData}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{handleData}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::handleData ( {\em self}, \/   {\em data}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_060ed5ba3cbf55b63ecc3f3aa006da04}
+
+
+
+
+\footnotesize\begin{verbatim}Dokonuje podstawowego podzialu danych do przetworzenia dalej. Tutaj wykonywany jest poczatek parsowania pakietu.
+    
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_ec3286787a7c8642127416c77e1c2c8f}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!loginApplication@{loginApplication}}
+\index{loginApplication@{loginApplication}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{loginApplication}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::loginApplication ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_ec3286787a7c8642127416c77e1c2c8f}
+
+
+
+
+\footnotesize\begin{verbatim}obsluguje logowanie klienta w jeszcze bardziej skomplikowany sposob:
+1)sprawdza login i haslo
+2)jesli ok:
+3)sprawdza czy user ma drivera, jesli ok:
+    dodaje do grupy, nadaje sid i wysyla ACK
+  nie ok:
+    wysyla SDEN z info "NO DRIVER" (sprawdzajac czy przypadkiem wczesniej nie byl zalogowany)
+4) jesli dupne login i haslo to wysyla SDEN z info "BAD CREDENTIALS"
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_e092cef5abd35ec04fa61e71377e1303}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!loginDriver@{loginDriver}}
+\index{loginDriver@{loginDriver}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{loginDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::loginDriver ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_e092cef5abd35ec04fa61e71377e1303}
+
+
+
+
+\footnotesize\begin{verbatim}oblsuguje logowanie sterownika w bardzo skomplikowany i zawily sposob...
+1) sprawdza czy dobry login i haslo
+2) jesli tak - dadaje sie do listy driverow (oczekujace na polaczenie klienta)
+3) jesli nie to olewa, olewanie jest dobre
+TODO: mozna by sprawdzac czy przypadkiem user nie jest zalogowany bo takie cyrki moga sie zdazyc...
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_dc1da4d6ff7eb9dbc114f8a426274aa0}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!normalContent@{normalContent}}
+\index{normalContent@{normalContent}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{normalContent}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::normalContent ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_dc1da4d6ff7eb9dbc114f8a426274aa0}
+
+
+
+
+\footnotesize\begin{verbatim}Obslugiwanie pakietow z normalna zawartoscia czyli do rozeslania dalej.
+Rozsyla dane po uzytkownikach grupy nadawcy pakietu oraz uaktualnia timestamp z ostatnia aktywnoscia uzytkownika. 
+
+\end{verbatim}
+\normalsize
+ 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/home/orbit/pz/bazinga/app/serwer/src/Serv/Parser.py\end{CompactItemize}

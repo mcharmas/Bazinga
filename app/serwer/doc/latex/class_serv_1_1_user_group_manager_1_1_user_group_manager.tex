@@ -1,0 +1,148 @@
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager}{
+\section{Serv::UserGroupManager::UserGroupManager Class Reference}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager}\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_f43f9798f1e93dd8425699ecd6de6c87}{
+def \textbf{\_\-\_\-init\_\-\_\-}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_f43f9798f1e93dd8425699ecd6de6c87}
+
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_ea0f7f8d1d6e4d5efce31f3d0ea35fd9}{addDriver}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_39ae7245da0bcda25ce712d1b55f2f29}{hasDriver}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_46ee225566738a93c7c036b464a931fb}{addUser}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_4b747272c8166d17b9458b3f8c4796f0}{delUser}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_94bccb5702d504f5b782ba2379aaaab4}{getUser}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_ed20d08470748f78a641e6cc5700b505}{getUserByLogin}
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_00aa453d586337ce2692166c666a1817}{
+\textbf{drivers}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_00aa453d586337ce2692166c666a1817}
+
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_b41620628a204c943cd30a8f836eddd0}{
+\textbf{users}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_b41620628a204c943cd30a8f836eddd0}
+
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_4da728a66a4115432bdc2057fd3e92fa}{
+\textbf{groups}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_4da728a66a4115432bdc2057fd3e92fa}
+
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_97c7d967f8ebfe883963ff38bee5ecaf}{
+\textbf{lastSid}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_97c7d967f8ebfe883963ff38bee5ecaf}
+
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_c2e922b108e77474d9daab6be8055436}{
+\textbf{name}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_c2e922b108e77474d9daab6be8055436}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\footnotesize\begin{verbatim}Klasa ta jest menagerem uzytkownikow, grup i sterownikow. Gdy uzytkownik jest podlaczany ta klasa zarzadza do jakiej grupy idzie.
+Klasa dba tez o to aby puste grupy byly usuwane.
+
+\end{verbatim}
+\normalsize
+ 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_ea0f7f8d1d6e4d5efce31f3d0ea35fd9}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!addDriver@{addDriver}}
+\index{addDriver@{addDriver}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{addDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::addDriver ( {\em self}, \/   {\em username}, \/   {\em host})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_ea0f7f8d1d6e4d5efce31f3d0ea35fd9}
+
+
+
+
+\footnotesize\begin{verbatim}Dodaje sterownik uzytkownika
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_46ee225566738a93c7c036b464a931fb}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!addUser@{addUser}}
+\index{addUser@{addUser}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{addUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::addUser ( {\em self}, \/   {\em user}, \/   {\em token})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_46ee225566738a93c7c036b464a931fb}
+
+
+
+
+\footnotesize\begin{verbatim}Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje.
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_4b747272c8166d17b9458b3f8c4796f0}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!delUser@{delUser}}
+\index{delUser@{delUser}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{delUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::delUser ( {\em self}, \/   {\em user})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_4b747272c8166d17b9458b3f8c4796f0}
+
+
+
+
+\footnotesize\begin{verbatim}Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta.
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_94bccb5702d504f5b782ba2379aaaab4}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!getUser@{getUser}}
+\index{getUser@{getUser}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{getUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::getUser ( {\em self}, \/   {\em id})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_94bccb5702d504f5b782ba2379aaaab4}
+
+
+
+
+\footnotesize\begin{verbatim}Zwraca uzytkownika o danym ID
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_ed20d08470748f78a641e6cc5700b505}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!getUserByLogin@{getUserByLogin}}
+\index{getUserByLogin@{getUserByLogin}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{getUserByLogin}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::getUserByLogin ( {\em self}, \/   {\em login})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_ed20d08470748f78a641e6cc5700b505}
+
+
+
+
+\footnotesize\begin{verbatim}Zwraca uzytkownika o danym loginie
+
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_39ae7245da0bcda25ce712d1b55f2f29}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!hasDriver@{hasDriver}}
+\index{hasDriver@{hasDriver}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{hasDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::hasDriver ( {\em self}, \/   {\em username})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_39ae7245da0bcda25ce712d1b55f2f29}
+
+
+
+
+\footnotesize\begin{verbatim}Zwraca czy dany username ma zalogowany sterownik.
+
+\end{verbatim}
+\normalsize
+ 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/home/orbit/pz/bazinga/app/serwer/src/Serv/UserGroupManager.py\end{CompactItemize}
