@@ -8,8 +8,9 @@
 #include <QUdpSocket>
 #include <QHostAddress>
 
-class BConnection
+class CLIENTLIBSHARED_EXPORT BConnection : public QObject
 {
+	Q_OBJECT
 public:
 
 	BConnection(unsigned char clientType);
@@ -31,11 +32,15 @@ protected:
 	BDatagram * getData();
 
 private:
+	void timerEvent(QTimerEvent *);
+
+
+private:
 	QHostAddress hostAddress;
 	quint16 listeningPort;
 	quint16 hostPort;
 	QUdpSocket socket;
-	int sessid;
+	quint32 sessid;
 	unsigned char clientType;
 };
 

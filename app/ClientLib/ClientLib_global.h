@@ -24,4 +24,6 @@
 #define B_TYPE_OTHER 8
 #define B_TYPE_ERROR 9
 
+#define B_INTERVAL_ACK_MS 3000
+
 #endif // CLIENTLIB_GLOBAL_H

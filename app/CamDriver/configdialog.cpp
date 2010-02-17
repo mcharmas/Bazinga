@@ -7,7 +7,7 @@
 #include <QDebug>
 
 ConfigDialog::ConfigDialog(QWidget *parent)
-        : QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL), quadranglesDetector(NULL), pointsDetector(NULL)
+		: QDialog(parent), FrameRetreiver(NULL), ui(new Ui::ConfigDialog), vin(NULL), faceDetector(NULL), quadranglesDetector(NULL), pointsDetector(NULL), connection(B_SOURCE_DRIVER), settings()
 {
 	ui->setupUi(this);
 }

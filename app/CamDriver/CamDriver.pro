@@ -35,3 +35,7 @@ unix:LIBS += -lcxcore \
     -lcvaux \
     -lhighgui \
     -lml
+
+
+INCLUDEPATH += "../ClientLib"
+LIBS += -L"../ClientLib/debug" -lClientLib

@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 
 	// TODO: tymczasowo ustawione na true, zmienic na false:
-        a.setQuitOnLastWindowClosed(false);
+	a.setQuitOnLastWindowClosed(true);
 	ConfigDialog w;
 
 	QMenu menu;

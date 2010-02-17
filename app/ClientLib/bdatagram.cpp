@@ -19,6 +19,7 @@ BDatagram::BDatagram(char *dataIn, int size) {
 	timestamp = *((quint32*)dataIn);
 	dataIn += 4;
 
+
 	type = *dataIn;
 	dataIn++;
 

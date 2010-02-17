@@ -2,8 +2,9 @@
 #define BCONNECTIONEXCEPTION_H
 
 #include <QString>
+#include "ClientLib_global.h"
 
-class BConnectionException
+class CLIENTLIBSHARED_EXPORT BConnectionException
 {
 public:
 	BConnectionException(char * cause);

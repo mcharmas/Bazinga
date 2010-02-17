@@ -14,7 +14,7 @@
    <string>Konfiguracja Sterownika</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="icons.qrc">
+   <iconset>
     <normaloff>:/tray/icon.png</normaloff>:/tray/icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -190,6 +190,13 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="connectButton">
+          <property name="text">
+           <string>Połącz</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </item>
@@ -213,9 +220,7 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>

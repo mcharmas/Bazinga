@@ -2,6 +2,9 @@
 #define CONFIGDIALOG_H
 
 #include <QtGui/QDialog>
+#include <QSettings>
+
+#include <bconnection.h>
 
 #include "frameretreiver.h"
 #include "videoinput.h"
@@ -32,13 +35,16 @@ private:
 	Ui::ConfigDialog *ui;
 	VideoInput * vin;
 	Faces faceDetector;
-        Quadrangles quadranglesDetector;
-        Points2 pointsDetector;
+	Quadrangles quadranglesDetector;
+	Points2 pointsDetector;
+	BConnection connection;
+	QSettings settings;
+
 
 private slots:
-        void on_pointsCheckBox_toggled(bool checked);
-        void on_quadrangleCheckBox_toggled(bool checked);
-        void on_facesCheckBox_toggled(bool checked);
+	void on_pointsCheckBox_toggled(bool checked);
+	void on_quadrangleCheckBox_toggled(bool checked);
+	void on_facesCheckBox_toggled(bool checked);
 	void on_checkBox_toggled(bool checked);
 };
 
