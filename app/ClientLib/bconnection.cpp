@@ -6,12 +6,17 @@
 #include <QDebug>
 
 CLIENTLIBSHARED_EXPORT BConnection::BConnection(unsigned char clientType)
-	: clientType(clientType)
+	: sessid(0), clientType(clientType)
 {
 	startTimer(B_INTERVAL_ACK_MS);
 }
 
-void BConnection::connect(const QString &serverAddress, quint16 serverPort, QString login, QString password, quint16 listeningPort, QString token) {
+void BConnection::connect(const QString & serverAddress,
+						  quint16 serverPort,
+						  const QString & login,
+						  const QString & password,
+						  quint16 listeningPort,
+						  const QString & token) {
 	qDebug() << "Sending SREQ";
 	hostAddress.setAddress(serverAddress);
 	hostPort = serverPort;
@@ -20,8 +25,9 @@ void BConnection::connect(const QString &serverAddress, quint16 serverPort, QStr
 	socket.bind(listeningPort);
 
 	QByteArray arr((login + ":" + password
-					+ ":" + listeningPort
-					+ ":" + token).toAscii());
+					+ ":" + QString::number(listeningPort)
+					+ (token.isEmpty() ? QString(":") + token : QString())).toAscii());
+	//qDebug() << arr;
 
 	BDatagram dgramLogin((quint32) 0,
 						 clientType,
@@ -57,51 +63,63 @@ void BConnection::timerEvent(QTimerEvent * e) {
 }
 
 BDatagram * BConnection::getData() {
-	int size = socket.pendingDatagramSize();
-	char * data = new char[size];
-	QHostAddress senderAddr;
-	quint16 senderPort;
+	if(socket.state() != QUdpSocket::BoundState
+	   || !socket.hasPendingDatagrams()) {
+		return NULL;
+	}
 
-	socket.readDatagram(data, size, &senderAddr, &senderPort);
+	if(socket.waitForReadyRead(1)) {
+		int size = socket.pendingDatagramSize();
+		if(size > 0) {
+			char * data = new char[size];
+			QHostAddress senderAddr;
+			quint16 senderPort;
 
-	if (senderAddr != hostAddress && senderPort != hostPort) {
-		qDebug() << "Bad sender: " << senderAddr << ":" << senderPort
-				<< "; expected: " << hostAddress << ":" << hostPort;
-		delete data;
-		throw BConnectionException("Bad sender");
+			socket.readDatagram(data, size, &senderAddr, &senderPort);
 
-	} else {
-		BDatagram * datagram = new BDatagram(data, size);
-		delete data; // moze powodowac segfault jesli BDataArray nie kopiuje tego. powinno sie okazac po pierwszym odpaleniu
+			if (senderAddr != hostAddress && senderPort != hostPort) {
+				qDebug() << "Bad sender: " << senderAddr << ":" << senderPort
+						<< "; expected: " << hostAddress << ":" << hostPort;
+				delete data;
+				throw BConnectionException("Bad sender");
 
-		if(datagram->source != B_SOURCE_SERVER) {
-			delete datagram;
-			throw BConnectionException("Packet not from server!");
-		}
-
-		switch (datagram->type) {
-  case B_TYPE_SACK:
-			if(sessid == 0) {
-				sessid = datagram->sessid;
 			} else {
-				throw BConnectionException("Someone tried to inject different sessionid");
-			}
-			delete datagram;
-			break;
+				BDatagram * datagram = new BDatagram(data, size);
+				delete data; // moze powodowac segfault jesli BDataArray nie kopiuje tego. powinno sie okazac po pierwszym odpaleniu
+
+				if(datagram->source != B_SOURCE_SERVER) {
+					delete datagram;
+					throw BConnectionException("Packet not from server!");
+				}
+
+				switch (datagram->type) {
+	case B_TYPE_SACK:
+					if(sessid == 0) {
+						qDebug() << "Logged in. Got session ID: " << datagram->sessid;
+						sessid = datagram->sessid;
+						delete datagram;
+						emit connected(sessid);
+					} else {
+						delete datagram;
+						throw BConnectionException("Someone tried to inject different sessionid");
+					}
+					break;
 
   case B_TYPE_SDEN:
-			sessid = 0;
-			delete datagram;
-			throw BConnectionException("Server disconnected.");
-			break;
+					sessid = 0;
+					delete datagram;
+					throw BConnectionException("Server disconnected.");
+					break;
 
   case B_TYPE_ERROR:
-			delete datagram;
-			throw BConnectionException(QString(datagram->data));
-			break;
+					throw BConnectionException("ERROR", datagram);
+					break;
 
+	case B_TYPE_OBJECT:
 			default:
-			delete datagram;
+					return datagram;
+				}
+			}
 		}
 	}
 	return NULL;

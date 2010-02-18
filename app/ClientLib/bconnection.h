@@ -22,14 +22,18 @@ public:
 	  */
 	void connect(const QString & serverAddress,
 				 quint16 serverPort,
-				 QString login,
-				 QString password,
+				 const QString & login,
+				 const QString & password,
 				 quint16 listeningPort,
-				 QString token);
+				 const QString & token = QString());
 
 	int sendData(BDatagram & data);
 
 	BDatagram * getData();
+
+signals:
+	void connected(quint32 sessid);
+	void disconnected();
 
 private:
 	void timerEvent(QTimerEvent *);

@@ -29,11 +29,15 @@ public slots:
 	void connectCamera();
 	void disconnectCamera();
 
+	void serverConnected(quint32 sessid);
+	void serverDisconnected();
+
 	void saveSettings();
 	void readSettings();
 
 private:
-	void retreiveFrame(QImage &);
+	void retreiveFrame(QImage & image);
+	void timerEvent(QTimerEvent * event);
 
 	Ui::ConfigDialog *ui;
 	VideoInput * vin;

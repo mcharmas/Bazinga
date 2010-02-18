@@ -1,6 +1,8 @@
 #include "configdialog.h"
 #include "ui_configdialog.h"
 
+#include <bconnectionexception.h>
+
 #include <QImage>
 #include <QPainter>
 #include <QMessageBox>
@@ -20,6 +22,9 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 	ui->setupUi(this);
 
 	readSettings();
+	startTimer(2000);
+
+	connect(&connection, SIGNAL(connected(quint32)), SLOT(serverConnected(quint32)));
 }
 
 ConfigDialog::~ConfigDialog()
@@ -108,11 +113,57 @@ void ConfigDialog::on_pointsCheckBox_toggled(bool checked)
 void ConfigDialog::on_connectButton_clicked()
 {
 	if(! connection.isSessionAlive()) {
-		// TODO
 		saveSettings();
-		ui->connectButton->setText("Rozlacz");
+
+		//ui->connectionGroupBox->setEnabled(false);
+		QListIterator<QObject*> children(ui->connectionGroupBox->children());
+		while(children.hasNext()) {
+			QObject* ob = children.next();
+			if(ob->property("objectName").toString() != QString("connectButton")) {
+				//ob->setProperty("enabled", false);
+			}
+		}
+
+		ui->connectButton->setText("Anuluj laczenie");
+		ui->connectButton->setEnabled(true);
+
+		connection.connect(ui->addressEdit->text(),
+						   (quint16) ui->serverPortBox->value(),
+						   ui->loginEdit->text(),
+						   ui->passwordEdit->text(),
+						   (quint16) ui->localPortBox->value(),
+						   ui->tokenEdit->text());
 	}
 }
+
+void ConfigDialog::serverConnected(quint32 sessid) {
+	qDebug() << "SERVER CONNECTED" << sessid;
+}
+
+void ConfigDialog::serverDisconnected() {
+}
+
+void ConfigDialog::timerEvent(QTimerEvent *event) {
+	BDatagram * datagram = NULL;
+	try {
+		datagram = connection.getData();
+
+		if(datagram) {
+			qDebug() << "DATAGRAM" << datagram->getAllData();
+			delete datagram;
+		}
+	} catch (BConnectionException &e) {
+		qDebug() << e.toString();
+		datagram = e.getDatagram();
+
+		if(datagram) {
+			qDebug() << "DATAGRAM" << datagram->getAllData();
+		}
+		// e zostanie delete, wiec datagram tez
+	}
+
+}
+
 
 void ConfigDialog::readSettings() {
 	ui->loginEdit->setText(settings.value("user/login", "cat").toString());

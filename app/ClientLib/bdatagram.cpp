@@ -34,7 +34,8 @@ QByteArray * BDatagram::getAllData() {
 	tmp->append(source);
 	tmp->append((char*) &timestamp, 4);
 	tmp->append(type);
-	tmp->append((quint16) data.size());
+	quint16 size = data.size();
+	tmp->append((char*) &size, 2);
 	tmp->append(data);
 	return tmp;
 }

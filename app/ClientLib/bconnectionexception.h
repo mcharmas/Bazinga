@@ -3,15 +3,19 @@
 
 #include <QString>
 #include "ClientLib_global.h"
+#include "bdatagram.h"
 
 class CLIENTLIBSHARED_EXPORT BConnectionException
 {
 public:
-	BConnectionException(char * cause);
-	BConnectionException(const QString & cause);
-	const QString & toString();
+	BConnectionException(char * cause, BDatagram * datagram = NULL);
+	BConnectionException(const QString & cause, BDatagram * datagram = NULL);
+	~BConnectionException();
+	const QString toString();
+	BDatagram * getDatagram();
 private:
 	QString cause;
+	BDatagram * datagram;
 };
 
 #endif // BCONNECTIONEXCEPTION_H
