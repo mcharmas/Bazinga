@@ -29,6 +29,9 @@ public slots:
 	void connectCamera();
 	void disconnectCamera();
 
+	void saveSettings();
+	void readSettings();
+
 private:
 	void retreiveFrame(QImage &);
 
@@ -42,6 +45,7 @@ private:
 
 
 private slots:
+	void on_connectButton_clicked();
 	void on_pointsCheckBox_toggled(bool checked);
 	void on_quadrangleCheckBox_toggled(bool checked);
 	void on_facesCheckBox_toggled(bool checked);

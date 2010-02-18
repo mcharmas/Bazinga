@@ -14,7 +14,7 @@
    <string>Konfiguracja Sterownika</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="icons.qrc">
     <normaloff>:/tray/icon.png</normaloff>:/tray/icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -118,7 +118,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="loginEdiit"/>
+         <widget class="QLineEdit" name="loginEdit"/>
         </item>
         <item>
          <widget class="QLabel" name="label_2">
@@ -138,9 +138,45 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_3">
+         <widget class="QCheckBox" name="savePasswordCheck">
           <property name="text">
            <string>Zapisz hasło</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Token:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="tokenEdit"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Otwarty lokalny port:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="localPortBox">
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>65535</number>
           </property>
          </widget>
         </item>
@@ -167,7 +203,7 @@
         <item>
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>Port:</string>
+           <string>Port serwera:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -175,7 +211,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="portNumberBox">
+         <widget class="QSpinBox" name="serverPortBox">
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
@@ -186,7 +222,7 @@
            <number>65535</number>
           </property>
           <property name="value">
-           <number>1500</number>
+           <number>1</number>
           </property>
          </widget>
         </item>
@@ -220,7 +256,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

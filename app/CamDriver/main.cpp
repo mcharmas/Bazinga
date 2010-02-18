@@ -8,6 +8,9 @@
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
+	a.setOrganizationName("Buzztva");
+	a.setApplicationName("Bazinga Driver");
+	a.setApplicationVersion("0.1");
 
 	// TODO: tymczasowo ustawione na true, zmienic na false:
 	a.setQuitOnLastWindowClosed(true);

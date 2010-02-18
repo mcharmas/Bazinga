@@ -11,10 +11,10 @@ CLIENTLIBSHARED_EXPORT BConnection::BConnection(unsigned char clientType)
 	startTimer(B_INTERVAL_ACK_MS);
 }
 
-void BConnection::connect(const QString &address, quint16 port, QString login, QString password, quint16 listeningPort, QString token) {
+void BConnection::connect(const QString &serverAddress, quint16 serverPort, QString login, QString password, quint16 listeningPort, QString token) {
 	qDebug() << "Sending SREQ";
-	hostAddress.setAddress(address);
-	hostPort = port;
+	hostAddress.setAddress(serverAddress);
+	hostPort = serverPort;
 	this->listeningPort = listeningPort;
 
 	socket.bind(listeningPort);
@@ -30,7 +30,7 @@ void BConnection::connect(const QString &address, quint16 port, QString login, Q
 
 	QByteArray * datagram = dgramLogin.getAllData();
 
-	socket.writeDatagram(*datagram, hostAddress, port);
+	socket.writeDatagram(*datagram, hostAddress, serverPort);
 	delete datagram;
 }
 
@@ -105,4 +105,8 @@ BDatagram * BConnection::getData() {
 		}
 	}
 	return NULL;
+}
+
+bool BConnection::isSessionAlive() {
+	return sessid != 0;
 }

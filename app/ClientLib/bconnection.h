@@ -14,14 +14,14 @@ class CLIENTLIBSHARED_EXPORT BConnection : public QObject
 public:
 
 	BConnection(unsigned char clientType);
+	bool isSessionAlive();
 
-protected:
 	/**
 	  connect w trybie klienta
 	  Binduje podany port (listeningPort), laczy sie z serwerem na podanym porcie, loguje na podstawie podanych danych
 	  */
-	void connect(const QString & address,
-				 quint16 port,
+	void connect(const QString & serverAddress,
+				 quint16 serverPort,
 				 QString login,
 				 QString password,
 				 quint16 listeningPort,
@@ -33,7 +33,6 @@ protected:
 
 private:
 	void timerEvent(QTimerEvent *);
-
 
 private:
 	QHostAddress hostAddress;
