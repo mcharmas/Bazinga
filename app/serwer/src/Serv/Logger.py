@@ -1,21 +1,15 @@
-'''
-Created on 2009-12-14
-
-@author: orbit
-'''
-
-class SLogger(object):
-    '''
-    Klasa logujaca...
-    '''
+class Logger:
+    '''Klasa logujaca.'''
+    
+    ##Zmienna statyczna wskazujaca czy logger jest wlaczony (1 - tak, 0 - nie)
     verbose = 1
     
     def log(classname, methodname, data):
-        """ metoda sluzaca do logowania danych na standardowe wyjscie
-        przyjmuje nazwe klasy i nazwe metody oddzielnie zeby ladnie sformatowac wyjscie
-        
+        """Metoda sluzaca do logowania danych na standardowe wyjscie.
+        Przyjmuje nazwe klasy i nazwe metody oddzielnie zeby ladnie sformatowac wyjscie.
         """
-        if SLogger.verbose:
+        if Logger.verbose:
             print classname + ":" + methodname + " message: " + data
-            
+    
+    ##Statyczna metoda logujaca        
     log = staticmethod(log)

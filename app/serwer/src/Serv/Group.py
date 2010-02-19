@@ -1,40 +1,44 @@
 import User
 import time
 from threading import Timer
-from Logger import SLogger
+from Logger import *
 
 class Group():
-    """grupa przechowujaca userow
-    posiada timer sprawdzajacy co timeout bezczynnosc userow po ich timestampach
-    po bezczynnosci user jest usuwany (TODO: wysylac odnowienie polaczenia)
+    """Grupa przechowujaca userow.
+    Posiada timer sprawdzajacy co timeout bezczynnosc userow po ich timestampach
+    po bezczynnosci user jest usuwany
     
+    TODO: wysylac odnowienie polaczenia    
     """
     def __init__(self, manager, id=0):
+        """Konstruktor"""
+        ##Tablica uzytkownikow
         self.users = []
+        ##Manager danej grupy
         self.manager = manager
+        ##Timeout po ktorym uzytkownik jest rozlaczany
         self.timeout = 30
+        ##Id grupy
         self.id = id
+        ##Nazwa potrzebna do debugowania
         self.name = "Group("+str(id)+")"
+        ##Timer wywolujacy funkcje czyszczenia grupy z bezczynnych uzytkownikow
         self.timer = Timer(self.timeout, self.checkTimeouts)        
         self.timer.start()
         
     def sendData(self,data):
-        """ funkcja wysyla dane do wszystkich z grupy
-        
-        """
-        SLogger.log(self.name, "sendData()", "Wysylanie danych.")
+        """Funkcja wysylajaca dane do wszystkich z grupy."""
+        Logger.log(self.name, "sendData()", "Wysylanie danych.")
         for u in self.users:
             u.sendData(data)
             
     def checkTimeouts(self):
-        """ funkcja wywolywana cyklicznie, sprawdzajaca bezczynnosci uzytkownikow
-        
-        """
-        SLogger.log(self.name, "checkTimeouts()", "Sprawdzanie bezczynnosci.")
+        """Funkcja wywolywana cyklicznie, sprawdzajaca bezczynnosci uzytkownikow."""
+        Logger.log(self.name, "checkTimeouts()", "Sprawdzanie bezczynnosci.")
         t = time.localtime()
         for u in self.users:            
             if  time.mktime(t) - time.mktime(u.timestamp) >= self.timeout:            
-                SLogger.log(self.name, "checkTimeouts()", "Usuwanie uzytkownika z powodu bezczynnosci " + u.login)
+                Logger.log(self.name, "checkTimeouts()", "Usuwanie uzytkownika z powodu bezczynnosci " + u.login)
                 self.manager.delUser(u.id)
                 self.users.remove(u)
         self.timer.cancel()
@@ -44,30 +48,23 @@ class Group():
                
                 
     def addUser(self, user):
-        """ dodaje usera do grupy
-        
-        """        
-        SLogger.log(self.name, "addUser()", "Dodawanie uzytkownika " + user.login)
+        """Dodaje usera do grupy."""        
+        Logger.log(self.name, "addUser()", "Dodawanie uzytkownika " + user.login)
         self.users.append(user)
         if not self.timer.isAlive():
             self.timer.start()
         
     def delUser(self, user):
-        """ usuwa usera z grupy
-        
-        """
-        SLogger.log(self.name, "delUser()", "Usuwanie uzytkownika bo sam tego chce " + user.login)
+        """Usuwa usera z grupy."""
+        Logger.log(self.name, "delUser()", "Usuwanie uzytkownika bo sam tego chce " + user.login)
         self.manager.delUser(user.id)
         self.users.remove(user)
         
     def isEmpty(self):
-        """ sprawdza czy grupa jest pusta
-        
-        """
+        """Zwraca czy grupa jest pusta."""
         if len(self.users):
             return True
         return False
-
         
 if __name__ == "__main__":
     g = Group()

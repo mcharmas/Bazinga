@@ -31,14 +31,12 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_u_d_p_server_1_1_threaded_u_d_p_request_handler.html#94afb499da79b188e658f8b2d4bffb9a">handle</a></td></tr>
 
 <tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c0a5ee1efde591fb33de85283b9b4d3f"></a><!-- doxytag: member="Serv::UDPServer::ThreadedUDPRequestHandler::parser" ref="c0a5ee1efde591fb33de85283b9b4d3f" args="" -->
-tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>parser</b> = <a class="el" href="class_serv_1_1_parser_1_1_parser.html">Parser</a>()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">tuple&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_u_d_p_server_1_1_threaded_u_d_p_request_handler.html#c0a5ee1efde591fb33de85283b9b4d3f">parser</a> = <a class="el" href="class_serv_1_1_parser_1_1_parser.html">Parser</a>()</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Statyczny parser uzywany do parsowania wszystkich danych.  <a href="#c0a5ee1efde591fb33de85283b9b4d3f"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-<div class="fragment"><pre class="fragment">klasa odpowiedzialna za obsługiwanie requestów serwera UDP
-
-</pre></div> <hr><h2>Member Function Documentation</h2>
+<div class="fragment"><pre class="fragment">Klasa odpowiedzialna za obsługiwanie requestów serwera UDP.</pre></div> <hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="94afb499da79b188e658f8b2d4bffb9a"></a><!-- doxytag: member="Serv::UDPServer::ThreadedUDPRequestHandler::handle" ref="94afb499da79b188e658f8b2d4bffb9a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -56,15 +54,33 @@ tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>parser</b> = <a clas
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">funkcja obslugujaca request serwera UDP
-
+<div class="fragment"><pre class="fragment">Funkcja obslugujaca request serwera UDP.
+Popycha dane dalej do parsera ktory sie zajmuje reszta.
 </pre></div> 
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="c0a5ee1efde591fb33de85283b9b4d3f"></a><!-- doxytag: member="Serv::UDPServer::ThreadedUDPRequestHandler::parser" ref="c0a5ee1efde591fb33de85283b9b4d3f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple <a class="el" href="class_serv_1_1_u_d_p_server_1_1_threaded_u_d_p_request_handler.html#c0a5ee1efde591fb33de85283b9b4d3f">Serv::UDPServer::ThreadedUDPRequestHandler::parser</a> = <a class="el" href="class_serv_1_1_parser_1_1_parser.html">Parser</a>()<code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Statyczny parser uzywany do parsowania wszystkich danych. 
+<p>
+
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li>/home/orbit/pz/bazinga/app/serwer/src/Serv/UDPServer.py</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Feb 17 23:02:24 2010 for BazingaServer by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Feb 19 13:22:56 2010 for BazingaServer by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

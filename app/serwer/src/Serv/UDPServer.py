@@ -3,63 +3,65 @@
 #import socket
 import threading
 import SocketServer
-from Logger import SLogger
+from Logger import *
 from Parser import *
 
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
-    """klasa odpowiedzialna za obsługiwanie requestów serwera UDP
+    """Klasa odpowiedzialna za obsługiwanie requestów serwera UDP."""
     
-    """
-    
+    ##Statyczny parser uzywany do parsowania wszystkich danych.
     parser = Parser()
     
     def handle(self):        
-        """funkcja obslugujaca request serwera UDP
-        
+        """Funkcja obslugujaca request serwera UDP.
+        Popycha dane dalej do parsera ktory sie zajmuje reszta.
         """
         data = self.request[0]
-        SLogger.log("ThreadedUDPRequestHandler", "handle", "Cos dostalem i daje parserowi.")        
+        Logger.log("ThreadedUDPRequestHandler", "handle", "Cos dostalem i daje parserowi.")        
         ThreadedUDPRequestHandler.parser.handleData(data, self.client_address)                                        
                 
                    
 
 class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
-    """klasa utworzona sztucznie zeby wymusic serwer na watkach
-    
-    """
+    """Klasa utworzona sztucznie zeby wymusic serwer na watkach."""
     pass
 
 
 class UDPServer:
-    """klasa przetrzymująca serwer i główny wątek
-    
-    """
+    """Klasa przetrzymująca serwer i główny wątek."""
     def __init__(self, host, port):
+        """Konstruktor przyjmujacy host i port na ktorym serwer ma nasluchiwac."""
+        ##Nazwa klasy uzywana do logowania
         self.name = "UDPServer"
+        
+        ##Adres i port na ktorym serwer ma sluchac.
         self.addr = (host,port)
+        
+        ##Serwer
         self.server = ThreadedUDPServer(self.addr, ThreadedUDPRequestHandler)
+        
+        ##Watek serwera
         self.server_thread = None
-        SLogger.log(self.name, "__init__", "utworzono serwer")
+        
+        Logger.log(self.name, "__init__", "utworzono serwer")
         
 
     def start(self):
-        """startuje serwer, w przypadku gdy juz byl uruchomiony wyrzuca wyjatek Exception("Already started")
-        
-        """
+        """Startuje serwer, w przypadku gdy juz byl uruchomiony wyrzuca wyjatek Exception("Already started")."""
         if self.server_thread:
-            SLogger.log(self.name, "start", "startowanie nie udane, serwer juz dzialal")
+            Logger.log(self.name, "start", "startowanie nie udane, serwer juz dzialal")
             raise Exception("Already started")
         self.server_thread = threading.Thread(target = self.server.serve_forever())
         self.server_thread.start()
-        SLogger.log(self.name, "start", "serwer wystartowany")
+        Logger.log(self.name, "start", "serwer wystartowany")
         
     
     def shutdown(self):
-        """wyłącza serwer (jezeli był uruchomiony)
-        
+        """Wyłącza serwer (jezeli był uruchomiony).
+        TODO: To jest do poprawienia. Zawsze wydaje mu sie ze serwer nie dziala...
         """
         if self.server_thread:            
             self.server.shutdown()
             self.server_thread = None
-            SLogger.log(self.name, "shutdown", "serwer wylaczony")        
-        SLogger.log(self.name, "shutdown", "serwer wczesniej nie dzialal")
+            Logger.log(self.name, "shutdown", "serwer wylaczony")        
+        Logger.log(self.name, "shutdown", "serwer wczesniej nie dzialal")

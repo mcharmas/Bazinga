@@ -28,8 +28,7 @@
 <a href="class_serv_1_1_user_group_manager_1_1_user_group_manager-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f43f9798f1e93dd8425699ecd6de6c87"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::__init__" ref="f43f9798f1e93dd8425699ecd6de6c87" args="" -->
-def&nbsp;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#f43f9798f1e93dd8425699ecd6de6c87">__init__</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#ea0f7f8d1d6e4d5efce31f3d0ea35fd9">addDriver</a></td></tr>
 
@@ -44,27 +43,50 @@ def&nbsp;</td><td class="memItemRight" valign="bottom"><b>__init__</b></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#ed20d08470748f78a641e6cc5700b505">getUserByLogin</a></td></tr>
 
 <tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="00aa453d586337ce2692166c666a1817"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::drivers" ref="00aa453d586337ce2692166c666a1817" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>drivers</b></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#00aa453d586337ce2692166c666a1817">drivers</a></td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Drivery ktore jeszcze nie maja klientow.  <a href="#00aa453d586337ce2692166c666a1817"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b41620628a204c943cd30a8f836eddd0"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::users" ref="b41620628a204c943cd30a8f836eddd0" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>users</b></td></tr>
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#b41620628a204c943cd30a8f836eddd0">users</a></td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zalogowani uzytkownicy po session ID. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4da728a66a4115432bdc2057fd3e92fa"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::groups" ref="4da728a66a4115432bdc2057fd3e92fa" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>groups</b></td></tr>
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#4da728a66a4115432bdc2057fd3e92fa">groups</a></td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tablica grup po tokenie. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="97c7d967f8ebfe883963ff38bee5ecaf"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::lastSid" ref="97c7d967f8ebfe883963ff38bee5ecaf" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>lastSid</b></td></tr>
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#97c7d967f8ebfe883963ff38bee5ecaf">lastSid</a></td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ostatni uzyty SID, za kazdym razem przyznawany jest kolejny. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c2e922b108e77474d9daab6be8055436"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::name" ref="c2e922b108e77474d9daab6be8055436" args="" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#c2e922b108e77474d9daab6be8055436">name</a></td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Nazwa klasy potrzeban do logowania. <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 <div class="fragment"><pre class="fragment">Klasa ta jest menagerem uzytkownikow, grup i sterownikow. Gdy uzytkownik jest podlaczany ta klasa zarzadza do jakiej grupy idzie.
-Klasa dba tez o to aby puste grupy byly usuwane.
-
+Klasa dba tez o to aby puste grupy byly usuwane.    
 </pre></div> <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="f43f9798f1e93dd8425699ecd6de6c87"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::__init__" ref="f43f9798f1e93dd8425699ecd6de6c87" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Serv::UserGroupManager::UserGroupManager::__init__           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>self</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Konstruktor</pre></div> 
+</div>
+</div><p>
 <a class="anchor" name="ea0f7f8d1d6e4d5efce31f3d0ea35fd9"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::addDriver" ref="ea0f7f8d1d6e4d5efce31f3d0ea35fd9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -97,9 +119,7 @@ Klasa dba tez o to aby puste grupy byly usuwane.
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">Dodaje sterownik uzytkownika
-
-</pre></div> 
+<div class="fragment"><pre class="fragment">Dodaje sterownik uzytkownika</pre></div> 
 </div>
 </div><p>
 <a class="anchor" name="46ee225566738a93c7c036b464a931fb"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::addUser" ref="46ee225566738a93c7c036b464a931fb" args="" -->
@@ -134,9 +154,7 @@ Klasa dba tez o to aby puste grupy byly usuwane.
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje.
-
-</pre></div> 
+<div class="fragment"><pre class="fragment">Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje.</pre></div> 
 </div>
 </div><p>
 <a class="anchor" name="4b747272c8166d17b9458b3f8c4796f0"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::delUser" ref="4b747272c8166d17b9458b3f8c4796f0" args="" -->
@@ -165,9 +183,7 @@ Klasa dba tez o to aby puste grupy byly usuwane.
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta.
-
-</pre></div> 
+<div class="fragment"><pre class="fragment">Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta.</pre></div> 
 </div>
 </div><p>
 <a class="anchor" name="94bccb5702d504f5b782ba2379aaaab4"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::getUser" ref="94bccb5702d504f5b782ba2379aaaab4" args="" -->
@@ -196,9 +212,7 @@ Klasa dba tez o to aby puste grupy byly usuwane.
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">Zwraca uzytkownika o danym ID
-
-</pre></div> 
+<div class="fragment"><pre class="fragment">Zwraca uzytkownika o danym ID.</pre></div> 
 </div>
 </div><p>
 <a class="anchor" name="ed20d08470748f78a641e6cc5700b505"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::getUserByLogin" ref="ed20d08470748f78a641e6cc5700b505" args="" -->
@@ -227,9 +241,7 @@ Klasa dba tez o to aby puste grupy byly usuwane.
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">Zwraca uzytkownika o danym loginie
-
-</pre></div> 
+<div class="fragment"><pre class="fragment">Zwraca uzytkownika o danym loginie</pre></div> 
 </div>
 </div><p>
 <a class="anchor" name="39ae7245da0bcda25ce712d1b55f2f29"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::hasDriver" ref="39ae7245da0bcda25ce712d1b55f2f29" args="" -->
@@ -258,15 +270,31 @@ Klasa dba tez o to aby puste grupy byly usuwane.
 <div class="memdoc">
 
 <p>
-<div class="fragment"><pre class="fragment">Zwraca czy dany username ma zalogowany sterownik.
+<div class="fragment"><pre class="fragment">Zwraca czy dany username ma zalogowany sterownik.</pre></div> 
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="00aa453d586337ce2692166c666a1817"></a><!-- doxytag: member="Serv::UserGroupManager::UserGroupManager::drivers" ref="00aa453d586337ce2692166c666a1817" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_serv_1_1_user_group_manager_1_1_user_group_manager.html#00aa453d586337ce2692166c666a1817">Serv::UserGroupManager::UserGroupManager::drivers</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-</pre></div> 
+<p>
+Drivery ktore jeszcze nie maja klientow. 
+<p>
+
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li>/home/orbit/pz/bazinga/app/serwer/src/Serv/UserGroupManager.py</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Feb 17 23:02:24 2010 for BazingaServer by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Feb 19 13:22:56 2010 for BazingaServer by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

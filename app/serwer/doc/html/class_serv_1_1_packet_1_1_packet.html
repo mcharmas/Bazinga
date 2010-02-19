@@ -23,22 +23,182 @@
   </div>
 </div>
 <div class="contents">
-<h1>Serv::Packet::Packet Class Reference</h1><!-- doxytag: class="Serv::Packet::Packet" --><table border="0" cellpadding="0" cellspacing="0">
+<h1>Serv::Packet::Packet Class Reference</h1><!-- doxytag: class="Serv::Packet::Packet" -->
+<p>
+<a href="class_serv_1_1_packet_1_1_packet-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
-<tr><td colspan="2"><br><h2>Classes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet_1_1_communicates.html">Communicates</a></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#1f71ef65b348c86a047c87abe9ca2775">__init__</a></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet_1_1_sources.html">Sources</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#393243697bc1e23d5adadc50698fccd1">packetFromCont</a></td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#6dab330b602405f42b3fe090863e5c1e">repack</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">def&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#2738b48c8c177150338082c936c823dc">toString</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="5c1fb13da3486f574c94aaac06f3c56c"></a><!-- doxytag: member="Serv::Packet::Packet::data" ref="5c1fb13da3486f574c94aaac06f3c56c" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#5c1fb13da3486f574c94aaac06f3c56c">data</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Niesformatowany pakiet. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="5cc00710f6a12b310f6b69d88ed51c55"></a><!-- doxytag: member="Serv::Packet::Packet::id" ref="5cc00710f6a12b310f6b69d88ed51c55" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#5cc00710f6a12b310f6b69d88ed51c55">id</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Id sesji. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="37864cf9c1e11502ff340f0068ffa7f9"></a><!-- doxytag: member="Serv::Packet::Packet::source" ref="37864cf9c1e11502ff340f0068ffa7f9" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#37864cf9c1e11502ff340f0068ffa7f9">source</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zrodlo (DRIVER, APPLICATION, SERVER). <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f7df973d840761ea9884fdffd800dc27"></a><!-- doxytag: member="Serv::Packet::Packet::timestamp" ref="f7df973d840761ea9884fdffd800dc27" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#f7df973d840761ea9884fdffd800dc27">timestamp</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Timestamp wyslania pakietu. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8a1139cb536fdc04312e50fbeb8e95a0"></a><!-- doxytag: member="Serv::Packet::Packet::command" ref="8a1139cb536fdc04312e50fbeb8e95a0" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#8a1139cb536fdc04312e50fbeb8e95a0">command</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Komenda (SREQ, SACK, SDEN,CHECK, CONFIRM, UPDATE, CLOSE, OBJECT, OTHER, ERROR). <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="df68d3f40f5a7583fce563366f2f9e61"></a><!-- doxytag: member="Serv::Packet::Packet::length" ref="df68d3f40f5a7583fce563366f2f9e61" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#df68d3f40f5a7583fce563366f2f9e61">length</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wielkosc pakietu. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="24efe22ef361ee7d966a663e96241820"></a><!-- doxytag: member="Serv::Packet::Packet::content" ref="24efe22ef361ee7d966a663e96241820" args="" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#24efe22ef361ee7d966a663e96241820">content</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zawartosc pakietu. <br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0406f36f89d9da4feb94f31959367ce8"></a><!-- doxytag: member="Serv::Packet::Packet::fmt" ref="0406f36f89d9da4feb94f31959367ce8" args="" -->
+string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#0406f36f89d9da4feb94f31959367ce8">fmt</a> = &quot;!ibibh&quot;</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Format danych przesnylanych przez siec: int(id), (byte)source, int(timestamp), byte(command),short(length),dane int(id), (byte)source, int(timestamp), byte(command),short(length). <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="145ac89df7bc66728e8b3e642650aff4"></a><!-- doxytag: member="Serv::Packet::Packet::packetFromContent" ref="145ac89df7bc66728e8b3e642650aff4" args="" -->
+tuple&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serv_1_1_packet_1_1_packet.html#145ac89df7bc66728e8b3e642650aff4">packetFromContent</a> = staticmethod(packetFromCont)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Metoda statyczna, zobacz packetFromCont. <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-<div class="fragment"><pre class="fragment">
-klasa trzymajaca pakiet podzielony na czesci
+<div class="fragment"><pre class="fragment">Klasa trzymajaca pakiet podzielony na czesci.</pre></div> <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="1f71ef65b348c86a047c87abe9ca2775"></a><!-- doxytag: member="Serv::Packet::Packet::__init__" ref="1f71ef65b348c86a047c87abe9ca2775" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Serv::Packet::Packet::__init__           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>&quot;&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-</pre></div> <hr>The documentation for this class was generated from the following file:<ul>
+<p>
+<div class="fragment"><pre class="fragment">Konstruktor ktory jak dostanie dane rozklada pakiet na czesci.</pre></div> 
+</div>
+</div><p>
+<a class="anchor" name="393243697bc1e23d5adadc50698fccd1"></a><!-- doxytag: member="Serv::Packet::Packet::packetFromCont" ref="393243697bc1e23d5adadc50698fccd1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Serv::Packet::Packet::packetFromCont           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>content</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Statyczna metoda ktora jest mapowana na funkcje statyczna (packetFromContent)
+podajemy jej wszystkie pola pakietu a ona generuje pakiet na ich podstawie.
+</pre></div> 
+</div>
+</div><p>
+<a class="anchor" name="6dab330b602405f42b3fe090863e5c1e"></a><!-- doxytag: member="Serv::Packet::Packet::repack" ref="6dab330b602405f42b3fe090863e5c1e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Serv::Packet::Packet::repack           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>self</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Funkcja sluzaca do ponownego zapakowania wszystkich danych.</pre></div> 
+</div>
+</div><p>
+<a class="anchor" name="2738b48c8c177150338082c936c823dc"></a><!-- doxytag: member="Serv::Packet::Packet::toString" ref="2738b48c8c177150338082c936c823dc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def Serv::Packet::Packet::toString           </td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>self</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<div class="fragment"><pre class="fragment">Funckcja zwracajaca zapakowany pakiet.</pre></div> 
+</div>
+</div><p>
+<hr>The documentation for this class was generated from the following file:<ul>
 <li>/home/orbit/pz/bazinga/app/serwer/src/Serv/Packet.py</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Feb 17 23:02:24 2010 for BazingaServer by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Feb 19 13:22:56 2010 for BazingaServer by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
