@@ -34,10 +34,32 @@ void BConnection::connect(const QString & serverAddress,
 						 (quint32) QDateTime::currentDateTime().toTime_t(),
 						 (unsigned char)B_TYPE_SREQ, arr);
 
-	QByteArray * datagram = dgramLogin.getAllData();
+	sendData(dgramLogin);
+//	QByteArray * datagram = dgramLogin.getAllData();
+//
+//	socket.writeDatagram(*datagram, hostAddress, serverPort);
+//	delete datagram;
+}
 
-	socket.writeDatagram(*datagram, hostAddress, serverPort);
-	delete datagram;
+
+void BConnection::disconnectFromHost() {
+	qDebug() << "Disconnecting";
+
+	sendData(B_TYPE_CLOSE);
+
+	socket.disconnectFromHost();
+
+	hostAddress.setAddress("A-S-D-F");
+	hostPort = 0;
+	listeningPort = 0;
+	sessid = 0;
+}
+
+QByteArray * BConnection::newTMPdatagram(unsigned char command, QByteArray & data) {
+	BDatagram gram(sessid, clientType,
+				   (quint32) QDateTime::currentDateTime().toTime_t(),
+				   command, data);
+	return gram.getAllData();
 }
 
 
@@ -46,6 +68,17 @@ int BConnection::sendData(BDatagram &data) {
 	int status = socket.writeDatagram(*datagram, hostAddress, hostPort);
 	delete datagram;
 	return status;
+}
+
+int BConnection::sendData(unsigned char command, QByteArray & data) {
+	QByteArray * tmpGram = newTMPdatagram(command, data);
+	int status = socket.writeDatagram(*tmpGram, hostAddress, hostPort);
+	delete tmpGram;
+	return status;
+}
+
+int BConnection::sendData(unsigned char command) {
+	return sendData(command);
 }
 
 void BConnection::timerEvent(QTimerEvent * e) {

@@ -27,7 +27,11 @@ public:
 				 quint16 listeningPort,
 				 const QString & token = QString());
 
+	void disconnectFromHost();
+
 	int sendData(BDatagram & data);
+	int sendData(unsigned char command, QByteArray & data);
+	int sendData(unsigned char command);
 
 	BDatagram * getData();
 
@@ -37,6 +41,7 @@ signals:
 
 private:
 	void timerEvent(QTimerEvent *);
+	QByteArray * newTMPdatagram(unsigned char command, QByteArray & data);
 
 private:
 	QHostAddress hostAddress;

@@ -131,8 +131,7 @@ void ConfigDialog::on_connectButton_clicked()
 						   (quint16) ui->serverPortBox->value(),
 						   ui->loginEdit->text(),
 						   ui->passwordEdit->text(),
-						   (quint16) ui->localPortBox->value(),
-						   ui->tokenEdit->text());
+						   (quint16) ui->localPortBox->value());
 	}
 }
 
@@ -167,7 +166,6 @@ void ConfigDialog::timerEvent(QTimerEvent *event) {
 
 void ConfigDialog::readSettings() {
 	ui->loginEdit->setText(settings.value("user/login", "cat").toString());
-	ui->tokenEdit->setText(settings.value("user/token", "dog").toString());
 	ui->localPortBox->setValue(settings.value("user/port", 1501).toInt());
 
 	ui->addressEdit->setText(settings.value("sever/address", "127.0.0.1").toString());
@@ -185,7 +183,6 @@ void ConfigDialog::readSettings() {
 
 void ConfigDialog::saveSettings() {
 	settings.setValue("user/login", ui->loginEdit->text());
-	settings.setValue("user/token", ui->tokenEdit->text());
 	settings.setValue("user/port", ui->localPortBox->value());
 	settings.setValue("server/address", ui->addressEdit->text());
 	settings.setValue("server/port", ui->serverPortBox->value());
