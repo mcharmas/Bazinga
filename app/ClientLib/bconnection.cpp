@@ -26,19 +26,9 @@ void BConnection::connect(const QString & serverAddress,
 
 	QByteArray arr((login + ":" + password
 					+ ":" + QString::number(listeningPort)
-					+ (token.isEmpty() ? QString(":") + token : QString())).toAscii());
-	//qDebug() << arr;
+					+ (token.isEmpty() ? QString() : QString(":") + token)).toAscii());
 
-	BDatagram dgramLogin((quint32) 0,
-						 clientType,
-						 (quint32) QDateTime::currentDateTime().toTime_t(),
-						 (unsigned char)B_TYPE_SREQ, arr);
-
-	sendData(dgramLogin);
-//	QByteArray * datagram = dgramLogin.getAllData();
-//
-//	socket.writeDatagram(*datagram, hostAddress, serverPort);
-//	delete datagram;
+	sendData(B_TYPE_SREQ, arr);
 }
 
 
@@ -78,20 +68,22 @@ int BConnection::sendData(unsigned char command, QByteArray & data) {
 }
 
 int BConnection::sendData(unsigned char command) {
-	return sendData(command);
+	QByteArray empty;
+	return sendData(command, empty);
 }
 
 void BConnection::timerEvent(QTimerEvent * e) {
-	if(sessid != 0) {
+	if(isSessionAlive() && socket.waitForBytesWritten(1)) {
 		qDebug() << "Sending CHECK";
-		QByteArray empty;
-		BDatagram dgramAck(sessid, clientType,
-						   (quint32) QDateTime::currentDateTime().toTime_t(),
-						   (unsigned char)B_TYPE_CHECK, empty);
-		QByteArray * datagram = dgramAck.getAllData();
-
-		socket.writeDatagram(*datagram, hostAddress, hostPort);
-		delete datagram;
+		sendData(B_TYPE_CHECK);
+//		QByteArray empty;
+//		BDatagram dgramAck(sessid, clientType,
+//						   (quint32) QDateTime::currentDateTime().toTime_t(),
+//						   (unsigned char)B_TYPE_CHECK, empty);
+//		QByteArray * datagram = dgramAck.getAllData();
+//
+//		socket.writeDatagram(*datagram, hostAddress, hostPort);
+//		delete datagram;
 	}
 }
 

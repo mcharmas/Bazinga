@@ -38,6 +38,7 @@ public slots:
 private:
 	void retreiveFrame(QImage & image);
 	void timerEvent(QTimerEvent * event);
+	void setConnectionGroupBoxEnabled(bool enabled);
 
 	Ui::ConfigDialog *ui;
 	VideoInput * vin;
@@ -46,14 +47,15 @@ private:
 	Points2 pointsDetector;
 	BConnection connection;
 	QSettings settings;
-
+	bool attemptingToConnect;
+	
 
 private slots:
+	void on_connectCameraBox_toggled(bool checked);
 	void on_connectButton_clicked();
 	void on_pointsCheckBox_toggled(bool checked);
 	void on_quadrangleCheckBox_toggled(bool checked);
 	void on_facesCheckBox_toggled(bool checked);
-	void on_checkBox_toggled(bool checked);
 };
 
 #endif // CONFIGDIALOG_H

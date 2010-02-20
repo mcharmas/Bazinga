@@ -17,7 +17,8 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 	quadranglesDetector(NULL),
 	pointsDetector(NULL),
 	connection(B_SOURCE_DRIVER),
-	settings()
+	settings(),
+	attemptingToConnect(false)
 {
 	ui->setupUi(this);
 
@@ -59,7 +60,8 @@ void ConfigDialog::disconnectCamera() {
 	vin = NULL;
 }
 
-void ConfigDialog::on_checkBox_toggled(bool checked)
+
+void ConfigDialog::on_connectCameraBox_toggled(bool checked)
 {
 	if(checked) {
 		connectCamera();
@@ -70,8 +72,6 @@ void ConfigDialog::on_checkBox_toggled(bool checked)
 
 void ConfigDialog::retreiveFrame(QImage & image) {
 	ImageDisplayer * tmp = this->ui->cameraPreview;
-	//tmp->setMinimumWidth(image.width());
-	//tmp->setMinimumHeight(image.height());
 	tmp->setImage(&image);
 	tmp->update();
 }
@@ -110,36 +110,53 @@ void ConfigDialog::on_pointsCheckBox_toggled(bool checked)
 
 }
 
+void ConfigDialog::setConnectionGroupBoxEnabled(bool enabled)
+{
+	QListIterator<QObject*> children(ui->connectionGroupBox->children());
+	while(children.hasNext()) {
+		QObject* ob = children.next();
+		ob->setProperty("enabled", enabled);
+	}
+
+	ui->connectButton->setEnabled(true);
+}
+
 void ConfigDialog::on_connectButton_clicked()
 {
-	if(! connection.isSessionAlive()) {
-		saveSettings();
-
-		//ui->connectionGroupBox->setEnabled(false);
-		QListIterator<QObject*> children(ui->connectionGroupBox->children());
-		while(children.hasNext()) {
-			QObject* ob = children.next();
-			if(ob->property("objectName").toString() != QString("connectButton")) {
-				//ob->setProperty("enabled", false);
-			}
+	if(! connection.isSessionAlive() && ! attemptingToConnect) {
+		if(vin == NULL) {
+			ui->connectCameraBox->setChecked(true);
 		}
 
+		saveSettings();
+		attemptingToConnect = true;
+
 		ui->connectButton->setText("Anuluj laczenie");
-		ui->connectButton->setEnabled(true);
+		setConnectionGroupBoxEnabled(false);
 
 		connection.connect(ui->addressEdit->text(),
 						   (quint16) ui->serverPortBox->value(),
 						   ui->loginEdit->text(),
 						   ui->passwordEdit->text(),
 						   (quint16) ui->localPortBox->value());
+	} else {
+		connection.disconnectFromHost();
+		ui->connectButton->setText("Polacz");
+		setConnectionGroupBoxEnabled(true);
+		attemptingToConnect = false;
 	}
 }
 
 void ConfigDialog::serverConnected(quint32 sessid) {
 	qDebug() << "SERVER CONNECTED" << sessid;
+	ui->connectButton->setText("Rozlacz");
+	attemptingToConnect = false;
 }
 
 void ConfigDialog::serverDisconnected() {
+	ui->connectButton->setText("Polacz");
+	setConnectionGroupBoxEnabled(true);
+	attemptingToConnect = false;
 }
 
 void ConfigDialog::timerEvent(QTimerEvent *event) {
@@ -198,3 +215,4 @@ void ConfigDialog::saveSettings() {
 
 	settings.sync();
 }
+

@@ -6,12 +6,10 @@ QT -= gui
 TARGET = ClientLib
 TEMPLATE = lib
 DEFINES += CLIENTLIB_LIBRARY
-SOURCES += clientlib.cpp \
-    bconnection.cpp \
+SOURCES += bconnection.cpp \
     bdatagram.cpp \
     bconnectionexception.cpp
-HEADERS += clientlib.h \
-    ClientLib_global.h \
+HEADERS += ClientLib_global.h \
     bconnection.h \
     bdatagram.h \
     bconnectionexception.h
