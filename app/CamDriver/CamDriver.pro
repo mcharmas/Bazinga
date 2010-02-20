@@ -27,15 +27,18 @@ win32 {
         -lcv200 \
         -lcvaux200 \
         -lhighgui200 \
-        -lml200
+        -lml200 \
+        -L"../ClientLib/debug" -lClientLib
     INCLUDEPATH += "C:\Native\OpenCV20\include"
 }
-unix:LIBS += -lcxcore \
+unix:LIBS += -L/usr/local/opencv/lib \
+    -lcxcore \
     -lcv \
     -lcvaux \
     -lhighgui \
-    -lml
+    -lml \
+    -L"../ClientLib" -lClientLib
 
 
 INCLUDEPATH += "../ClientLib"
-LIBS += -L"../ClientLib/debug" -lClientLib
+
