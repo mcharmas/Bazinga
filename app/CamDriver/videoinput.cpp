@@ -2,12 +2,15 @@
 #include "frameretreiver.h"
 
 #include <QDebug>
+#include <QString>
 
 using namespace cv;
 
 VideoInput::VideoInput(int frameRate) : vid(0), frameRate(frameRate), running(true)
 {
-	if(!vid.isOpened()) throw "Nie ma dostepnej zadnej kamery.";
+	if(!vid.isOpened()) {
+		throw new QString("Nie ma dostepnej zadnej kamery.");
+	}
 	vid >> frame;
 	if(frame.cols != image.width() || frame.rows != image.height()) {
 		image = QImage(frame.data, frame.cols, frame.rows, QImage::Format_RGB888);
@@ -40,7 +43,7 @@ void VideoInput::run() {
 void VideoInput::getFrame() {
 	vid >> frame;
 	cvtColor(frame, frame, CV_BGR2RGB);
-        flip(frame,frame, 1);
+	flip(frame,frame, 1);
 }
 
 void VideoInput::safelyStop() {

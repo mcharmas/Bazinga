@@ -76,14 +76,6 @@ void BConnection::timerEvent(QTimerEvent * e) {
 	if(isSessionAlive() && socket.waitForBytesWritten(1)) {
 		qDebug() << "Sending CHECK";
 		sendData(B_TYPE_CHECK);
-//		QByteArray empty;
-//		BDatagram dgramAck(sessid, clientType,
-//						   (quint32) QDateTime::currentDateTime().toTime_t(),
-//						   (unsigned char)B_TYPE_CHECK, empty);
-//		QByteArray * datagram = dgramAck.getAllData();
-//
-//		socket.writeDatagram(*datagram, hostAddress, hostPort);
-//		delete datagram;
 	}
 }
 
@@ -106,7 +98,7 @@ BDatagram * BConnection::getData() {
 				qDebug() << "Bad sender: " << senderAddr << ":" << senderPort
 						<< "; expected: " << hostAddress << ":" << hostPort;
 				delete data;
-				throw BConnectionException("Bad sender");
+				throw new BConnectionException("Bad sender");
 
 			} else {
 				BDatagram * datagram = new BDatagram(data, size);
@@ -114,7 +106,7 @@ BDatagram * BConnection::getData() {
 
 				if(datagram->source != B_SOURCE_SERVER) {
 					delete datagram;
-					throw BConnectionException("Packet not from server!");
+					throw new BConnectionException("Packet not from server!");
 				}
 
 				switch (datagram->type) {
@@ -126,18 +118,18 @@ BDatagram * BConnection::getData() {
 						emit connected(sessid);
 					} else {
 						delete datagram;
-						throw BConnectionException("Someone tried to inject different sessionid");
+						throw new BConnectionException("Someone tried to inject different sessionid");
 					}
 					break;
 
   case B_TYPE_SDEN:
 					sessid = 0;
 					delete datagram;
-					throw BConnectionException("Server disconnected.");
+					throw new BConnectionException("Server disconnected.");
 					break;
 
   case B_TYPE_ERROR:
-					throw BConnectionException("ERROR", datagram);
+					throw new BConnectionException("ERROR", datagram);
 					break;
 
 	case B_TYPE_OBJECT:

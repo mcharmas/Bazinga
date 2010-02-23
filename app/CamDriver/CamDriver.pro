@@ -11,14 +11,16 @@ SOURCES += main.cpp \
     imagedisplayer.cpp \
     faces.cpp \
     quadrangles.cpp \
-    points.cpp
+    points.cpp \
+    cameranotconnectedblocker.cpp
 HEADERS += configdialog.h \
     videoinput.h \
     frameretreiver.h \
     imagedisplayer.h \
     faces.h \
     quadrangles.h \
-    points.h
+    points.h \
+    cameranotconnectedblocker.h
 FORMS += configdialog.ui
 RESOURCES += icons.qrc
 win32 { 
@@ -28,7 +30,8 @@ win32 {
         -lcvaux200 \
         -lhighgui200 \
         -lml200 \
-        -L"../ClientLib/debug" -lClientLib
+        -L"../ClientLib/debug" \
+        -lClientLib
     INCLUDEPATH += "C:\Native\OpenCV20\include"
 }
 unix:LIBS += -L/usr/local/opencv/lib \
@@ -37,8 +40,6 @@ unix:LIBS += -L/usr/local/opencv/lib \
     -lcvaux \
     -lhighgui \
     -lml \
-    -L"../ClientLib" -lClientLib
-
-
+    -L"../ClientLib" \
+    -lClientLib
 INCLUDEPATH += "../ClientLib"
-

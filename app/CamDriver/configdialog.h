@@ -5,7 +5,10 @@
 #include <QSettings>
 
 #include <bconnection.h>
+#include <bconnectionblocker.h>
+#include <bconnectionwidget.h>
 
+#include "cameranotconnectedblocker.h"
 #include "frameretreiver.h"
 #include "videoinput.h"
 #include "faces.h"
@@ -22,6 +25,9 @@ class ConfigDialog : public QDialog, public FrameRetreiver
 	Q_OBJECT
 
 public:
+
+	friend bool CameraNotConnectedBlocker::canConnect();
+
 	ConfigDialog(QWidget *parent = 0);
 	~ConfigDialog();
 
@@ -35,10 +41,11 @@ public slots:
 	void saveSettings();
 	void readSettings();
 
+	void catchException(BConnectionException * e);
+
 private:
 	void retreiveFrame(QImage & image);
 	void timerEvent(QTimerEvent * event);
-	void setConnectionGroupBoxEnabled(bool enabled);
 
 	Ui::ConfigDialog *ui;
 	VideoInput * vin;
@@ -47,12 +54,11 @@ private:
 	Points2 pointsDetector;
 	BConnection connection;
 	QSettings settings;
-	bool attemptingToConnect;
-	
+	CameraNotConnectedBlocker cameraBlocker;
+	BConnectionWidget connectionWidget;
 
 private slots:
 	void on_connectCameraBox_toggled(bool checked);
-	void on_connectButton_clicked();
 	void on_pointsCheckBox_toggled(bool checked);
 	void on_quadrangleCheckBox_toggled(bool checked);
 	void on_facesCheckBox_toggled(bool checked);

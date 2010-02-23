@@ -18,18 +18,24 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 	pointsDetector(NULL),
 	connection(B_SOURCE_DRIVER),
 	settings(),
-	attemptingToConnect(false)
+	cameraBlocker(this),
+	connectionWidget(this, &connection, &settings, false, &cameraBlocker)
 {
 	ui->setupUi(this);
 
-	readSettings();
+	ui->horizontalLayout->addWidget(&connectionWidget);
+
+	//readSettings();
 	startTimer(2000);
 
 	connect(&connection, SIGNAL(connected(quint32)), SLOT(serverConnected(quint32)));
+
+	connect(&connectionWidget, SIGNAL(throwException(BConnectionException*)), SLOT(catchException(BConnectionException*)));
 }
 
 ConfigDialog::~ConfigDialog()
 {
+	connection.disconnectFromHost();
 	if(vin) {
 		vin->safelyStop();
 		delete vin;
@@ -39,15 +45,11 @@ ConfigDialog::~ConfigDialog()
 }
 
 void ConfigDialog::connectCamera() {
-	disconnectCamera();
-	try {
+	//disconnectCamera();
+	if(!vin) {
 		vin = new VideoInput(25); // todo ustawianie framerate
 		vin->addObserver(this);
 		vin->start();
-	} catch (char* & message) {
-		qDebug() << message;
-		QMessageBox::warning(this, "Bd", message);
-		vin = NULL;
 	}
 }
 
@@ -60,11 +62,20 @@ void ConfigDialog::disconnectCamera() {
 	vin = NULL;
 }
 
+void ConfigDialog::catchException(BConnectionException * e) {
+	QMessageBox::warning(this, QString("Zlapano wyjatek"), e->toString());
+}
 
 void ConfigDialog::on_connectCameraBox_toggled(bool checked)
 {
 	if(checked) {
-		connectCamera();
+		try {
+			connectCamera();
+		} catch (QString * message) {
+			QMessageBox::warning(this, "Blad", *message);
+			ui->connectCameraBox->setChecked(false);
+			delete message;
+		}
 	} else {
 		disconnectCamera();
 	}
@@ -110,53 +121,11 @@ void ConfigDialog::on_pointsCheckBox_toggled(bool checked)
 
 }
 
-void ConfigDialog::setConnectionGroupBoxEnabled(bool enabled)
-{
-	QListIterator<QObject*> children(ui->connectionGroupBox->children());
-	while(children.hasNext()) {
-		QObject* ob = children.next();
-		ob->setProperty("enabled", enabled);
-	}
-
-	ui->connectButton->setEnabled(true);
-}
-
-void ConfigDialog::on_connectButton_clicked()
-{
-	if(! connection.isSessionAlive() && ! attemptingToConnect) {
-		if(vin == NULL) {
-			ui->connectCameraBox->setChecked(true);
-		}
-
-		saveSettings();
-		attemptingToConnect = true;
-
-		ui->connectButton->setText("Anuluj laczenie");
-		setConnectionGroupBoxEnabled(false);
-
-		connection.connect(ui->addressEdit->text(),
-						   (quint16) ui->serverPortBox->value(),
-						   ui->loginEdit->text(),
-						   ui->passwordEdit->text(),
-						   (quint16) ui->localPortBox->value());
-	} else {
-		connection.disconnectFromHost();
-		ui->connectButton->setText("Polacz");
-		setConnectionGroupBoxEnabled(true);
-		attemptingToConnect = false;
-	}
-}
-
 void ConfigDialog::serverConnected(quint32 sessid) {
 	qDebug() << "SERVER CONNECTED" << sessid;
-	ui->connectButton->setText("Rozlacz");
-	attemptingToConnect = false;
 }
 
 void ConfigDialog::serverDisconnected() {
-	ui->connectButton->setText("Polacz");
-	setConnectionGroupBoxEnabled(true);
-	attemptingToConnect = false;
 }
 
 void ConfigDialog::timerEvent(QTimerEvent *event) {
@@ -168,50 +137,23 @@ void ConfigDialog::timerEvent(QTimerEvent *event) {
 			qDebug() << "DATAGRAM" << datagram->getAllData();
 			delete datagram;
 		}
-	} catch (BConnectionException &e) {
-		qDebug() << e.toString();
-		datagram = e.getDatagram();
+	} catch (BConnectionException *e) {
+		qDebug() << e->toString();
+		datagram = e->getDatagram();
 
 		if(datagram) {
 			qDebug() << "DATAGRAM" << datagram->getAllData();
 		}
-		// e zostanie delete, wiec datagram tez
+		delete e;
 	}
 
 }
 
 
 void ConfigDialog::readSettings() {
-	ui->loginEdit->setText(settings.value("user/login", "cat").toString());
-	ui->localPortBox->setValue(settings.value("user/port", 1501).toInt());
-
-	ui->addressEdit->setText(settings.value("sever/address", "127.0.0.1").toString());
-	ui->serverPortBox->setValue(settings.value("server/port", 1500).toInt());
-
-	bool savePassword = settings.value("user/save_password", false).toBool();
-	ui->savePasswordCheck->setChecked(savePassword);
-
-	if(savePassword) {
-		ui->passwordEdit->setText(settings.value("user/password", "").toString());
-	} else {
-		settings.setValue("user/save_password", false);
-	}
 }
 
 void ConfigDialog::saveSettings() {
-	settings.setValue("user/login", ui->loginEdit->text());
-	settings.setValue("user/port", ui->localPortBox->value());
-	settings.setValue("server/address", ui->addressEdit->text());
-	settings.setValue("server/port", ui->serverPortBox->value());
-
-	bool savePassword = ui->savePasswordCheck->isChecked();
-	settings.setValue("user/save_password", savePassword);
-
-	if(savePassword) {
-		settings.setValue("user/password", ui->passwordEdit->text());
-	} else {
-		settings.setValue("user/password", "");
-	}
 
 	settings.sync();
 }

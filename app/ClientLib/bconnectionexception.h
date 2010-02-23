@@ -10,6 +10,7 @@ class CLIENTLIBSHARED_EXPORT BConnectionException
 public:
 	BConnectionException(char * cause, BDatagram * datagram = NULL);
 	BConnectionException(const QString & cause, BDatagram * datagram = NULL);
+	BConnectionException(BConnectionException & old);
 	~BConnectionException();
 	const QString toString();
 	BDatagram * getDatagram();

@@ -9,13 +9,18 @@ BConnectionException::BConnectionException(const QString & cause, BDatagram * da
 {
 }
 
+BConnectionException::BConnectionException(BConnectionException &old)
+	: cause(old.cause), datagram(old.datagram)
+{
+	old.datagram = NULL;
+}
+
 BConnectionException::~BConnectionException() {
 	if(datagram) delete datagram;
 }
 
 const QString BConnectionException::toString() {
-	if(datagram)
-	return cause + " (Datagram avialable)";
+	return cause + (datagram ? " (Datagram avialable)" : "");
 }
 
 BDatagram * BConnectionException::getDatagram() {
