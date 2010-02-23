@@ -31,7 +31,7 @@ class Parser:
         try:                 
             p = Packet(data)            
         except:
-            Logger.log(self.classname, "handleData", "Cos poszlo nie tak z parsowanie pakietu. Olewamy! (Kochamy UDP:P)")
+            Logger.log(self.classname, "handleData", "Blad podczas parsowania pakietu. pakiet zignorowany.")
             
         if p.command == Communicates.SREQ:
             if p.source == Sources.DRIVER:
@@ -53,12 +53,12 @@ class Parser:
         TODO: mozna by sprawdzac czy przypadkiem user nie jest zalogowany bo takie cyrki moga sie zdazyc...        
         """                                                       
 
-        Logger.log(self.classname, "loginDriver", "Dostalem dane do logowania sterownika.")
+        Logger.log(self.classname, "loginDriver", "Otrzymano dane do logowania sterownika.")
         try:
             user,passwd,port = packet.content.split(':')
             port = int(port)
         except ValueError:
-            Logger.log(self.classname, "loginDriver", "Blad zawartosci pakietu, olewam")
+            Logger.log(self.classname, "loginDriver", "Blad zawartosci pakietu. Pakiet porzucony.")
             return
         
         id = self.groupManager.getUserByLogin(user)
@@ -68,11 +68,11 @@ class Parser:
          
         correct = self.authenticator.checkUser(user, passwd)
         if correct:
-            Logger.log(self.classname, "loginDriver", "Fpytke haslo i login, dodaje do driverow.")
+            Logger.log(self.classname, "loginDriver", "haslo i login poprawne, dodaje do driverow.")
             h = (client[0], port)
             self.groupManager.addDriver(user, h)            
         else:
-            Logger.log(self.classname, "loginDriver", "Zle haslo i/lub login... Olewam sprawe.")
+            Logger.log(self.classname, "loginDriver", "Zle haslo i/lub login... User zignorowany.")
             
     
     def loginApplication(self, packet, client):
@@ -90,13 +90,13 @@ class Parser:
             user,passwd,port,token = packet.content.split(':')        
             client = (client[0], int(port))
         except:
-            Logger.log(self.classname, "loginApplication", "Blad zawartosci pakietu. Olewam.")
+            Logger.log(self.classname, "loginApplication", "Blad zawartosci pakietu. Pakiet porzucony.")
             return            
                 
         correct = self.authenticator.checkUser(user, passwd)
         if correct:
             if self.groupManager.hasDriver(user):
-                Logger.log(self.classname, "loginApplication", "Wszystko fpyte, jest driver, odsylam info ze spoko")
+                Logger.log(self.classname, "loginApplication", "Dane OK. odsylam potwierdzenie...")
                 u = User.User(0, user, passwd, client, self.dataSenderSocket)
                 sid = self.groupManager.addUser(u, token)
                 p = Packet.packetFromContent(sid, Sources.SERVER, 0, Communicates.SACK, str(sid)).toString()

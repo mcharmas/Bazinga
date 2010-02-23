@@ -9,7 +9,7 @@ class Logger:
         Przyjmuje nazwe klasy i nazwe metody oddzielnie zeby ladnie sformatowac wyjscie.
         """
         if Logger.verbose:
-            print classname + ":" + methodname + " message: " + data
+            print classname + " : " + methodname + "    | message: " + data
     
     ##Statyczna metoda logujaca        
     log = staticmethod(log)

@@ -12,8 +12,8 @@ if __name__ == "__main__":
     HOST, PORT = "localhost", 1234    
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     
-    loginDriverPacket = Packet.packetFromContent(0, Sources.DRIVER, 0, Communicates.SREQ, "dupa:jasio:9999")
-    loginAppPacket = Packet.packetFromContent(0, Sources.APPLICATION, 0, Communicates.SREQ, "dupa:jasio:9999:test")
+    loginDriverPacket = Packet.packetFromContent(0, Sources.DRIVER, 0, Communicates.SREQ, "pass:jasio:9999")
+    loginAppPacket = Packet.packetFromContent(0, Sources.APPLICATION, 0, Communicates.SREQ, "pass:jasio:9999:test")
     checkPacket = Packet.packetFromContent(1, Sources.APPLICATION, 0, Communicates.CHECK, "")
     normalContent = Packet.packetFromContent(1, Sources.DRIVER, 0, Communicates.OBJECT, "to sa jakies pierdoly.... i jeszcze wieksze peirdoly")
     

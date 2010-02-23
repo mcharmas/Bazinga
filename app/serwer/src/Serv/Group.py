@@ -38,7 +38,7 @@ class Group():
         t = time.localtime()
         for u in self.users:            
             if  time.mktime(t) - time.mktime(u.timestamp) >= self.timeout:            
-                Logger.log(self.name, "checkTimeouts()", "Usuwanie uzytkownika z powodu bezczynnosci " + u.login)
+                Logger.log(self.name, "checkTimeouts()", "Usuwanie uzytkownika z powodu bezczynnosci - " + u.login)
                 self.manager.delUser(u.id)
                 self.users.remove(u)
         self.timer.cancel()
@@ -49,14 +49,14 @@ class Group():
                 
     def addUser(self, user):
         """Dodaje usera do grupy."""        
-        Logger.log(self.name, "addUser()", "Dodawanie uzytkownika " + user.login)
+        Logger.log(self.name, "addUser()", "Dodawanie uzytkownika - " + user.login)
         self.users.append(user)
         if not self.timer.isAlive():
             self.timer.start()
         
     def delUser(self, user):
         """Usuwa usera z grupy."""
-        Logger.log(self.name, "delUser()", "Usuwanie uzytkownika bo sam tego chce " + user.login)
+        Logger.log(self.name, "delUser()", "Usuwanie uzytkownika z powodu jego dzialania - " + user.login)
         self.manager.delUser(user.id)
         self.users.remove(user)
         

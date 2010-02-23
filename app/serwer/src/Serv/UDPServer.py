@@ -17,7 +17,7 @@ class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
         Popycha dane dalej do parsera ktory sie zajmuje reszta.
         """
         data = self.request[0]
-        Logger.log("ThreadedUDPRequestHandler", "handle", "Cos dostalem i daje parserowi.")        
+        Logger.log("ThreadedUDPRequestHandler", "handle", "Dane otrzymane o przekazane do Parsera.")
         ThreadedUDPRequestHandler.parser.handleData(data, self.client_address)                                        
                 
                    

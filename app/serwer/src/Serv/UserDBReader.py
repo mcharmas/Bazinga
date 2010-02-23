@@ -32,10 +32,10 @@ class UserDBReader:
         Logger.log("UserDBReader", "checkUser()", "sprawdzam usera: " + user + " haslo: ***")
         if self.userExists(user):
             if self.getUserPasswd(user,passwd):
-                Logger.log("UserDBReader", "checkUser()", "Wow! Jest OK!")
+                Logger.log("UserDBReader", "checkUser()", "User sprawdzony. OK!")
                 return True
             else:
-                Logger.log("UserDBReader", "checkUser()", "Eee... Zle!")
+                Logger.log("UserDBReader", "checkUser()", "User sprawdzony. Zle!")
                 return False
         else:
             return False

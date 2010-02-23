@@ -55,11 +55,11 @@ class UserGroupManager:
     
     def delUser(self, user):
         """Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta."""
-        Logger.log(self.name, "addUser", "Wywalam usera: "+str(user))
+        Logger.log(self.name, "addUser", "Usuwamm usera: "+str(user))
         del self.users[user]
         for k in self.groups.keys():
             if self.groups[k].isEmpty():
-                Logger.log(self.name, "addUser", "Wywalam grupe: "+k+" bo jest pusta.")
+                Logger.log(self.name, "addUser", "Usuwam pusta grupe: "+k)
                 del self.groups[k]
             
         
