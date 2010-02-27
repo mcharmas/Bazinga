@@ -17,7 +17,7 @@ class Packet:
 
     ##Format danych przesnylanych przez siec: int(id), (byte)source, int(timestamp), byte(command),short(length),dane
     #int(id), (byte)source, int(timestamp), byte(command),short(length)
-    fmt = "ibibh" 
+    fmt = "<ibibh" 
             
     def __init__(self, data=""):
         """Konstruktor ktory jak dostanie dane rozklada pakiet na czesci."""            
