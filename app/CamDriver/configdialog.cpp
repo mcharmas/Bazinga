@@ -126,6 +126,7 @@ void ConfigDialog::serverConnected(quint32 sessid) {
 }
 
 void ConfigDialog::serverDisconnected() {
+	qDebug() << "SERVER DISconnected";
 }
 
 void ConfigDialog::timerEvent(QTimerEvent *event) {

@@ -73,7 +73,7 @@ int BConnection::sendData(unsigned char command) {
 }
 
 void BConnection::timerEvent(QTimerEvent * e) {
-	if(isSessionAlive() && socket.waitForBytesWritten(1)) {
+	if(isSessionAlive()) {
 		qDebug() << "Sending CHECK";
 		sendData(B_TYPE_CHECK);
 	}
@@ -111,12 +111,14 @@ BDatagram * BConnection::getData() {
 
 				switch (datagram->type) {
 	case B_TYPE_SACK:
-					if(sessid == 0) {
+					if(this->sessid == 0 && datagram->sessid != 0) {
 						qDebug() << "Logged in. Got session ID: " << datagram->sessid;
 						sessid = datagram->sessid;
 						delete datagram;
 						emit connected(sessid);
-					} else {
+					} else if(datagram->sessid == 0) {
+						throw new BConnectionException("Session ID 0? WTF.");
+					}else {
 						delete datagram;
 						throw new BConnectionException("Someone tried to inject different sessionid");
 					}
@@ -125,7 +127,8 @@ BDatagram * BConnection::getData() {
   case B_TYPE_SDEN:
 					sessid = 0;
 					delete datagram;
-					throw new BConnectionException("Server disconnected.");
+					emit disconnectFromHost();
+//					throw new BConnectionException("Server disconnected.");
 					break;
 
   case B_TYPE_ERROR:

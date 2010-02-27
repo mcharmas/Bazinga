@@ -38,7 +38,7 @@ public:
 
 	  @param arr Tablica do ktorej ma sie dodac.
 	  */
-	void appendToArray(QByteArray & arr);
+	void appendToArray(QByteArray & arr) const;
 
 	quint16 x, y, width, height;
 };

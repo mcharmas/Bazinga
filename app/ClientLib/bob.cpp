@@ -27,7 +27,7 @@ BOb::BOb(QByteArray &arr, int offset)
 	}
 }
 
-void BOb::appendToArray(QByteArray &arr)
+void BOb::appendToArray(QByteArray &arr) const
 {
 	char arrayTmp[] = { x & 0xff,
 						y & 0xff,
