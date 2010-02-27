@@ -28,21 +28,23 @@ class UserGroupManager:
     def addDriver(self,username, host):
         """Dodaje sterownik uzytkownika"""
         Logger.log(self.name, "addDriver", "Dodaje driver "+username)
-        self.drivers[username] = host
+        sid = self.lastSid;
+        self.lastSid+=1        
+        self.drivers[username] = (sid,host)
+        return sid
+        
         
     def hasDriver(self, username):
         """Zwraca czy dany username ma zalogowany sterownik."""
         if username in self.drivers.keys():
-            return self.drivers[username]
+            id,_ = self.drivers[username]
+            return id
         return None
     
     def addUser(self, user, token):
         """Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje."""
         Logger.log(self.name, "addUser", "Dodaje usera: "+user.login+" do grupy:"+token)        
-        driverHost = self.drivers.pop(user.login)
-        user.driverHost = driverHost
-        user.id = self.lastSid
-        self.lastSid+=1 
+        user.id,user.driverHost = self.drivers.pop(user.login)         
         
         if not self.groups.has_key(token):
             self.groups[token] = Group(self)
@@ -51,7 +53,7 @@ class UserGroupManager:
         self.users[user.id] = user       
         self.groups[token].addUser(user)
         Logger.log(self.name, "addUser", "Nadany sid to: "+user.login+":"+str(self.lastSid-1))
-        return self.lastSid-1
+        return user.id
     
     def delUser(self, user):
         """Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta."""

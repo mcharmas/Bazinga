@@ -69,9 +69,15 @@ class Parser:
         correct = self.authenticator.checkUser(user, passwd)
         h = (client[0], port)
         if correct:
-            Logger.log(self.classname, "loginDriver", "haslo i login poprawne, dodaje do driverow.")
-            self.groupManager.addDriver(user, h)
-            p = Packet.packetFromContent(0, Sources.SERVER, 0, Communicates.SACK, str(0)).toString()   
+            Logger.log(self.classname, "loginDriver", "haslo i login poprawne,")            
+            id = self.groupManager.hasDriver(user) 
+            if not id:                
+                Logger.log(self.classname, "loginDriver", "Ten driver nie jest zarejestrowany. Dodaje do driverow.")
+                id = self.groupManager.addDriver(user, h)
+            else:
+                Logger.log(self.classname, "loginDriver", "Ten driver byl juz zarejestrowany. Wysylam ACK.")
+                                
+            p = Packet.packetFromContent(id, Sources.SERVER, 0, Communicates.SACK, str(0)).toString()   
             self.dataSenderSocket.sendto(p, h)       
         else:
             Logger.log(self.classname, "loginDriver", "Zle haslo i/lub login... User zignorowany.")

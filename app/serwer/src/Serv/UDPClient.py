@@ -18,7 +18,7 @@ if __name__ == "__main__":
     normalContent = Packet.packetFromContent(1, Sources.DRIVER, 0, Communicates.OBJECT, "to sa jakies pierdoly.... i jeszcze wieksze peirdoly")
     
         
-    #sock.sendto(loginDriverPacket.toString(), (HOST, PORT))
+    sock.sendto(loginDriverPacket.toString(), (HOST, PORT))
     #sock.sendto(loginAppPacket.toString(), (HOST, PORT))
     #sock.sendto(checkPacket.toString(), (HOST, PORT))
     #sock.sendto(normalContent.toString(), (HOST, PORT))
