@@ -67,12 +67,16 @@ class Parser:
             return
          
         correct = self.authenticator.checkUser(user, passwd)
+        h = (client[0], port)
         if correct:
             Logger.log(self.classname, "loginDriver", "haslo i login poprawne, dodaje do driverow.")
-            h = (client[0], port)
-            self.groupManager.addDriver(user, h)            
+            self.groupManager.addDriver(user, h)
+            p = Packet.packetFromContent(0, Sources.SERVER, 0, Communicates.SACK, str(0)).toString()   
+            self.dataSenderSocket.sendto(p, h)       
         else:
             Logger.log(self.classname, "loginDriver", "Zle haslo i/lub login... User zignorowany.")
+            p = Packet.packetFromContent(0, Sources.SERVER, 0, Communicates.SDEN, str(0)).toString()   
+            self.dataSenderSocket.sendto(p, h)       
             
     
     def loginApplication(self, packet, client):

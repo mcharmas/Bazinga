@@ -66,8 +66,8 @@ class Packet:
         """Funkcja sluzaca do ponownego zapakowania wszystkich danych."""
         self.data = struct.pack(Packet.fmt,self.id,self.source,self.timestamp,self.command,len(self.content))+self.content
         
-#    def debug(self):
-#        return str(self.id)+" "+str(self.source)+" "+str(self.timestamp)+" "+str(self.command)+" "+str(self.length)+" "+self.content
+    def debug(self):
+        return str(self.id)+" "+str(self.source)+" "+str(self.timestamp)+" "+str(self.command)+" "+str(self.length)+" "+self.content
         
     def toString(self):
         """Funckcja zwracajaca zapakowany pakiet."""
