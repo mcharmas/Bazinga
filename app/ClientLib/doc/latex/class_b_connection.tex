@@ -1,0 +1,152 @@
+\hypertarget{class_b_connection}{
+\section{Dokumentacja klasy BConnection}
+\label{class_b_connection}\index{BConnection@{BConnection}}
+}
+
+
+Klasa reprezentujaca polaczenie.  
+
+
+{\ttfamily \#include $<$bconnection.h$>$}\subsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_b_connection_a90dca3f0343427e31bb4544a8accf56d}{connected} (quint32 sessid)
+\begin{DoxyCompactList}\small\item\em Emitowany, gdy serwer wysle info o polaczeniu. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_connection_a20fa85863f4cb396d3141e01d4928fd4}{
+void \hyperlink{class_b_connection_a20fa85863f4cb396d3141e01d4928fd4}{disconnected} ()}
+\label{class_b_connection_a20fa85863f4cb396d3141e01d4928fd4}
+
+\begin{DoxyCompactList}\small\item\em Emitowany, gdy serwer wysle informacje o zerwaniu polaczenia. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_connection_ac9dfcf1eed50d5ac3636cb2256b208e9}{BConnection} (unsigned char clientType)
+\begin{DoxyCompactList}\small\item\em Konstruuje obiekt z ustawionym typem klienta. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_b_connection_a5a4985b2a3f559b448ce6660ba353acb}{isSessionAlive} ()
+\begin{DoxyCompactList}\small\item\em Sprawda czy sesja jest aktywna. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_b_connection_aac501a13f453169ed00bc3d4f8664040}{connect} (const QString \&serverAddress, quint16 serverPort, const QString \&login, const QString \&password, quint16 listeningPort, const QString \&token=QString())
+\begin{DoxyCompactList}\small\item\em Laczy z serwerem. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_b_connection_a9035d3ca3836f1c841e0f91327753f14}{disconnectFromHost} ()
+\begin{DoxyCompactList}\small\item\em Rozlacz sie z serwerem. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_b_connection_a53b6835b9124709e108913103049910b}{sendData} (\hyperlink{class_b_datagram}{BDatagram} \&data)
+\begin{DoxyCompactList}\small\item\em Wysyla przygotowany wczesniej datagram. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_b_connection_a77f411c1ec683bd571f41023609f2e7f}{sendData} (unsigned char command, QByteArray \&data)
+\begin{DoxyCompactList}\small\item\em Wysyla datagram z danymi. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_b_connection_ae6e720ac6a03bd3672ab440eb1e9b8c5}{sendData} (unsigned char command)
+\begin{DoxyCompactList}\small\item\em Wysyla pusty datagram. \item\end{DoxyCompactList}\item 
+\hyperlink{class_b_datagram}{BDatagram} $\ast$ \hyperlink{class_b_connection_a68fb4ff5ee98e5228378d08a2fe2ae19}{getData} ()
+\begin{DoxyCompactList}\small\item\em Odbierz datagram od serwera. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa reprezentujaca polaczenie. Obiekt po polaczeniu wysyla do serwera okresowo pakiet informujacy, ze jeszcze zyje. Odbieranie informacji wykonuje sie zawsze jawnie odpalajac \hyperlink{class_b_connection_a68fb4ff5ee98e5228378d08a2fe2ae19}{getData()}. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_b_connection_ac9dfcf1eed50d5ac3636cb2256b208e9}{
+\index{BConnection@{BConnection}!BConnection@{BConnection}}
+\index{BConnection@{BConnection}!BConnection@{BConnection}}
+\subsubsection[{BConnection}]{\setlength{\rightskip}{0pt plus 5cm}CLIENTLIBSHARED\_\-EXPORT BConnection::BConnection (unsigned char {\em clientType})}}
+\label{class_b_connection_ac9dfcf1eed50d5ac3636cb2256b208e9}
+
+
+Konstruuje obiekt z ustawionym typem klienta. 
+\begin{DoxyParams}{Parametry}
+\item[{\em clientType}]B\_\-SOURCE\_\-DRIVER albo B\_\-SOURCE\_\-APP \end{DoxyParams}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_b_connection_aac501a13f453169ed00bc3d4f8664040}{
+\index{BConnection@{BConnection}!connect@{connect}}
+\index{connect@{connect}!BConnection@{BConnection}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}void BConnection::connect (const QString \& {\em serverAddress}, \/  quint16 {\em serverPort}, \/  const QString \& {\em login}, \/  const QString \& {\em password}, \/  quint16 {\em listeningPort}, \/  const QString \& {\em token} = {\ttfamily QString()})}}
+\label{class_b_connection_aac501a13f453169ed00bc3d4f8664040}
+
+
+Laczy z serwerem. Binduje podany port (listeningPort), laczy sie z serwerem na podanym porcie, loguje na podstawie podanych danych (token moze byc pusty i nie podany)
+
+Wysyla serwerowi komunikat SREQ o tresci login:haslo:port:token lub login:haslo:port w zaleznosci od tego, czy token zostal podany.
+
+\begin{DoxyWarning}{Ostrzeżenie}
+Nie czeka na potwierdzenie serwera. Trzeba wywolac \hyperlink{class_b_connection_a68fb4ff5ee98e5228378d08a2fe2ae19}{getData()}, wtedy, jesli zostanie odebrane od serwera potwierdzenie zalogowania, obiekt polaczenia wyemituje sygnal \hyperlink{class_b_connection_a90dca3f0343427e31bb4544a8accf56d}{connected(quint32 sessid)}. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parametry}
+\item[{\em serverAddress}]adres serwera \item[{\em serverPort}]port serwera \item[{\em login}]login \item[{\em password}]haslo \item[{\em listeningPort}]port na ktorym driver bedzie nasluchiwal potwierdzen z serwera \item[{\em token}]token gry, parametr opcjonalny \end{DoxyParams}
+\hypertarget{class_b_connection_a90dca3f0343427e31bb4544a8accf56d}{
+\index{BConnection@{BConnection}!connected@{connected}}
+\index{connected@{connected}!BConnection@{BConnection}}
+\subsubsection[{connected}]{\setlength{\rightskip}{0pt plus 5cm}void BConnection::connected (quint32 {\em sessid})\hspace{0.3cm}{\ttfamily  \mbox{[}signal\mbox{]}}}}
+\label{class_b_connection_a90dca3f0343427e31bb4544a8accf56d}
+
+
+Emitowany, gdy serwer wysle info o polaczeniu. 
+\begin{DoxyParams}{Parametry}
+\item[{\em sessid}]id sesji \end{DoxyParams}
+\hypertarget{class_b_connection_a9035d3ca3836f1c841e0f91327753f14}{
+\index{BConnection@{BConnection}!disconnectFromHost@{disconnectFromHost}}
+\index{disconnectFromHost@{disconnectFromHost}!BConnection@{BConnection}}
+\subsubsection[{disconnectFromHost}]{\setlength{\rightskip}{0pt plus 5cm}void BConnection::disconnectFromHost ()}}
+\label{class_b_connection_a9035d3ca3836f1c841e0f91327753f14}
+
+
+Rozlacz sie z serwerem. Wysyla do serwera CLOSE i wylacza nasluchiwanie na porcie lokalnym. \hypertarget{class_b_connection_a68fb4ff5ee98e5228378d08a2fe2ae19}{
+\index{BConnection@{BConnection}!getData@{getData}}
+\index{getData@{getData}!BConnection@{BConnection}}
+\subsubsection[{getData}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BDatagram} $\ast$ BConnection::getData ()}}
+\label{class_b_connection_a68fb4ff5ee98e5228378d08a2fe2ae19}
+
+
+Odbierz datagram od serwera. Metoda wstepnie przetwarza pobrany pakiet. W zaleznosci od jego zawartosci moze: \begin{DoxyItemize}
+\item zwrocic datagram. \item rzucic wyjatkiem \hyperlink{class_b_connection_exception}{BConnectionException} z zawartoscia pakietu badz nie. \item zapisac sobie id sesji, wyemitowac sygnal \hyperlink{class_b_connection_a90dca3f0343427e31bb4544a8accf56d}{connected(quint32 sessid)} i zwrocic NULL. Od tego momentu zakladane jest, ze polaczenie zostalo nawiazane. \end{DoxyItemize}
+\hypertarget{class_b_connection_a5a4985b2a3f559b448ce6660ba353acb}{
+\index{BConnection@{BConnection}!isSessionAlive@{isSessionAlive}}
+\index{isSessionAlive@{isSessionAlive}!BConnection@{BConnection}}
+\subsubsection[{isSessionAlive}]{\setlength{\rightskip}{0pt plus 5cm}bool BConnection::isSessionAlive ()}}
+\label{class_b_connection_a5a4985b2a3f559b448ce6660ba353acb}
+
+
+Sprawda czy sesja jest aktywna. Technicznie sprowadza sie to do sprawdzenia czy sessid != 0.
+
+\begin{DoxyReturn}{Zwraca}
+true jesli sesja jest aktywna, false w przeciwnym przypadku. 
+\end{DoxyReturn}
+\hypertarget{class_b_connection_ae6e720ac6a03bd3672ab440eb1e9b8c5}{
+\index{BConnection@{BConnection}!sendData@{sendData}}
+\index{sendData@{sendData}!BConnection@{BConnection}}
+\subsubsection[{sendData}]{\setlength{\rightskip}{0pt plus 5cm}int BConnection::sendData (unsigned char {\em command})}}
+\label{class_b_connection_ae6e720ac6a03bd3672ab440eb1e9b8c5}
+
+
+Wysyla pusty datagram. jak w \hyperlink{class_b_connection_a77f411c1ec683bd571f41023609f2e7f}{sendData(unsigned char command, QByteArray \& data)} tylko ze wysyla sam naglowek.
+
+\begin{DoxyReturn}{Zwraca}
+status jak w QUDPSocket::writeDatagram(); 
+\end{DoxyReturn}
+\hypertarget{class_b_connection_a77f411c1ec683bd571f41023609f2e7f}{
+\index{BConnection@{BConnection}!sendData@{sendData}}
+\index{sendData@{sendData}!BConnection@{BConnection}}
+\subsubsection[{sendData}]{\setlength{\rightskip}{0pt plus 5cm}int BConnection::sendData (unsigned char {\em command}, \/  QByteArray \& {\em data})}}
+\label{class_b_connection_a77f411c1ec683bd571f41023609f2e7f}
+
+
+Wysyla datagram z danymi. Ustawia odpowiednio pole command i dane. Reszta jest pobierana z wlasciwosci tego obiektu.
+
+\begin{DoxyReturn}{Zwraca}
+status jak w QUDPSocket::writeDatagram(); 
+\end{DoxyReturn}
+\hypertarget{class_b_connection_a53b6835b9124709e108913103049910b}{
+\index{BConnection@{BConnection}!sendData@{sendData}}
+\index{sendData@{sendData}!BConnection@{BConnection}}
+\subsubsection[{sendData}]{\setlength{\rightskip}{0pt plus 5cm}int BConnection::sendData ({\bf BDatagram} \& {\em data})}}
+\label{class_b_connection_a53b6835b9124709e108913103049910b}
+
+
+Wysyla przygotowany wczesniej datagram. \begin{DoxyReturn}{Zwraca}
+status jak w QUDPSocket::writeDatagram(); 
+\end{DoxyReturn}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
+\item 
+bconnection.h\item 
+bconnection.cpp\end{DoxyCompactItemize}

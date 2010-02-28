@@ -1,0 +1,61 @@
+\contentsline {chapter}{\numberline {1}Indeks klas}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Lista klas}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Dokumentacja klas}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Dokumentacja klasy BConnection}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Dokumentacja konstruktora i destruktora}{4}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}BConnection}{4}{subsubsection.2.1.2.1}
+\contentsline {subsection}{\numberline {2.1.3}Dokumentacja funkcji sk\IeC {\l }adowych}{4}{subsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.3.1}connect}{4}{subsubsection.2.1.3.1}
+\contentsline {subsubsection}{\numberline {2.1.3.2}connected}{5}{subsubsection.2.1.3.2}
+\contentsline {subsubsection}{\numberline {2.1.3.3}disconnectFromHost}{5}{subsubsection.2.1.3.3}
+\contentsline {subsubsection}{\numberline {2.1.3.4}getData}{5}{subsubsection.2.1.3.4}
+\contentsline {subsubsection}{\numberline {2.1.3.5}isSessionAlive}{5}{subsubsection.2.1.3.5}
+\contentsline {subsubsection}{\numberline {2.1.3.6}sendData}{5}{subsubsection.2.1.3.6}
+\contentsline {subsubsection}{\numberline {2.1.3.7}sendData}{5}{subsubsection.2.1.3.7}
+\contentsline {subsubsection}{\numberline {2.1.3.8}sendData}{6}{subsubsection.2.1.3.8}
+\contentsline {section}{\numberline {2.2}Dokumentacja klasy BConnectionBlocker}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Dokumentacja funkcji sk\IeC {\l }adowych}{7}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}canConnect}{7}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2}canDisconnect}{7}{subsubsection.2.2.2.2}
+\contentsline {section}{\numberline {2.3}Dokumentacja klasy BConnectionException}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Dokumentacja funkcji sk\IeC {\l }adowych}{8}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1}getDatagram}{8}{subsubsection.2.3.2.1}
+\contentsline {subsubsection}{\numberline {2.3.2.2}toString}{8}{subsubsection.2.3.2.2}
+\contentsline {section}{\numberline {2.4}Dokumentacja klasy BConnectionWidget}{10}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Dokumentacja konstruktora i destruktora}{11}{subsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2.1}BConnectionWidget}{11}{subsubsection.2.4.2.1}
+\contentsline {subsection}{\numberline {2.4.3}Dokumentacja funkcji sk\IeC {\l }adowych}{11}{subsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.3.1}changeEvent}{11}{subsubsection.2.4.3.1}
+\contentsline {subsubsection}{\numberline {2.4.3.2}connectButtonClicked}{11}{subsubsection.2.4.3.2}
+\contentsline {subsubsection}{\numberline {2.4.3.3}serverConnected}{12}{subsubsection.2.4.3.3}
+\contentsline {subsubsection}{\numberline {2.4.3.4}serverDisconnected}{12}{subsubsection.2.4.3.4}
+\contentsline {subsubsection}{\numberline {2.4.3.5}setBlockerObject}{12}{subsubsection.2.4.3.5}
+\contentsline {subsubsection}{\numberline {2.4.3.6}setConnectionObject}{12}{subsubsection.2.4.3.6}
+\contentsline {subsubsection}{\numberline {2.4.3.7}setSettingsObject}{12}{subsubsection.2.4.3.7}
+\contentsline {subsubsection}{\numberline {2.4.3.8}setUseToken}{13}{subsubsection.2.4.3.8}
+\contentsline {subsubsection}{\numberline {2.4.3.9}throwException}{13}{subsubsection.2.4.3.9}
+\contentsline {section}{\numberline {2.5}Dokumentacja klasy BDatagram}{14}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{14}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Dokumentacja konstruktora i destruktora}{15}{subsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.2.1}BDatagram}{15}{subsubsection.2.5.2.1}
+\contentsline {section}{\numberline {2.6}Dokumentacja klasy BOb}{16}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{16}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Dokumentacja konstruktora i destruktora}{16}{subsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.2.1}BOb}{16}{subsubsection.2.6.2.1}
+\contentsline {subsection}{\numberline {2.6.3}Dokumentacja funkcji sk\IeC {\l }adowych}{17}{subsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.3.1}appendToArray}{17}{subsubsection.2.6.3.1}
+\contentsline {subsection}{\numberline {2.6.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{17}{subsection.2.6.4}
+\contentsline {subsubsection}{\numberline {2.6.4.1}height}{17}{subsubsection.2.6.4.1}
+\contentsline {subsubsection}{\numberline {2.6.4.2}width}{17}{subsubsection.2.6.4.2}
+\contentsline {subsubsection}{\numberline {2.6.4.3}x}{17}{subsubsection.2.6.4.3}
+\contentsline {subsubsection}{\numberline {2.6.4.4}y}{17}{subsubsection.2.6.4.4}
+\contentsline {section}{\numberline {2.7}Dokumentacja klasy BObList}{18}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{18}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Dokumentacja konstruktora i destruktora}{18}{subsection.2.7.2}
+\contentsline {subsubsection}{\numberline {2.7.2.1}BObList}{18}{subsubsection.2.7.2.1}
+\contentsline {subsection}{\numberline {2.7.3}Dokumentacja funkcji sk\IeC {\l }adowych}{18}{subsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.3.1}pack}{18}{subsubsection.2.7.3.1}

@@ -11,6 +11,7 @@
 	\li x i width musza byc rzutowane na przedzial 0-639
 	\li y i height musza byc rzutowane na przedzial 0-479
 
+	Technicznie kazda liczba reprezentowana jest jako 10 bitow unsigned.
   */
 class CLIENTLIBSHARED_EXPORT BOb
 {
@@ -40,7 +41,29 @@ public:
 	  */
 	void appendToArray(QByteArray & arr) const;
 
-	quint16 x, y, width, height;
+	/*! \brief Wspolrzedna X
+
+	  Wartosc musi byc z przedzialu 0-639.
+	  */
+	quint16 x;
+
+	/*! \brief Wspolrzedna Y
+
+	  Wartosc musi byc z przedzialu 0-479.
+	  */
+	quint16 y;
+
+	/*! \brief Szerokosc obiektu
+
+	  Wartosc musi byc z przedzialu 0-639.
+	  */
+	quint16 width;
+
+	/*! \brief Wysokosc obiektu
+
+	  Wartosc musi byc z przedzialu 0-479.
+	  */
+	quint16 height;
 };
 
 #endif // BOB_H

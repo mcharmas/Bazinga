@@ -8,7 +8,10 @@
 /*! \brief Blokuje albo zezwala na nawiazanie polaczenia w BConnectionWidget.
 
 	Klasa dziedziczaca moze zaimplementowac metody canConnect() i canDisconnect()
-	zeby zablokowac laczenie/rozlaczenie w wybranych przypadkach
+	zeby zablokowac laczenie/rozlaczenie w wybranych przypadkach.
+
+	Przydaje sie to, jesli chcemy, by widget nie pozwalal na polaczenie, jesli
+	np. nie zostaly ustawione wszystkie potrzebne parametry gry.
   */
 class CLIENTLIBSHARED_EXPORT BConnectionBlocker
 {

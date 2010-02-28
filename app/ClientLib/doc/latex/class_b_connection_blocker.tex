@@ -1,0 +1,55 @@
+\hypertarget{class_b_connection_blocker}{
+\section{Dokumentacja klasy BConnectionBlocker}
+\label{class_b_connection_blocker}\index{BConnectionBlocker@{BConnectionBlocker}}
+}
+
+
+Blokuje albo zezwala na nawiazanie polaczenia w \hyperlink{class_b_connection_widget}{BConnectionWidget}.  
+
+
+{\ttfamily \#include $<$bconnectionblocker.h$>$}\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_b_connection_blocker_a2ebcdef0e5570c7331036dd5b6ba4448}{canConnect} ()
+\begin{DoxyCompactList}\small\item\em Zezwala/zabrania nawiazanie polaczenia. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_b_connection_blocker_a81e8782c93ac1943a7e19b4ed7ced792}{canDisconnect} ()
+\begin{DoxyCompactList}\small\item\em Zezwala/zabrania zerwanie polaczenia. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_connection_blocker_adbf0d87dd3869926916e7bd956fbbc11}{
+virtual QString \hyperlink{class_b_connection_blocker_adbf0d87dd3869926916e7bd956fbbc11}{toString} ()}
+\label{class_b_connection_blocker_adbf0d87dd3869926916e7bd956fbbc11}
+
+\begin{DoxyCompactList}\small\item\em Zwraca komunikat ostatniego bledu. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Blokuje albo zezwala na nawiazanie polaczenia w \hyperlink{class_b_connection_widget}{BConnectionWidget}. Klasa dziedziczaca moze zaimplementowac metody \hyperlink{class_b_connection_blocker_a2ebcdef0e5570c7331036dd5b6ba4448}{canConnect()} i \hyperlink{class_b_connection_blocker_a81e8782c93ac1943a7e19b4ed7ced792}{canDisconnect()} zeby zablokowac laczenie/rozlaczenie w wybranych przypadkach.
+
+Przydaje sie to, jesli chcemy, by widget nie pozwalal na polaczenie, jesli np. nie zostaly ustawione wszystkie potrzebne parametry gry. 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_b_connection_blocker_a2ebcdef0e5570c7331036dd5b6ba4448}{
+\index{BConnectionBlocker@{BConnectionBlocker}!canConnect@{canConnect}}
+\index{canConnect@{canConnect}!BConnectionBlocker@{BConnectionBlocker}}
+\subsubsection[{canConnect}]{\setlength{\rightskip}{0pt plus 5cm}bool BConnectionBlocker::canConnect ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_b_connection_blocker_a2ebcdef0e5570c7331036dd5b6ba4448}
+
+
+Zezwala/zabrania nawiazanie polaczenia. \begin{DoxyReturn}{Zwraca}
+domyslna implementacja zwraca true 
+\end{DoxyReturn}
+\hypertarget{class_b_connection_blocker_a81e8782c93ac1943a7e19b4ed7ced792}{
+\index{BConnectionBlocker@{BConnectionBlocker}!canDisconnect@{canDisconnect}}
+\index{canDisconnect@{canDisconnect}!BConnectionBlocker@{BConnectionBlocker}}
+\subsubsection[{canDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool BConnectionBlocker::canDisconnect ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_b_connection_blocker_a81e8782c93ac1943a7e19b4ed7ced792}
+
+
+Zezwala/zabrania zerwanie polaczenia. \begin{DoxyReturn}{Zwraca}
+domyslna implementacja zwraca true 
+\end{DoxyReturn}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
+\item 
+bconnectionblocker.h\item 
+bconnectionblocker.cpp\end{DoxyCompactItemize}

@@ -9,8 +9,19 @@
 #  define CLIENTLIBSHARED_EXPORT Q_DECL_IMPORT
 #endif
 
+/*! \brief stala oznaczajaca zrodlo obiektow (driver).
+
+  uzywana w naglowku datagramu w polu source */
 #define B_SOURCE_DRIVER 0
+
+/*! \brief stala oznaczajaca aplikacje kliencka.
+
+  uzywana w naglowku datagramu w polu source */
 #define B_SOURCE_APP 1
+
+/*! \brief stala oznaczajaca serwer.
+
+  uzywana w naglowku datagramu w polu source */
 #define B_SOURCE_SERVER 2
 
 #define B_TYPE_SREQ 0

@@ -1,0 +1,81 @@
+\hypertarget{class_b_datagram}{
+\section{Dokumentacja klasy BDatagram}
+\label{class_b_datagram}\index{BDatagram@{BDatagram}}
+}
+
+
+Datagram zawierajacy generajuacy odpowiedenie naglowki.  
+
+
+{\ttfamily \#include $<$bdatagram.h$>$}\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_datagram_a6a687551e97a36b91c6a40a1c5a374ed}{BDatagram} (quint32 \hyperlink{class_b_datagram_ad77fa0aefd216480abe999e24f28dba6}{sessid}, unsigned char \hyperlink{class_b_datagram_a2e70a774059cddc0a5715850370bc1d9}{source}, quint32 \hyperlink{class_b_datagram_a1a0d1b7430e0e9d95cd9248b3499904f}{timestamp}, unsigned char \hyperlink{class_b_datagram_a3ae0b66921f9b51864beb65e5e03eeb9}{type}, QByteArray \&\hyperlink{class_b_datagram_a98d72aa468643e0179bbc02d6dbf388e}{data})
+\begin{DoxyCompactList}\small\item\em Tworzy obiekt na podstawie podanych parametrow. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_datagram_a63ed2c2ac245dec6a1179a3ac7ace1b6}{
+\hyperlink{class_b_datagram_a63ed2c2ac245dec6a1179a3ac7ace1b6}{BDatagram} (char $\ast$dataIn, int size)}
+\label{class_b_datagram_a63ed2c2ac245dec6a1179a3ac7ace1b6}
+
+\begin{DoxyCompactList}\small\item\em Tworzy obiekt z surowej tablicy bajtow o podanym rozmiarze. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_datagram_abf97808c5ae33d46feb4e2f1a920cb4f}{
+QByteArray $\ast$ \hyperlink{class_b_datagram_abf97808c5ae33d46feb4e2f1a920cb4f}{getAllData} ()}
+\label{class_b_datagram_abf97808c5ae33d46feb4e2f1a920cb4f}
+
+\begin{DoxyCompactList}\small\item\em Pobiera datagram gotowy do wyslania na serwer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_b_datagram_ad77fa0aefd216480abe999e24f28dba6}{
+quint32 \hyperlink{class_b_datagram_ad77fa0aefd216480abe999e24f28dba6}{sessid}}
+\label{class_b_datagram_ad77fa0aefd216480abe999e24f28dba6}
+
+\begin{DoxyCompactList}\small\item\em ID sesji, dopoki nie jest znany mozna wstawic 0. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_datagram_a2e70a774059cddc0a5715850370bc1d9}{
+unsigned char \hyperlink{class_b_datagram_a2e70a774059cddc0a5715850370bc1d9}{source}}
+\label{class_b_datagram_a2e70a774059cddc0a5715850370bc1d9}
+
+\begin{DoxyCompactList}\small\item\em Typ zrodla: B\_\-SOURCE\_\-APP, B\_\-SOURCE\_\-DRIVER lub B\_\-SOURCE\_\-SERVER. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_datagram_a1a0d1b7430e0e9d95cd9248b3499904f}{
+quint32 \hyperlink{class_b_datagram_a1a0d1b7430e0e9d95cd9248b3499904f}{timestamp}}
+\label{class_b_datagram_a1a0d1b7430e0e9d95cd9248b3499904f}
+
+\begin{DoxyCompactList}\small\item\em timestamp uniksowy. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_datagram_a3ae0b66921f9b51864beb65e5e03eeb9}{
+unsigned char \hyperlink{class_b_datagram_a3ae0b66921f9b51864beb65e5e03eeb9}{type}}
+\label{class_b_datagram_a3ae0b66921f9b51864beb65e5e03eeb9}
+
+\begin{DoxyCompactList}\small\item\em typ komunikatu. \item\end{DoxyCompactList}\item 
+\hypertarget{class_b_datagram_a98d72aa468643e0179bbc02d6dbf388e}{
+QByteArray \hyperlink{class_b_datagram_a98d72aa468643e0179bbc02d6dbf388e}{data}}
+\label{class_b_datagram_a98d72aa468643e0179bbc02d6dbf388e}
+
+\begin{DoxyCompactList}\small\item\em tablica danych \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Datagram zawierajacy generajuacy odpowiedenie naglowki. Oferuje bardzo podstawowa funkcjonalnosc. Obiekt ma dwa konstruktory dla wygody i metode \hyperlink{class_b_datagram_abf97808c5ae33d46feb4e2f1a920cb4f}{getAllData()} do wyciagania tablic typu QByteArray gotowych do wyslania (z odpowiednim naglowkiem).
+
+\begin{DoxyWarning}{Ostrzeżenie}
+Koduje liczby w kolejnosci bajtow little endian. Serwer jest na to przygotowany.
+\end{DoxyWarning}
+Naglowek sklada sie z: \begin{DoxyItemize}
+\item 4 bajty unsinged little endian -\/ ID sesji. \item 1 bajt unsinged -\/ typ zrodla. \item 4 bajty unsinged little endian -\/ timestamp. \item 1 bajt unsigned -\/ typ komunikatu, jedno z B\_\-TYPE\_\-$\ast$ \item 2 bajty unsinged little endian -\/ rozmiar danych. \end{DoxyItemize}
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_b_datagram_a6a687551e97a36b91c6a40a1c5a374ed}{
+\index{BDatagram@{BDatagram}!BDatagram@{BDatagram}}
+\index{BDatagram@{BDatagram}!BDatagram@{BDatagram}}
+\subsubsection[{BDatagram}]{\setlength{\rightskip}{0pt plus 5cm}BDatagram::BDatagram (quint32 {\em sessid}, \/  unsigned char {\em source}, \/  quint32 {\em timestamp}, \/  unsigned char {\em type}, \/  QByteArray \& {\em data})}}
+\label{class_b_datagram_a6a687551e97a36b91c6a40a1c5a374ed}
+
+
+Tworzy obiekt na podstawie podanych parametrow. 
+\begin{DoxyParams}{Parametry}
+\item[{\em sessid}]id sesji \item[{\em source}]typ zrolda \item[{\em timestamp}]timestamp uniksowy. \item[{\em type}]typ komunikatu. \item[{\em data}]tablica bajtow z danymi. \end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
+\item 
+bdatagram.h\item 
+bdatagram.cpp\end{DoxyCompactItemize}
