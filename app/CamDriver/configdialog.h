@@ -7,6 +7,7 @@
 #include <bconnection.h>
 #include <bconnectionblocker.h>
 #include <bconnectionwidget.h>
+#include <boblist.h>
 
 #include "cameranotconnectedblocker.h"
 #include "frameretreiver.h"

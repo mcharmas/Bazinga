@@ -1,12 +1,13 @@
 #ifndef POINTS_H
 #define POINTS_H
 
+#include <QObject>
+#include <boblist.h>
 #include "frameretreiver.h"
 
-class Points2 : public FrameRetreiver
+class Points2 : public QObject, public FrameRetreiver
 {
-private:
-
+	Q_OBJECT
 public:
     Points2(VideoInput* input);
     virtual ~Points2();
@@ -14,6 +15,9 @@ public:
     static void addPoint( int, int);
     static CvPoint pt;
     static int add_remove_pt;
+
+signals:
+	void bobjects(BObList * list);
 
 private:
     int count;

@@ -18,7 +18,10 @@ class CLIENTLIBSHARED_EXPORT BOb
 public:
 	/*! \brief Tworzy obiekt z podanych liczb
 	  */
-	BOb(quint16 x = 0, quint16 y = 0, quint16 width = 0, quint16 height = 0);
+	BOb(quint16 x, quint16 y, quint16 width, quint16 height);
+
+	/*! \brief Pusty konstruktor */
+	BOb();
 
 	/*! \brief Tworzy obiekt z danych w tablicy
 

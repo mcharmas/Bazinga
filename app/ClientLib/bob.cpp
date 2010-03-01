@@ -4,6 +4,9 @@ BOb::BOb(quint16 x, quint16 y, quint16 width, quint16 height)
 	: x(x), y(y), width(width), height(height)
 {}
 
+BOb::BOb() : x(0), y(0), width(0), height(0)
+{}
+
 BOb::BOb(QByteArray &arr, int offset)
 {
 	if(arr.size() < offset + 4 || offset < 0) {

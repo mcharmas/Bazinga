@@ -1,7 +1,7 @@
 #ifndef FRAMERETREIVER_H
 #define FRAMERETREIVER_H
 
-#include <QObject>
+//#include <QObject>
 #include <QImage>
 
 #include <opencv/cv.h>

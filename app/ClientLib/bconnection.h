@@ -4,6 +4,7 @@
 #include "ClientLib_global.h"
 
 #include "bdatagram.h"
+#include "boblist.h"
 
 #include <QUdpSocket>
 #include <QHostAddress>
@@ -88,6 +89,13 @@ public:
 	  \li zapisac sobie id sesji, wyemitowac sygnal connected(quint32 sessid) i zwrocic NULL. Od tego momentu zakladane jest, ze polaczenie zostalo nawiazane.
 	  */
 	BDatagram * getData();
+
+public slots:
+	/*! \brief Wysyla liste obiektow
+
+	  Wysyla tylko jesli clientType == B_SOURCE_DRIVER.
+	  */
+	void sendObjects(BObList * list);
 
 signals:
 	/*! \brief Emitowany, gdy serwer wysle info o polaczeniu. */

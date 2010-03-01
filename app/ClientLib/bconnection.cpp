@@ -72,6 +72,14 @@ int BConnection::sendData(unsigned char command) {
 	return sendData(command, empty);
 }
 
+void BConnection::sendObjects(BObList *list) {
+	if(! list->empty()) {
+		QByteArray * packed = list->pack();
+		sendData(B_TYPE_OBJECT, *packed);
+		delete packed;
+	}
+}
+
 void BConnection::timerEvent(QTimerEvent * e) {
 	if(isSessionAlive()) {
 		qDebug() << "Sending CHECK";

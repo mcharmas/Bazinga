@@ -25,12 +25,18 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 
 	ui->horizontalLayout->addWidget(&connectionWidget);
 
-	//readSettings();
-	startTimer(2000);
-
+	// qonnecty dla obiektu polaczenia
 	connect(&connection, SIGNAL(connected(quint32)), SLOT(serverConnected(quint32)));
 
+	// qonnecty dla widgetu polaczenia
 	connect(&connectionWidget, SIGNAL(throwException(BConnectionException*)), SLOT(catchException(BConnectionException*)));
+
+	// qonnecty dla obiektow emitujacych listy obiektow.
+	connect(&faceDetector, SIGNAL(bobjects(BObList*)), &connection, SLOT(sendObjects(BObList*)));
+	connect(&pointsDetector, SIGNAL(bobjects(BObList*)), &connection, SLOT(sendObjects(BObList*)));
+
+	//readSettings();
+	startTimer(2000);
 }
 
 ConfigDialog::~ConfigDialog()
