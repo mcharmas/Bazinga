@@ -28,6 +28,7 @@ private:
     bool active;
     char *status;
     int flags;
+	BObList bobs;
 
     CvSize currBuffsSize;
     CvPoint2D32f* points[2], *swap_points;

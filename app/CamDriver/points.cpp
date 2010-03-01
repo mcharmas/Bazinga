@@ -59,10 +59,13 @@ void Points2::checkSize(CvSize frameSize) {
 
 void Points2::retreiveFrame(cv::Mat & frame) {
 
+	bobs.clear();
+	double horizProp = (double) 640 / frame.cols;
+	double vertProp = (double) 480 / frame.rows;
+
     CvSize frameSize;
     frameSize.width = frame.size().width;
     frameSize.height = frame.size().height;
-
 
     checkSize(frameSize);
 
@@ -100,7 +103,9 @@ void Points2::retreiveFrame(cv::Mat & frame) {
 
             points[1][k++] = points[1][i];
             cv::circle( frame, cvPointFrom32f(points[1][i]), 3, CV_RGB(0,255,0), -1, 8,0);
-
+			bobs.append(BOb((quint16) (horizProp * points[1][i].x),
+							(quint16) (vertProp * points[1][i].y),
+							0,0));
         }
         count = k;
     }
@@ -121,4 +126,7 @@ void Points2::retreiveFrame(cv::Mat & frame) {
     CV_SWAP( prevPyramid, currPyramid, swapImage );
     CV_SWAP( points[0], points[1], swap_points );
     delete dupa;
+
+	if(!bobs.empty())
+		emit bobjects(&bobs);
 }
