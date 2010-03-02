@@ -105,7 +105,7 @@ void Points2::retreiveFrame(cv::Mat & frame) {
             cv::circle( frame, cvPointFrom32f(points[1][i]), 3, CV_RGB(0,255,0), -1, 8,0);
 			bobs.append(BOb((quint16) (horizProp * points[1][i].x),
 							(quint16) (vertProp * points[1][i].y),
-							0,0));
+							1,1));
         }
         count = k;
     }

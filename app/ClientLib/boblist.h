@@ -27,6 +27,8 @@ public:
 	  Tablica ma rozmiar ilosc obiektow * 5 bajtow.
 	  */
 	QByteArray * pack();
+
+	QString toString() const;
 };
 
 #endif // BOBLIST_H

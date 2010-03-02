@@ -95,7 +95,8 @@ void BConnectionWidget::on_connectButton_clicked()
 									(quint16) ui->serverPortBox->value(),
 									ui->loginEdit->text(),
 									ui->passwordEdit->text(),
-									(quint16) ui->localPortBox->value());
+									(quint16) ui->localPortBox->value(),
+									ui->tokenEdit->text());
 			} else {
 				if(blocker && ! blocker->canDisconnect())
 					throw new BConnectionException("Blocker blocked disconnecting: " + blocker->toString());
@@ -171,6 +172,7 @@ void BConnectionWidget::setConnectionObject(BConnection * connection) {
 void BConnectionWidget::setSettingsObject(QSettings *settings)
 {
 	this->settings = settings;
+	readSettings();
 }
 
 void BConnectionWidget::setBlockerObject(BConnectionBlocker *blocker)

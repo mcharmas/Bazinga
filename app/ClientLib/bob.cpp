@@ -1,4 +1,5 @@
 #include "bob.h"
+#include <QString>
 
 BOb::BOb(quint16 x, quint16 y, quint16 width, quint16 height)
 	: x(x), y(y), width(width), height(height)
@@ -12,11 +13,11 @@ BOb::BOb(QByteArray &arr, int offset)
 	if(arr.size() < offset + 4 || offset < 0) {
 		x = y = width = height = 0;
 	} else {
-		x = arr.at(offset);
-		y = arr.at(offset + 1);
-		width = arr.at(offset + 2);
-		height = arr.at(offset + 3);
-		int rest = arr.at(offset + 4);
+		x = (unsigned char) arr.at(offset);
+		y = (unsigned char) arr.at(offset + 1);
+		width = (unsigned char) arr.at(offset + 2);
+		height = (unsigned char) arr.at(offset + 3);
+		unsigned int rest = (unsigned char) arr.at(offset + 4);
 
 		/* 3 to binarnie 11, przesuwamy jako maske do wyciagania
 		   kolejnych bitow po 2.
@@ -51,4 +52,9 @@ void BOb::appendToArray(QByteArray &arr) const
 	arrayTmp[4] = rest & 0xff;
 
 	arr.append(arrayTmp, 5);
+}
+
+QString BOb::toString() const
+{
+	return QString("[%1 %2 : %3 %4]").arg(x).arg(y).arg(width).arg(height);
 }

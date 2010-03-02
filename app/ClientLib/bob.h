@@ -44,6 +44,9 @@ public:
 	  */
 	void appendToArray(QByteArray & arr) const;
 
+
+	QString toString() const;
+
 	/*! \brief Wspolrzedna X
 
 	  Wartosc musi byc z przedzialu 0-639.

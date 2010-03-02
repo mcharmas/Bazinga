@@ -1,5 +1,6 @@
 #include "boblist.h"
 #include <QListIterator>
+#include <QString>
 
 BObList::BObList()
 {
@@ -23,4 +24,13 @@ QByteArray * BObList::pack()
 		it.next().appendToArray(*array);
 	}
 	return array;
+}
+
+QString BObList::toString() const {
+	QString tmp;
+	QListIterator<BOb> it(*this);
+	while(it.hasNext()) {
+		tmp += it.next().toString() + ", ";
+	}
+	return tmp;
 }

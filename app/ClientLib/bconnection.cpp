@@ -73,7 +73,8 @@ int BConnection::sendData(unsigned char command) {
 }
 
 void BConnection::sendObjects(BObList *list) {
-	if(! list->empty()) {
+	if(list && ! list->empty()) {
+		qDebug() << list->toString();
 		QByteArray * packed = list->pack();
 		sendData(B_TYPE_OBJECT, *packed);
 		delete packed;
