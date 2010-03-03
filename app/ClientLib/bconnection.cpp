@@ -6,7 +6,7 @@
 #include <QDebug>
 
 CLIENTLIBSHARED_EXPORT BConnection::BConnection(unsigned char clientType)
-	: sessid(0), clientType(clientType)
+	: sessid(0), clientType(clientType), confirmed(false)
 {
 	startTimer(B_INTERVAL_ACK_MS);
 }
@@ -83,8 +83,15 @@ void BConnection::sendObjects(BObList *list) {
 
 void BConnection::timerEvent(QTimerEvent * e) {
 	if(isSessionAlive()) {
-		qDebug() << "Sending CHECK";
-		sendData(B_TYPE_CHECK);
+		if(confirmed) {
+			qDebug() << "Sending CHECK";
+			sendData(B_TYPE_CHECK);
+			confirmed = false;
+		} else {
+			qDebug() << "Server lost.";
+			//disconnectFromHost();
+			//emit disconnected();
+		}
 	}
 }
 
@@ -123,6 +130,7 @@ BDatagram * BConnection::getData() {
 					if(this->sessid == 0 && datagram->sessid != 0) {
 						qDebug() << "Logged in. Got session ID: " << datagram->sessid;
 						sessid = datagram->sessid;
+						confirmed = true;
 						delete datagram;
 						emit connected(sessid);
 					} else if(datagram->sessid == 0) {
@@ -135,17 +143,24 @@ BDatagram * BConnection::getData() {
 
   case B_TYPE_SDEN:
 					sessid = 0;
+					confirmed = false;
 					delete datagram;
-					emit disconnectFromHost();
+					disconnectFromHost();
+					emit disconnected();
 //					throw new BConnectionException("Server disconnected.");
 					break;
-
+	case B_TYPE_CONFIRM:
+					delete datagram;
+					confirmed = true;
+					qDebug() << "GOT CONFIRM";
+					break;
   case B_TYPE_ERROR:
 					throw new BConnectionException("ERROR", datagram);
 					break;
 
 	case B_TYPE_OBJECT:
 			default:
+					confirmed = true;
 					return datagram;
 				}
 			}

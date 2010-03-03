@@ -21,7 +21,7 @@ public:
 
 	/*! \brief Konstruuje obiekt z ustawionym typem klienta.
 	  */
-	BConnection(unsigned char clientType /*!< B_SOURCE_DRIVER albo B_SOURCE_APP */);
+	BConnection(unsigned char clientType = B_SOURCE_APP /*!< B_SOURCE_DRIVER albo B_SOURCE_APP */);
 
 	/*! \brief Sprawda czy sesja jest aktywna
 
@@ -123,6 +123,7 @@ private:
 	QUdpSocket socket;
 	quint32 sessid;
 	unsigned char clientType;
+	bool confirmed;
 };
 
 #endif // BCONNECTION_H
