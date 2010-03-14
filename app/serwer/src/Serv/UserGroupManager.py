@@ -41,6 +41,12 @@ class UserGroupManager:
             return id
         return None
     
+    def driverSessionExists(self, id1):
+        for id2, host in self.drivers.values():
+            if id2 == id1:
+                return host
+        return False
+    
     def addUser(self, user, token):
         """Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje."""
         Logger.log(self.name, "addUser", "Dodaje usera: "+user.login+" do grupy:"+token)        

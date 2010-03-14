@@ -39,7 +39,11 @@ class Parser:
             elif p.source == Sources.APPLICATION:
                 self.loginApplication(p, client)
         elif p.command == Communicates.CHECK:
-            self.check(p, client)
+            if p.source == Sources.DRIVER:
+                self.checkDriver(p, client)
+            elif p.source == Sources.APPLICATION:
+                self.checkApplication(p, client)
+            #self.check(p, client)
         elif p.command == Communicates.CLOSE:
             self.close(p, client)
         elif p.command == Communicates.OBJECT or p.command == Communicates.OTHER:
@@ -111,7 +115,6 @@ class Parser:
                 sid = self.groupManager.addUser(u, token)
                 p = Packet.packetFromContent(sid, Sources.SERVER, 0, Communicates.SACK, str(sid)).toString()
                 u.sendData(p)
-                u.sendDataToDriver(p)
             else:
                 #moze jest juz zalogowany?
                 id = self.groupManager.getUserByLogin(user)
@@ -129,21 +132,33 @@ class Parser:
                 p = Packet.packetFromContent(0, Sources.SERVER, 0, Communicates.SDEN, "BAD CREDENTIALS").toString()
                 u.sendData(p)
 
+    def checkDriver(self, packet, client):
+        """ASDF, Szymon napisal, Szymon wie co to robi, pytac Szymona"""
+        Logger.log(self.classname, "checkDriver", "Dostalem request do synchronizacji sesji drivera.")
+        dhost = self.groupManager.driverSessionExists(packet.id)
+        p = None
+        if dhost:
+            Logger.log(self.classname, "checkDriver", "Odsylam driverowi CONFIRM")
+            p = Packet.packetFromContent(packet.id, Sources.SERVER, 0, Communicates.CONFIRM, "").toString()
+            h = dhost
+            self.dataSenderSocket.sendto(p, dhost)
+        else:
+            self.checkApplication(packet, client)
+        
     
-    
-    def check(self, packet, client):
+    def checkApplication(self, packet, client):
         """Obsluguje rzadnie check. Aktualizuje klienta w grupie zeby potwierdzic ciaglosc polaczenia oraz odsyla confirm do klienta."""
-        Logger.log(self.classname, "check", "Dostalem request do synchronizacji sesji.")
+        Logger.log(self.classname, "check", "Dostalem request do synchronizacji sesji klienta.")
         
         u = self.groupManager.getUser(packet.id)
         if u:
             u.update()
             p = Packet.packetFromContent(packet.id, Sources.SERVER, 0, Communicates.CONFIRM, "")
             u.sendData(p.toString())
+            u.sendDataToDriver(p.toString())
             Logger.log(self.classname, "check", "Zupdatowalem i wyslalem confirma...")
         else:     
             Logger.log(self.classname, "check", "Ups... nie ma takiego  klienta.")
-        
     
     def close(self, packet, client):
         """Konczy sesje z uzytkownikiem usuwajac go rowniez z grupy."""

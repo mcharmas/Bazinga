@@ -74,7 +74,7 @@ int BConnection::sendData(unsigned char command) {
 
 void BConnection::sendObjects(BObList *list) {
 	if(list && ! list->empty()) {
-		qDebug() << list->toString();
+                //qDebug() << list->toString();
 		QByteArray * packed = list->pack();
 		sendData(B_TYPE_OBJECT, *packed);
 		delete packed;
@@ -89,8 +89,8 @@ void BConnection::timerEvent(QTimerEvent * e) {
 			confirmed = false;
 		} else {
 			qDebug() << "Server lost.";
-			//disconnectFromHost();
-			//emit disconnected();
+			disconnectFromHost();
+			emit disconnected();
 		}
 	}
 }
@@ -134,8 +134,10 @@ BDatagram * BConnection::getData() {
 						delete datagram;
 						emit connected(sessid);
 					} else if(datagram->sessid == 0) {
-						throw new BConnectionException("Session ID 0? WTF.");
-					}else {
+						throw new BConnectionException("ACK with session ID 0? WTF.");
+					} else if(datagram->sessid == this->sessid) {
+						// ok
+					} else {
 						delete datagram;
 						throw new BConnectionException("Someone tried to inject different sessionid");
 					}
