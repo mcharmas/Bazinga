@@ -24,10 +24,9 @@ void IdiotWindow::timerEvent(QTimerEvent *ev) {
 		datagram = connection.getData();
 
 		if(datagram) {
-			BObList bobjects(datagram->data);
-			ui->imageWidget->bobs = bobjects;
+			BObList * bobjects = new BObList(datagram->data);
+			ui->imageWidget->setBObs(datagram->sessid, bobjects);
 			ui->imageWidget->update();
-			qDebug() << bobjects.toString();
 			delete datagram;
 		}
 	} catch (BConnectionException *e) {

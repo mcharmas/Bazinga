@@ -164,7 +164,9 @@ class Parser:
         """Konczy sesje z uzytkownikiem usuwajac go rowniez z grupy."""
         Logger.log(self.classname, "close", "Dostalem request do zakonczenia sesji.")
         try:
-            self.groupManager.getUser(packet.id).group.delUser(self.groupManager.getUser(packet.id)) #to jest brzyyyyyyydkie
+            u = self.groupManager.getUser(packet.id)
+            if u:
+                u.group.delUser(self.groupManager.getUser(packet.id)) #to jest brzyyyyyyydkie
         except KeyError:
             Logger.log(self.classname, "close", "UPS Najwyrazniej nie ma takiego  klienta.")
         Logger.log(self.classname, "close", "I po krzyku.")
