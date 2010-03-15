@@ -2,6 +2,15 @@
 \section{Dokumentacja klasy Faces}
 \label{class_faces}\index{Faces@{Faces}}
 }
+
+
+Wykrywa twarze.  
+
+
+
+
+{\ttfamily \#include $<$faces.h$>$}
+
 Diagram dziedziczenia dla Faces\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,23 +21,39 @@ Diagram dziedziczenia dla Faces\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{class_faces_a92e42ecfad99d9e0766b569b562b86ba}{
-void {\bfseries bobjects} (BObList $\ast$list)}
+void \hyperlink{class_faces_a92e42ecfad99d9e0766b569b562b86ba}{bobjects} (BObList $\ast$list)}
 \label{class_faces_a92e42ecfad99d9e0766b569b562b86ba}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em emituje obiekty typu BOb \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{class_faces_a65ba31b6180506d6815f773365883a80}{
-{\bfseries Faces} (\hyperlink{class_video_input}{VideoInput} $\ast$input)}
+\hyperlink{class_faces_a65ba31b6180506d6815f773365883a80}{Faces} (\hyperlink{class_video_input}{VideoInput} $\ast$input)}
 \label{class_faces_a65ba31b6180506d6815f773365883a80}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Pobieraj z danego wejścia. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_faces_a7fd92e73e117b72898097551b964fd96}{retreiveFrame} (cv::Mat \&)
+\begin{DoxyCompactList}\small\item\em Odbiera ramkę jako cv::Mat. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Wykrywa twarze. 
+
+\subsection{Dokumentacja funkcji składowych}
 \hypertarget{class_faces_a7fd92e73e117b72898097551b964fd96}{
-void {\bfseries retreiveFrame} (cv::Mat \&)}
+\index{Faces@{Faces}!retreiveFrame@{retreiveFrame}}
+\index{retreiveFrame@{retreiveFrame}!Faces@{Faces}}
+\subsubsection[{retreiveFrame}]{\setlength{\rightskip}{0pt plus 5cm}void Faces::retreiveFrame (cv::Mat \& {\em mat})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
 \label{class_faces_a7fd92e73e117b72898097551b964fd96}
 
-\end{DoxyCompactItemize}
+
+Odbiera ramkę jako cv::Mat. 
+
+do samodzielnej implementacji 
+
+Reimplementowana z \hyperlink{class_frame_retreiver_a72912583af45c00d267f215a0d0b9bb1}{FrameRetreiver}.
+
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}

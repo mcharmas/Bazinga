@@ -77,7 +77,6 @@ unsigned long VideoInput::getSleepUTime() {
 
 void VideoInput::addObserver(FrameRetreiver * ft) {
 	observersMutex.lock();
-	//observers.append(ft);
 	observers.prepend(ft);
 	observersMutex.unlock();
 }

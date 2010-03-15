@@ -20,39 +20,118 @@
     <ul>
       <li><a href="annotated.html"><span>Lista&nbsp;klas</span></a></li>
       <li><a href="hierarchy.html"><span>Hierarchia&nbsp;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&nbsp;klas</span></a></li>
     </ul>
   </div>
 </div>
 <div class="contents">
 <h1>Dokumentacja klasy VideoInput</h1><!-- doxytag: class="VideoInput" -->
+<p>Klasa przechwytująca obraz z kamerki.  
+<a href="#_details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="videoinput_8h_source.html">videoinput.h</a>&gt;</code></p>
+
 <p><a href="class_video_input-members.html">Lista wszystkich składowych.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Sloty publiczne</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78e2d773100160be101d3c48ecdfb910"></a><!-- doxytag: member="VideoInput::safelyStop" ref="a78e2d773100160be101d3c48ecdfb910" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>safelyStop</b> ()</td></tr>
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#a78e2d773100160be101d3c48ecdfb910">safelyStop</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">bezpiecznie wyłącz pobieranie obrazu i poczekaj <br/></td></tr>
 <tr><td colspan="2"><h2>Metody publiczne</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a136409a2c510d131dd25b00796ebb9a6"></a><!-- doxytag: member="VideoInput::VideoInput" ref="a136409a2c510d131dd25b00796ebb9a6" args="(int frameRate)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>VideoInput</b> (int frameRate)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2370a0c1ea0d4b1ce36c2f9678530a4"></a><!-- doxytag: member="VideoInput::addObserver" ref="ac2370a0c1ea0d4b1ce36c2f9678530a4" args="(FrameRetreiver *)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>addObserver</b> (<a class="el" href="class_frame_retreiver.html">FrameRetreiver</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#a136409a2c510d131dd25b00796ebb9a6">VideoInput</a> (int frameRate)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor.  <a href="#a136409a2c510d131dd25b00796ebb9a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#ac2370a0c1ea0d4b1ce36c2f9678530a4">addObserver</a> (<a class="el" href="class_frame_retreiver.html">FrameRetreiver</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dodaj obserwatora.  <a href="#ac2370a0c1ea0d4b1ce36c2f9678530a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc3bab19893d3e49284ab8b8101b9d1f"></a><!-- doxytag: member="VideoInput::delObserver" ref="afc3bab19893d3e49284ab8b8101b9d1f" args="(FrameRetreiver *)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>delObserver</b> (<a class="el" href="class_frame_retreiver.html">FrameRetreiver</a> *)</td></tr>
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#afc3bab19893d3e49284ab8b8101b9d1f">delObserver</a> (<a class="el" href="class_frame_retreiver.html">FrameRetreiver</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wywal obserwatora. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a498cc39dce8940616e9d1811953bf920"></a><!-- doxytag: member="VideoInput::setFrameRate" ref="a498cc39dce8940616e9d1811953bf920" args="(float frameRate)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setFrameRate</b> (float frameRate)</td></tr>
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#a498cc39dce8940616e9d1811953bf920">setFrameRate</a> (float frameRate)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ustaw frame rate <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa172de34ebd4e1f1e7c63548fb406f39"></a><!-- doxytag: member="VideoInput::getFrameRate" ref="aa172de34ebd4e1f1e7c63548fb406f39" args="()" -->
-float&nbsp;</td><td class="memItemRight" valign="bottom"><b>getFrameRate</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95deb1fbd0ab027a4208b7432dedcdc9"></a><!-- doxytag: member="VideoInput::getSleepUTime" ref="a95deb1fbd0ab027a4208b7432dedcdc9" args="()" -->
-unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><b>getSleepUTime</b> ()</td></tr>
+float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#aa172de34ebd4e1f1e7c63548fb406f39">getFrameRate</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">pobierz frame rate <br/></td></tr>
 <tr><td colspan="2"><h2>Metody chronione</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a653a4568756629a94a3b6e2697973864"></a><!-- doxytag: member="VideoInput::run" ref="a653a4568756629a94a3b6e2697973864" args="()" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_video_input.html#a653a4568756629a94a3b6e2697973864">run</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">zreimlementowane z QThread  <a href="#a653a4568756629a94a3b6e2697973864"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Opis szczegółowy</h2>
+<p>Klasa przechwytująca obraz z kamerki. </p>
+<hr/><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" id="a136409a2c510d131dd25b00796ebb9a6"></a><!-- doxytag: member="VideoInput::VideoInput" ref="a136409a2c510d131dd25b00796ebb9a6" args="(int frameRate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VideoInput::VideoInput </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>frameRate</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Konstruktor. </p>
+<dl><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>frameRate</em>&nbsp;</td><td>ustaw początkowy framerate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="ac2370a0c1ea0d4b1ce36c2f9678530a4"></a><!-- doxytag: member="VideoInput::addObserver" ref="ac2370a0c1ea0d4b1ce36c2f9678530a4" args="(FrameRetreiver *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoInput::addObserver </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_frame_retreiver.html">FrameRetreiver</a> *&nbsp;</td>
+          <td class="paramname"> <em>ft</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Dodaj obserwatora. </p>
+<p>Dodaje na początek listy. Na każdym obserwatorze zostaną wywołane metody obie <a class="el" href="class_frame_retreiver.html#a061c97e43f3b73705903e49afad3e5bf" title="Odbiera ramkę jako QImage.">FrameRetreiver::retreiveFrame()</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a653a4568756629a94a3b6e2697973864"></a><!-- doxytag: member="VideoInput::run" ref="a653a4568756629a94a3b6e2697973864" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoInput::run </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>zreimlementowane z QThread </p>
+<p>Zawiera pętlę, w której pobierany jest obraz. </p>
+
+</div>
+</div>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
 <li><a class="el" href="videoinput_8h_source.html">videoinput.h</a></li>
 <li>videoinput.cpp</li>
 </ul>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Wygenerowano Mon Mar 15 20:17:17 2010 dla Bazinga Camera Driver programem&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Wygenerowano Mon Mar 15 22:10:05 2010 dla Bazinga Camera Driver programem&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

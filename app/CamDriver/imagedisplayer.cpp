@@ -4,7 +4,6 @@
 
 void ImageDisplayer::commonSetup() {
 	this->setAttribute(Qt::WA_OpaquePaintEvent, true);
-	//this->startTimer(40);
 }
 
 ImageDisplayer::ImageDisplayer() : image(0)
@@ -35,8 +34,4 @@ void ImageDisplayer::paintEvent(QPaintEvent * e) {
 		QPainter paint(this);
 		paint.drawImage(e->rect(), *image);
 	}
-}
-
-void ImageDisplayer::timerEvent(QTimerEvent * e) {
-	//this->update();
 }

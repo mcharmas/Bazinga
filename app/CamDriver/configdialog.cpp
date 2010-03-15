@@ -14,7 +14,6 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 	ui(new Ui::ConfigDialog),
 	vin(NULL),
 	faceDetector(NULL),
-	quadranglesDetector(NULL),
 	pointsDetector(NULL),
 	connection(B_SOURCE_DRIVER),
 	settings(),
@@ -51,9 +50,8 @@ ConfigDialog::~ConfigDialog()
 }
 
 void ConfigDialog::connectCamera() {
-	//disconnectCamera();
 	if(!vin) {
-		vin = new VideoInput(25); // todo ustawianie framerate
+		vin = new VideoInput(25);
 		vin->addObserver(this);
 		vin->start();
 	}
@@ -102,17 +100,6 @@ void ConfigDialog::on_facesCheckBox_toggled(bool checked)
 			vin->delObserver(&faceDetector);
 		}
 	}
-}
-
-void ConfigDialog::on_quadrangleCheckBox_toggled(bool checked)
-{
-    if(vin) {
-		if(checked) {
-			vin->addObserver(&quadranglesDetector);
-		} else {
-			vin->delObserver(&quadranglesDetector);
-		}
-    }
 }
 
 void ConfigDialog::on_pointsCheckBox_toggled(bool checked)

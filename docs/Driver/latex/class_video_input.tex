@@ -2,56 +2,90 @@
 \section{Dokumentacja klasy VideoInput}
 \label{class_video_input}\index{VideoInput@{VideoInput}}
 }
+
+
+Klasa przechwytująca obraz z kamerki.  
+
+
+
+
+{\ttfamily \#include $<$videoinput.h$>$}
+
 \subsection*{Sloty publiczne}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{class_video_input_a78e2d773100160be101d3c48ecdfb910}{
-void {\bfseries safelyStop} ()}
+void \hyperlink{class_video_input_a78e2d773100160be101d3c48ecdfb910}{safelyStop} ()}
 \label{class_video_input_a78e2d773100160be101d3c48ecdfb910}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em bezpiecznie wyłącz pobieranie obrazu i poczekaj \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_video_input_a136409a2c510d131dd25b00796ebb9a6}{
-{\bfseries VideoInput} (int frameRate)}
-\label{class_video_input_a136409a2c510d131dd25b00796ebb9a6}
-
-\item 
-\hypertarget{class_video_input_ac2370a0c1ea0d4b1ce36c2f9678530a4}{
-void {\bfseries addObserver} (\hyperlink{class_frame_retreiver}{FrameRetreiver} $\ast$)}
-\label{class_video_input_ac2370a0c1ea0d4b1ce36c2f9678530a4}
-
-\item 
+\hyperlink{class_video_input_a136409a2c510d131dd25b00796ebb9a6}{VideoInput} (int frameRate)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_video_input_ac2370a0c1ea0d4b1ce36c2f9678530a4}{addObserver} (\hyperlink{class_frame_retreiver}{FrameRetreiver} $\ast$)
+\begin{DoxyCompactList}\small\item\em Dodaj obserwatora. \item\end{DoxyCompactList}\item 
 \hypertarget{class_video_input_afc3bab19893d3e49284ab8b8101b9d1f}{
-void {\bfseries delObserver} (\hyperlink{class_frame_retreiver}{FrameRetreiver} $\ast$)}
+void \hyperlink{class_video_input_afc3bab19893d3e49284ab8b8101b9d1f}{delObserver} (\hyperlink{class_frame_retreiver}{FrameRetreiver} $\ast$)}
 \label{class_video_input_afc3bab19893d3e49284ab8b8101b9d1f}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Wywal obserwatora. \item\end{DoxyCompactList}\item 
 \hypertarget{class_video_input_a498cc39dce8940616e9d1811953bf920}{
-void {\bfseries setFrameRate} (float frameRate)}
+void \hyperlink{class_video_input_a498cc39dce8940616e9d1811953bf920}{setFrameRate} (float frameRate)}
 \label{class_video_input_a498cc39dce8940616e9d1811953bf920}
 
-\item 
+\begin{DoxyCompactList}\small\item\em ustaw frame rate \item\end{DoxyCompactList}\item 
 \hypertarget{class_video_input_aa172de34ebd4e1f1e7c63548fb406f39}{
-float {\bfseries getFrameRate} ()}
+float \hyperlink{class_video_input_aa172de34ebd4e1f1e7c63548fb406f39}{getFrameRate} ()}
 \label{class_video_input_aa172de34ebd4e1f1e7c63548fb406f39}
 
-\item 
-\hypertarget{class_video_input_a95deb1fbd0ab027a4208b7432dedcdc9}{
-unsigned long {\bfseries getSleepUTime} ()}
-\label{class_video_input_a95deb1fbd0ab027a4208b7432dedcdc9}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em pobierz frame rate \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_video_input_a653a4568756629a94a3b6e2697973864}{
-virtual void {\bfseries run} ()}
+virtual void \hyperlink{class_video_input_a653a4568756629a94a3b6e2697973864}{run} ()
+\begin{DoxyCompactList}\small\item\em zreimlementowane z QThread \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa przechwytująca obraz z kamerki. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_video_input_a136409a2c510d131dd25b00796ebb9a6}{
+\index{VideoInput@{VideoInput}!VideoInput@{VideoInput}}
+\index{VideoInput@{VideoInput}!VideoInput@{VideoInput}}
+\subsubsection[{VideoInput}]{\setlength{\rightskip}{0pt plus 5cm}VideoInput::VideoInput (int {\em frameRate})}}
+\label{class_video_input_a136409a2c510d131dd25b00796ebb9a6}
+
+
+Konstruktor. 
+
+
+\begin{DoxyParams}{Parametry}
+\item[{\em frameRate}]ustaw początkowy framerate \end{DoxyParams}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_video_input_ac2370a0c1ea0d4b1ce36c2f9678530a4}{
+\index{VideoInput@{VideoInput}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!VideoInput@{VideoInput}}
+\subsubsection[{addObserver}]{\setlength{\rightskip}{0pt plus 5cm}void VideoInput::addObserver ({\bf FrameRetreiver} $\ast$ {\em ft})}}
+\label{class_video_input_ac2370a0c1ea0d4b1ce36c2f9678530a4}
+
+
+Dodaj obserwatora. 
+
+Dodaje na początek listy. Na każdym obserwatorze zostaną wywołane metody obie \hyperlink{class_frame_retreiver_a061c97e43f3b73705903e49afad3e5bf}{FrameRetreiver::retreiveFrame()} \hypertarget{class_video_input_a653a4568756629a94a3b6e2697973864}{
+\index{VideoInput@{VideoInput}!run@{run}}
+\index{run@{run}!VideoInput@{VideoInput}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void VideoInput::run ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
 \label{class_video_input_a653a4568756629a94a3b6e2697973864}
 
-\end{DoxyCompactItemize}
 
+zreimlementowane z QThread 
+
+Zawiera pętlę, w której pobierany jest obraz. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
 \item 

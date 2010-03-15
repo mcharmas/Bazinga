@@ -11,26 +11,47 @@
 
 class FrameRetreiver;
 
+/*! \brief Klasa przechwytująca obraz z kamerki */
 class VideoInput : public QThread
 {
 	Q_OBJECT
 public:
+	/*! \brief Konstruktor
+
+	  @param frameRate ustaw początkowy framerate */
 	VideoInput(int frameRate);
 	virtual ~VideoInput();
+
+	/*! \brief Dodaj obserwatora
+
+	  Dodaje na początek listy.
+	  Na każdym obserwatorze zostaną wywołane metody obie FrameRetreiver::retreiveFrame() */
 	void addObserver(FrameRetreiver *);
+
+	/*! \brief Wywal obserwatora */
 	void delObserver(FrameRetreiver *);
+
+	/*! \brief ustaw frame rate */
 	void setFrameRate(float frameRate);
+
+	/*! \brief pobierz frame rate */
 	float getFrameRate();
-	unsigned long getSleepUTime();
 
 public slots:
+	/*! \brief bezpiecznie wyłącz pobieranie obrazu i poczekaj */
 	void safelyStop();
 
 protected:
+	/*! \brief zreimlementowane z QThread
+
+	  Zawiera pętlę, w której pobierany jest obraz.
+	*/
 	virtual void run();
 
 private:
 	void getFrame();
+
+	unsigned long getSleepUTime();
 
 	cv::VideoCapture vid;
 	cv::Mat frame;

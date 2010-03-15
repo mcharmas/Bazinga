@@ -10,7 +10,6 @@ SOURCES += main.cpp \
     frameretreiver.cpp \
     imagedisplayer.cpp \
     faces.cpp \
-    quadrangles.cpp \
     points.cpp \
     cameranotconnectedblocker.cpp
 HEADERS += configdialog.h \
@@ -18,7 +17,6 @@ HEADERS += configdialog.h \
     frameretreiver.h \
     imagedisplayer.h \
     faces.h \
-    quadrangles.h \
     points.h \
     cameranotconnectedblocker.h
 FORMS += configdialog.ui

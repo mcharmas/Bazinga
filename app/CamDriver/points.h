@@ -5,18 +5,25 @@
 #include <boblist.h>
 #include "frameretreiver.h"
 
+/*! \brief Klasa śledząca zdefiniowane przez użytkownika punkty */
 class Points2 : public QObject, public FrameRetreiver
 {
 	Q_OBJECT
 public:
+	//! Tworzy obiekt pobierający z wejścia input
     Points2(VideoInput* input);
     virtual ~Points2();
     void retreiveFrame(cv::Mat &);
+
+	//! \brief Dodaj punkt do śledzenia
     static void addPoint( int, int);
+	//! \brief Radek, pochwal się do czego to służy
     static CvPoint pt;
+	//! \brief Radek, pochwal się do czego to służy
     static int add_remove_pt;
 
 signals:
+	//! \brief emituje listę wykrytych obiektów
 	void bobjects(BObList * list);
 
 private:
