@@ -21,7 +21,6 @@ BConnectionWidget::BConnectionWidget(QWidget *parent, BConnection *connection,
 
 BConnectionWidget::~BConnectionWidget()
 {
-	saveSettings();
     delete ui;
 }
 
@@ -31,14 +30,14 @@ void BConnectionWidget::on_savePasswordCheck_toggled(bool checked)
 void BConnectionWidget::readSettings() {
 	if(settings) {
 		ui->loginEdit->setText(settings->value("user/login", "cat").toString());
-		ui->localPortBox->setValue(settings->value("user/port", 1501).toInt());
+		ui->localPortBox->setValue(settings->value("user/port", 1501 + useToken).toInt());
 
 		if(useToken) {
 			ui->tokenEdit->setText(settings->value("user/token", "dog").toString());
 		}
 
-		ui->addressEdit->setText(settings->value("sever/address", "127.0.0.1").toString());
-		ui->serverPortBox->setValue(settings->value("server/port", 1500).toInt());
+		ui->addressEdit->setText(settings->value("server/address", "127.0.0.1").toString());
+		ui->serverPortBox->setValue(settings->value("server/port", 1234).toInt());
 
 		bool savePassword = settings->value("user/save_password", false).toBool();
 		ui->savePasswordCheck->setChecked(savePassword);

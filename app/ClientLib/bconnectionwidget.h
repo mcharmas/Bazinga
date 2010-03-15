@@ -94,6 +94,13 @@ public slots:
 	  */
 	void pushConnectButton();
 
+	//! \brief zapisz ustawienia
+	void saveSettings();
+
+	//! \brief odczytaj ustawienia
+	void readSettings();
+
+
 signals:
 	/*! \brief Emitowany zaraz po wcisniecu przycisku polaczenia.
 
@@ -125,12 +132,6 @@ private:
 
 	//! \brief uzywane wewnetrznie do wylaczania pol
 	void setConnectionGroupBoxEnabled(bool enabled, bool connectButtonEnabled = true);
-
-	//! \brief zapisz ustawienia
-	void saveSettings();
-
-	//! \brief odczytaj ustawienia
-	void readSettings();
 
 private:
 	//! \brief obiekt z UI

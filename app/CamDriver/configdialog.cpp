@@ -46,7 +46,7 @@ ConfigDialog::~ConfigDialog()
 		vin->safelyStop();
 		delete vin;
 	}
-	saveSettings();
+	connectionWidget.saveSettings();
     delete ui;
 }
 

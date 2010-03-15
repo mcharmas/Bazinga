@@ -15,6 +15,7 @@ IdiotWindow::IdiotWindow(QWidget *parent) :
 IdiotWindow::~IdiotWindow()
 {
 	connection.disconnectFromHost();
+	ui->connectionWidget->saveSettings();
     delete ui;
 }
 
