@@ -44,7 +44,7 @@ public:
 	  */
 	void appendToArray(QByteArray & arr) const;
 
-
+	/*! \brief Zwraca stringa w postaci [x, y, w, h] */
 	QString toString() const;
 
 	/*! \brief Wspolrzedna X

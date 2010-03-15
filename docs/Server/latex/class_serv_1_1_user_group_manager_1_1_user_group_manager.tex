@@ -1,0 +1,119 @@
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager}{
+\section{Dokumentacja klasy Serv::UserGroupManager::UserGroupManager}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager}\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_af43f9798f1e93dd8425699ecd6de6c87}{\_\-\_\-init\_\-\_\-}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_aea0f7f8d1d6e4d5efce31f3d0ea35fd9}{addDriver}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a39ae7245da0bcda25ce712d1b55f2f29}{hasDriver}
+\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a2911282f4333a88387427c1563649a52}{
+def {\bfseries driverSessionExists}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a2911282f4333a88387427c1563649a52}
+
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a46ee225566738a93c7c036b464a931fb}{addUser}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a4b747272c8166d17b9458b3f8c4796f0}{delUser}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a94bccb5702d504f5b782ba2379aaaab4}{getUser}
+\item 
+def \hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_aed20d08470748f78a641e6cc5700b505}{getUserByLogin}
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a00aa453d586337ce2692166c666a1817}{drivers}
+\begin{DoxyCompactList}\small\item\em Drivery ktore jeszcze nie maja klientow. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_ab41620628a204c943cd30a8f836eddd0}{
+\hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_ab41620628a204c943cd30a8f836eddd0}{users}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_ab41620628a204c943cd30a8f836eddd0}
+
+\begin{DoxyCompactList}\small\item\em Zalogowani uzytkownicy po session ID. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a4da728a66a4115432bdc2057fd3e92fa}{
+\hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a4da728a66a4115432bdc2057fd3e92fa}{groups}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a4da728a66a4115432bdc2057fd3e92fa}
+
+\begin{DoxyCompactList}\small\item\em Tablica grup po tokenie. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a97c7d967f8ebfe883963ff38bee5ecaf}{
+\hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_a97c7d967f8ebfe883963ff38bee5ecaf}{lastSid}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a97c7d967f8ebfe883963ff38bee5ecaf}
+
+\begin{DoxyCompactList}\small\item\em Ostatni uzyty SID, za kazdym razem przyznawany jest kolejny. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_ac2e922b108e77474d9daab6be8055436}{
+\hyperlink{class_serv_1_1_user_group_manager_1_1_user_group_manager_ac2e922b108e77474d9daab6be8055436}{name}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_ac2e922b108e77474d9daab6be8055436}
+
+\begin{DoxyCompactList}\small\item\em Nazwa klasy potrzeban do logowania. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+\begin{DoxyVerb}Klasa ta jest menagerem uzytkownikow, grup i sterownikow. Gdy uzytkownik jest podlaczany ta klasa zarzadza do jakiej grupy idzie.
+Klasa dba tez o to aby puste grupy byly usuwane.    
+\end{DoxyVerb}
+ 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_af43f9798f1e93dd8425699ecd6de6c87}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::\_\-\_\-init\_\-\_\- ( {\em self})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_af43f9798f1e93dd8425699ecd6de6c87}
+\begin{DoxyVerb}Konstruktor\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_aea0f7f8d1d6e4d5efce31f3d0ea35fd9}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!addDriver@{addDriver}}
+\index{addDriver@{addDriver}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{addDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::addDriver ( {\em self}, \/   {\em username}, \/   {\em host})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_aea0f7f8d1d6e4d5efce31f3d0ea35fd9}
+\begin{DoxyVerb}Dodaje sterownik uzytkownika\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a46ee225566738a93c7c036b464a931fb}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!addUser@{addUser}}
+\index{addUser@{addUser}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{addUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::addUser ( {\em self}, \/   {\em user}, \/   {\em token})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a46ee225566738a93c7c036b464a931fb}
+\begin{DoxyVerb}Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje.\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a4b747272c8166d17b9458b3f8c4796f0}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!delUser@{delUser}}
+\index{delUser@{delUser}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{delUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::delUser ( {\em self}, \/   {\em user})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a4b747272c8166d17b9458b3f8c4796f0}
+\begin{DoxyVerb}Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta.\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a94bccb5702d504f5b782ba2379aaaab4}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!getUser@{getUser}}
+\index{getUser@{getUser}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{getUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::getUser ( {\em self}, \/   {\em id})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a94bccb5702d504f5b782ba2379aaaab4}
+\begin{DoxyVerb}Zwraca uzytkownika o danym ID.\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_aed20d08470748f78a641e6cc5700b505}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!getUserByLogin@{getUserByLogin}}
+\index{getUserByLogin@{getUserByLogin}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{getUserByLogin}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::getUserByLogin ( {\em self}, \/   {\em login})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_aed20d08470748f78a641e6cc5700b505}
+\begin{DoxyVerb}Zwraca uzytkownika o danym loginie\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a39ae7245da0bcda25ce712d1b55f2f29}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!hasDriver@{hasDriver}}
+\index{hasDriver@{hasDriver}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{hasDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserGroupManager::UserGroupManager::hasDriver ( {\em self}, \/   {\em username})}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a39ae7245da0bcda25ce712d1b55f2f29}
+\begin{DoxyVerb}Zwraca czy dany username ma zalogowany sterownik.\end{DoxyVerb}
+ 
+
+\subsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_serv_1_1_user_group_manager_1_1_user_group_manager_a00aa453d586337ce2692166c666a1817}{
+\index{Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}!drivers@{drivers}}
+\index{drivers@{drivers}!Serv::UserGroupManager::UserGroupManager@{Serv::UserGroupManager::UserGroupManager}}
+\subsubsection[{drivers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Serv::UserGroupManager::UserGroupManager::drivers}}}
+\label{class_serv_1_1_user_group_manager_1_1_user_group_manager_a00aa453d586337ce2692166c666a1817}
+
+
+Drivery ktore jeszcze nie maja klientow. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku:\begin{DoxyCompactItemize}
+\item 
+UserGroupManager.py\end{DoxyCompactItemize}

@@ -28,6 +28,7 @@ public:
 	  */
 	QByteArray * pack();
 
+	/*! \brief Zwraca liste obiektow w postaci stringa */
 	QString toString() const;
 };
 

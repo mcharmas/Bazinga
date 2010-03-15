@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>BazingaServer: Dokumentacja przestrzeni nazw Serv::UDPClient</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Wygenerowano przez Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="namespaces.html"><span>Lista&nbsp;przestrzeni&nbsp;nazw</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><b>Serv</b>::<a class="el" href="namespace_serv_1_1_u_d_p_client.html">UDPClient</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja przestrzeni nazw Serv::UDPClient</h1><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Zmienne</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26010463e2557dd99ea69558ac84b513"></a><!-- doxytag: member="Serv::UDPClient::sock" ref="a26010463e2557dd99ea69558ac84b513" args="" -->
+tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>sock</b> = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a7c093d00705f1a7a45121724849c7a"></a><!-- doxytag: member="Serv::UDPClient::loginDriverPacket" ref="a6a7c093d00705f1a7a45121724849c7a" args="" -->
+tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>loginDriverPacket</b> = <a class="el" href="class_serv_1_1_packet_1_1_packet.html#a145ac89df7bc66728e8b3e642650aff4">Packet.packetFromContent</a>(0, Sources.DRIVER, 0, Communicates.SREQ, &quot;pass:jasio:9999&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8224433da892f0816d12f588d2c55cb5"></a><!-- doxytag: member="Serv::UDPClient::loginAppPacket" ref="a8224433da892f0816d12f588d2c55cb5" args="" -->
+tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>loginAppPacket</b> = <a class="el" href="class_serv_1_1_packet_1_1_packet.html#a145ac89df7bc66728e8b3e642650aff4">Packet.packetFromContent</a>(0, Sources.APPLICATION, 0, Communicates.SREQ, &quot;pass:jasio:9999:test&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ca5a80c0fb3b47ffa84794ed8d3352e"></a><!-- doxytag: member="Serv::UDPClient::checkPacket" ref="a5ca5a80c0fb3b47ffa84794ed8d3352e" args="" -->
+tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>checkPacket</b> = <a class="el" href="class_serv_1_1_packet_1_1_packet.html#a145ac89df7bc66728e8b3e642650aff4">Packet.packetFromContent</a>(1, Sources.APPLICATION, 0, Communicates.CHECK, &quot;&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4d57687ceee96cbdac42b143b2dd99f"></a><!-- doxytag: member="Serv::UDPClient::normalContent" ref="af4d57687ceee96cbdac42b143b2dd99f" args="" -->
+tuple&nbsp;</td><td class="memItemRight" valign="bottom"><b>normalContent</b> = <a class="el" href="class_serv_1_1_packet_1_1_packet.html#a145ac89df7bc66728e8b3e642650aff4">Packet.packetFromContent</a>(1, Sources.DRIVER, 0, Communicates.OBJECT, &quot;to sa jakies pierdoly.... i jeszcze wieksze peirdoly&quot;)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Opis szczegółowy</h2>
+<div class="fragment"><pre class="fragment">
+Created on 2009-12-14
+
+@author: orbit
+</pre></div> </div>
+<hr class="footer"/><address style="text-align: right;"><small>Wygenerowano Mon Mar 15 20:17:30 2010 dla BazingaServer programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,41 @@
+\hypertarget{namespace_serv_1_1_u_d_p_client}{
+\section{Dokumentacja przestrzeni nazw Serv::UDPClient}
+\label{namespace_serv_1_1_u_d_p_client}\index{Serv::UDPClient@{Serv::UDPClient}}
+}
+\subsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespace_serv_1_1_u_d_p_client_a26010463e2557dd99ea69558ac84b513}{
+tuple {\bfseries sock} = socket.socket(socket.AF\_\-INET, socket.SOCK\_\-DGRAM)}
+\label{namespace_serv_1_1_u_d_p_client_a26010463e2557dd99ea69558ac84b513}
+
+\item 
+\hypertarget{namespace_serv_1_1_u_d_p_client_a6a7c093d00705f1a7a45121724849c7a}{
+tuple {\bfseries loginDriverPacket} = \hyperlink{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}{Packet.packetFromContent}(0, Sources.DRIVER, 0, Communicates.SREQ, \char`\"{}pass:jasio:9999\char`\"{})}
+\label{namespace_serv_1_1_u_d_p_client_a6a7c093d00705f1a7a45121724849c7a}
+
+\item 
+\hypertarget{namespace_serv_1_1_u_d_p_client_a8224433da892f0816d12f588d2c55cb5}{
+tuple {\bfseries loginAppPacket} = \hyperlink{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}{Packet.packetFromContent}(0, Sources.APPLICATION, 0, Communicates.SREQ, \char`\"{}pass:jasio:9999:test\char`\"{})}
+\label{namespace_serv_1_1_u_d_p_client_a8224433da892f0816d12f588d2c55cb5}
+
+\item 
+\hypertarget{namespace_serv_1_1_u_d_p_client_a5ca5a80c0fb3b47ffa84794ed8d3352e}{
+tuple {\bfseries checkPacket} = \hyperlink{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}{Packet.packetFromContent}(1, Sources.APPLICATION, 0, Communicates.CHECK, \char`\"{}\char`\"{})}
+\label{namespace_serv_1_1_u_d_p_client_a5ca5a80c0fb3b47ffa84794ed8d3352e}
+
+\item 
+\hypertarget{namespace_serv_1_1_u_d_p_client_af4d57687ceee96cbdac42b143b2dd99f}{
+tuple {\bfseries normalContent} = \hyperlink{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}{Packet.packetFromContent}(1, Sources.DRIVER, 0, Communicates.OBJECT, \char`\"{}to sa jakies pierdoly.... i jeszcze wieksze peirdoly\char`\"{})}
+\label{namespace_serv_1_1_u_d_p_client_af4d57687ceee96cbdac42b143b2dd99f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+\begin{DoxyVerb}
+Created on 2009-12-14
+
+@author: orbit
+\end{DoxyVerb}
+ 

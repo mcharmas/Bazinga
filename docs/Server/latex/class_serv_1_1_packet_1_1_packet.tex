@@ -1,0 +1,109 @@
+\hypertarget{class_serv_1_1_packet_1_1_packet}{
+\section{Dokumentacja klasy Serv::Packet::Packet}
+\label{class_serv_1_1_packet_1_1_packet}\index{Serv::Packet::Packet@{Serv::Packet::Packet}}
+}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_serv_1_1_packet_1_1_packet_a1f71ef65b348c86a047c87abe9ca2775}{\_\-\_\-init\_\-\_\-}
+\item 
+def \hyperlink{class_serv_1_1_packet_1_1_packet_a393243697bc1e23d5adadc50698fccd1}{packetFromCont}
+\item 
+def \hyperlink{class_serv_1_1_packet_1_1_packet_a6dab330b602405f42b3fe090863e5c1e}{repack}
+\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_aca58d8a6836377fbe433aae6290e087a}{
+def {\bfseries debug}}
+\label{class_serv_1_1_packet_1_1_packet_aca58d8a6836377fbe433aae6290e087a}
+
+\item 
+def \hyperlink{class_serv_1_1_packet_1_1_packet_a2738b48c8c177150338082c936c823dc}{toString}
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a5c1fb13da3486f574c94aaac06f3c56c}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_a5c1fb13da3486f574c94aaac06f3c56c}{data}}
+\label{class_serv_1_1_packet_1_1_packet_a5c1fb13da3486f574c94aaac06f3c56c}
+
+\begin{DoxyCompactList}\small\item\em Niesformatowany pakiet. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a5cc00710f6a12b310f6b69d88ed51c55}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_a5cc00710f6a12b310f6b69d88ed51c55}{id}}
+\label{class_serv_1_1_packet_1_1_packet_a5cc00710f6a12b310f6b69d88ed51c55}
+
+\begin{DoxyCompactList}\small\item\em Id sesji. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a37864cf9c1e11502ff340f0068ffa7f9}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_a37864cf9c1e11502ff340f0068ffa7f9}{source}}
+\label{class_serv_1_1_packet_1_1_packet_a37864cf9c1e11502ff340f0068ffa7f9}
+
+\begin{DoxyCompactList}\small\item\em Zrodlo (DRIVER, APPLICATION, SERVER). \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_af7df973d840761ea9884fdffd800dc27}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_af7df973d840761ea9884fdffd800dc27}{timestamp}}
+\label{class_serv_1_1_packet_1_1_packet_af7df973d840761ea9884fdffd800dc27}
+
+\begin{DoxyCompactList}\small\item\em Timestamp wyslania pakietu. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a8a1139cb536fdc04312e50fbeb8e95a0}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_a8a1139cb536fdc04312e50fbeb8e95a0}{command}}
+\label{class_serv_1_1_packet_1_1_packet_a8a1139cb536fdc04312e50fbeb8e95a0}
+
+\begin{DoxyCompactList}\small\item\em Komenda (SREQ, SACK, SDEN,CHECK, CONFIRM, UPDATE, CLOSE, OBJECT, OTHER, ERROR). \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_adf68d3f40f5a7583fce563366f2f9e61}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_adf68d3f40f5a7583fce563366f2f9e61}{length}}
+\label{class_serv_1_1_packet_1_1_packet_adf68d3f40f5a7583fce563366f2f9e61}
+
+\begin{DoxyCompactList}\small\item\em Wielkosc pakietu. \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a24efe22ef361ee7d966a663e96241820}{
+\hyperlink{class_serv_1_1_packet_1_1_packet_a24efe22ef361ee7d966a663e96241820}{content}}
+\label{class_serv_1_1_packet_1_1_packet_a24efe22ef361ee7d966a663e96241820}
+
+\begin{DoxyCompactList}\small\item\em Zawartosc pakietu. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Statyczne atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a0406f36f89d9da4feb94f31959367ce8}{
+string \hyperlink{class_serv_1_1_packet_1_1_packet_a0406f36f89d9da4feb94f31959367ce8}{fmt} = \char`\"{}$<$ibibh\char`\"{}}
+\label{class_serv_1_1_packet_1_1_packet_a0406f36f89d9da4feb94f31959367ce8}
+
+\begin{DoxyCompactList}\small\item\em Format danych przesnylanych przez siec: int(id), (byte)source, int(timestamp), byte(command),short(length),dane int(id), (byte)source, int(timestamp), byte(command),short(length). \item\end{DoxyCompactList}\item 
+\hypertarget{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}{
+tuple \hyperlink{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}{packetFromContent} = staticmethod(packetFromCont)}
+\label{class_serv_1_1_packet_1_1_packet_a145ac89df7bc66728e8b3e642650aff4}
+
+\begin{DoxyCompactList}\small\item\em Metoda statyczna, zobacz packetFromCont. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+\begin{DoxyVerb}Klasa trzymajaca pakiet podzielony na czesci.\end{DoxyVerb}
+ 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_serv_1_1_packet_1_1_packet_a1f71ef65b348c86a047c87abe9ca2775}{
+\index{Serv::Packet::Packet@{Serv::Packet::Packet}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!Serv::Packet::Packet@{Serv::Packet::Packet}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Packet::Packet::\_\-\_\-init\_\-\_\- ( {\em self}, \/   {\em data} = {\ttfamily \char`\"{}\char`\"{}})}}
+\label{class_serv_1_1_packet_1_1_packet_a1f71ef65b348c86a047c87abe9ca2775}
+\begin{DoxyVerb}Konstruktor ktory jak dostanie dane rozklada pakiet na czesci.\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_packet_1_1_packet_a393243697bc1e23d5adadc50698fccd1}{
+\index{Serv::Packet::Packet@{Serv::Packet::Packet}!packetFromCont@{packetFromCont}}
+\index{packetFromCont@{packetFromCont}!Serv::Packet::Packet@{Serv::Packet::Packet}}
+\subsubsection[{packetFromCont}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Packet::Packet::packetFromCont ( {\em id}, \/   {\em source}, \/   {\em timestamp}, \/   {\em command}, \/   {\em content})}}
+\label{class_serv_1_1_packet_1_1_packet_a393243697bc1e23d5adadc50698fccd1}
+\begin{DoxyVerb}Statyczna metoda ktora jest mapowana na funkcje statyczna (packetFromContent)
+podajemy jej wszystkie pola pakietu a ona generuje pakiet na ich podstawie.
+\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_packet_1_1_packet_a6dab330b602405f42b3fe090863e5c1e}{
+\index{Serv::Packet::Packet@{Serv::Packet::Packet}!repack@{repack}}
+\index{repack@{repack}!Serv::Packet::Packet@{Serv::Packet::Packet}}
+\subsubsection[{repack}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Packet::Packet::repack ( {\em self})}}
+\label{class_serv_1_1_packet_1_1_packet_a6dab330b602405f42b3fe090863e5c1e}
+\begin{DoxyVerb}Funkcja sluzaca do ponownego zapakowania wszystkich danych.\end{DoxyVerb}
+ \hypertarget{class_serv_1_1_packet_1_1_packet_a2738b48c8c177150338082c936c823dc}{
+\index{Serv::Packet::Packet@{Serv::Packet::Packet}!toString@{toString}}
+\index{toString@{toString}!Serv::Packet::Packet@{Serv::Packet::Packet}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Packet::Packet::toString ( {\em self})}}
+\label{class_serv_1_1_packet_1_1_packet_a2738b48c8c177150338082c936c823dc}
+\begin{DoxyVerb}Funckcja zwracajaca zapakowany pakiet.\end{DoxyVerb}
+ 
+
+Dokumentacja dla tej klasy została wygenerowana z pliku:\begin{DoxyCompactItemize}
+\item 
+Packet.py\end{DoxyCompactItemize}
