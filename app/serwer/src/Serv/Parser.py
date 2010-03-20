@@ -3,6 +3,7 @@ from Logger import *
 from User import User 
 from UserAuthenticator import *
 from UserGroupManager import *
+from threading import Timer
 import socket
 
 
@@ -45,7 +46,10 @@ class Parser:
                 self.checkApplication(p, client)
             #self.check(p, client)
         elif p.command == Communicates.CLOSE:
-            self.close(p, client)
+            if p.source == Sources.APPLICATION:
+                self.closeApplication(p, client)
+            elif p.source == Sources.DRIVER:
+                self.closeDriver(p, client)
         elif p.command == Communicates.OBJECT or p.command == Communicates.OTHER:
             self.normalContent(p, client)
     
@@ -138,9 +142,10 @@ class Parser:
         dhost = self.groupManager.driverSessionExists(packet.id)
         p = None
         if dhost:
-            Logger.log(self.classname, "checkDriver", "Odsylam driverowi CONFIRM")
+            Logger.log(self.classname, "checkDriver", "Odsylam driverowi CONFIRM i robie UPDATE")
             p = Packet.packetFromContent(packet.id, Sources.SERVER, 0, Communicates.CONFIRM, "").toString()
             h = dhost
+            self.groupManager.updateDriver(packet.id)
             self.dataSenderSocket.sendto(p, dhost)
         else:
             self.checkApplication(packet, client)
@@ -160,16 +165,24 @@ class Parser:
         else:     
             Logger.log(self.classname, "check", "Ups... nie ma takiego  klienta.")
     
-    def close(self, packet, client):
+    def closeApplication(self, packet, client):
         """Konczy sesje z uzytkownikiem usuwajac go rowniez z grupy."""
-        Logger.log(self.classname, "close", "Dostalem request do zakonczenia sesji.")
+        Logger.log(self.classname, "closeApplication", "Dostalem request do zakonczenia sesji.")
         try:
             u = self.groupManager.getUser(packet.id)
             if u:
                 u.group.delUser(self.groupManager.getUser(packet.id)) #to jest brzyyyyyyydkie
         except KeyError:
-            Logger.log(self.classname, "close", "UPS Najwyrazniej nie ma takiego  klienta.")
-        Logger.log(self.classname, "close", "I po krzyku.")
+            Logger.log(self.classname, "closeApplication", "UPS Najwyrazniej nie ma takiego  klienta.")
+        Logger.log(self.classname, "closeApplication", "I po krzyku.")
+        
+    def closeDriver(self, packet, client):
+        """Zamyka sesje drivera zamykajac wczesniej sesje aplikacji."""
+        Logger.log(self.classname, "closeApplication", "Dostalem request do zakonczenia sesji drivera.")
+        self.closeApplication(packet, client)
+        self.groupManager.delDriver(packet.id)
+        p = Packet.packetFromContent(packet.id, Sources.SERVER, 0, Communicates.CONFIRM, "")
+        Logger.log(self.classname, "closeApplication", "Dostalem request do zakonczenia sesji drivera.")
     
     def normalContent(self, packet, client):
         """Obslugiwanie pakietow z normalna zawartoscia czyli do rozeslania dalej.
