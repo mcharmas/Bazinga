@@ -4,15 +4,16 @@ class UserDBReader:
     """Klasa zczytuje z pliku baze danych z uzytkownikami
     format linii:   user;;haslo
     Plik musi znajdowac sie w katalogu z ktorego odpalamy serwer.
-    TODO: dodac mozliwosc przekazania pliku konfiguracyjnego jako parametr i zmienic domysle polozenie
-    
     """
+    
+    path='users.conf'
     
     def __init__(self):
         """Konstruktor."""
         ##Mapa uzytkownikow z haslami
+        Logger.log("UserDBReader", "INIT", "Jestem tworzony.")
         self.userList={}
-        self.getUserList('users.conf')
+        self.getUserList(UserDBReader.path)
 
     def getUserList(self,file):
         """Pobiera z pliku liste uzytkownikow."""

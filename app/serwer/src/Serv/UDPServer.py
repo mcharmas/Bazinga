@@ -9,16 +9,13 @@ from Parser import *
 class ThreadedUDPRequestHandler(SocketServer.BaseRequestHandler):
     """Klasa odpowiedzialna za obsługiwanie requestów serwera UDP."""
     
-    ##Statyczny parser uzywany do parsowania wszystkich danych.
-    parser = Parser()
-    
     def handle(self):        
         """Funkcja obslugujaca request serwera UDP.
         Popycha dane dalej do parsera ktory sie zajmuje reszta.
         """
         data = self.request[0]
         Logger.log("ThreadedUDPRequestHandler", "handle", "Dane otrzymane o przekazane do Parsera.")
-        ThreadedUDPRequestHandler.parser.handleData(data, self.client_address)                                        
+        UDPServer.parser.handleData(data, self.client_address)                                        
                 
                    
 
@@ -28,12 +25,20 @@ class ThreadedUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
 
 
 class UDPServer:
+
+    ##Statyczny parser uzywany do parsowania wszystkich danych.
+    parser = None
+
     """Klasa przetrzymująca serwer i główny wątek."""
     def __init__(self, host, port):
         """Konstruktor przyjmujacy host i port na ktorym serwer ma nasluchiwac."""
         ##Nazwa klasy uzywana do logowania
         self.name = "UDPServer"
-        
+        Logger.log(self.name, "__init__", "utworzono serwer")
+                        
+        if not UDPServer.parser:
+            UDPServer.parser = Parser()
+                        
         ##Adres i port na ktorym serwer ma sluchac.
         self.addr = (host,port)
         
@@ -42,8 +47,7 @@ class UDPServer:
         
         ##Watek serwera
         self.server_thread = None
-        
-        Logger.log(self.name, "__init__", "utworzono serwer")
+
         
 
     def start(self):
@@ -58,10 +62,9 @@ class UDPServer:
     
     def shutdown(self):
         """Wyłącza serwer (jezeli był uruchomiony).
-        TODO: To jest do poprawienia. Zawsze wydaje mu sie ze serwer nie dziala...
         """
         if self.server_thread:            
             self.server.shutdown()
             self.server_thread = None
             Logger.log(self.name, "shutdown", "serwer wylaczony")        
-        Logger.log(self.name, "shutdown", "serwer wczesniej nie dzialal")
+        Logger.log(self.name, "shutdown", "serwer wylaczony")

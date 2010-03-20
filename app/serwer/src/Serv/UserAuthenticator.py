@@ -8,6 +8,7 @@ class UserAuthenticator():
 
     def __init__(self):
         """Konstruktor."""
+        Logger.log("UserAuthenticator", "INIT", "Jestem tworzony.")
         ##Obiekt czytajacy z bazy danych
         self.user=UserDBReader()
 

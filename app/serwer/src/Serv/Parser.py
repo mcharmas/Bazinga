@@ -13,6 +13,7 @@ class Parser:
     
     def __init__(self):
         """Konstruktor."""
+        Logger.log("Parser", "INIT", "Jestem tworzony.")
         
         ##Nazwa klasy potrzebna do loggera
         self.classname = "Parser"
@@ -57,8 +58,7 @@ class Parser:
         """Oblsuguje logowanie sterownika w bardzo skomplikowany i zawily sposob...
         1) sprawdza czy dobry login i haslo
         2) jesli tak - dadaje sie do listy driverow (oczekujace na polaczenie klienta)
-        3) jesli nie to olewa, olewanie jest dobre
-        TODO: mozna by sprawdzac czy przypadkiem user nie jest zalogowany bo takie cyrki moga sie zdazyc...        
+        3) jesli nie to olewa, olewanie jest dobre        
         """                                                       
 
         Logger.log(self.classname, "loginDriver", "Otrzymano dane do logowania sterownika.")

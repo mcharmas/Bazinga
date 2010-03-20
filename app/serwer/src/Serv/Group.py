@@ -6,9 +6,7 @@ from Logger import *
 class Group():
     """Grupa przechowujaca userow.
     Posiada timer sprawdzajacy co timeout bezczynnosc userow po ich timestampach
-    po bezczynnosci user jest usuwany
-    
-    TODO: wysylac odnowienie polaczenia    
+    po bezczynnosci user jest usuwany    
     """
     def __init__(self, manager, id=0):
         """Konstruktor"""
