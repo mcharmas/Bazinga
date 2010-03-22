@@ -171,7 +171,8 @@ class Parser:
         try:
             u = self.groupManager.getUser(packet.id)
             if u:
-                u.group.delUser(self.groupManager.getUser(packet.id)) #to jest brzyyyyyyydkie
+                #u.group.delUser(self.groupManager.getUser(packet.id)) #to jest brzyyyyyyydkie
+                self.groupManager.delUser(u)
         except KeyError:
             Logger.log(self.classname, "closeApplication", "UPS Najwyrazniej nie ma takiego  klienta.")
         Logger.log(self.classname, "closeApplication", "I po krzyku.")

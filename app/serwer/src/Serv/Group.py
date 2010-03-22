@@ -26,7 +26,7 @@ class Group():
         
     def sendData(self,data):
         """Funkcja wysylajaca dane do wszystkich z grupy."""
-        Logger.log(self.name, "sendData()", "Wysylanie danych.")
+        Logger.log(self.name, "sendData()", "Wysylanie danych. " + str(len(self.users)))
         for u in self.users:
             u.sendData(data)
             
@@ -55,12 +55,11 @@ class Group():
     def delUser(self, user):
         """Usuwa usera z grupy."""
         Logger.log(self.name, "delUser()", "Usuwanie uzytkownika z powodu jego dzialania - " + user.login)
-        self.manager.delUser(user.id)
         self.users.remove(user)
         
     def isEmpty(self):
         """Zwraca czy grupa jest pusta."""
-        if len(self.users):
+        if not len(self.users):
             return True
         return False
         

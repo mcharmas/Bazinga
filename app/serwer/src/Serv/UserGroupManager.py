@@ -69,24 +69,34 @@ class UserGroupManager:
       
     def addUser(self, user, token):
         """Dodaje uzytkownika do grupy z danym tokienem o ile taka grupa istnieje."""
-        Logger.log(self.name, "addUser", "Dodaje usera: "+user.login+" do grupy:"+token)        
+        Logger.log(self.name, "addUser", "Dodaje usera: "+user.login+" do grupy: "+token)        
         #user.id,user.driverHost = self.drivers.pop(user.login)         
         user.id,user.driverHost,_ = self.drivers[user.login]
         
-        if not self.groups.has_key(token):
+        try:
+            self.groups[token].addUser(user)
+            user.group = self.groups[token]
+        except:
+            Logger.log(self.name, "addUser", "Nie bylo takiej grupy.")
             self.groups[token] = Group(self)
-        user.group = self.groups[token]      
-        
-        self.users[user.id] = user       
-        self.groups[token].addUser(user)
+            self.groups[token].addUser(user)
+            user.group = self.groups[token]
+
+        self.users[user.id] = user
         Logger.log(self.name, "addUser", "Nadany sid to: "+user.login+":"+str(self.lastSid-1))
         return user.id
     
     def delUser(self, user):
         """Usuwa uzytkownika z grupy oraz grupe jezeli jest pusta."""
-        Logger.log(self.name, "delUser", "Usuwam usera: "+str(user))
+        Logger.log(self.name, "delUser", "Usuwam usera: "+str(user.login))        
+        
         try:
-            del self.users[user]
+            user.group.delUser(user)
+        except KeyError:
+            Logger.log(self.name, "delUser", "Nie bylo usera do usuniecia.")
+        
+        try:
+            self.users.pop(user.id)            
         except:
             Logger.log(self.name, "delUser", "Nie bylo usera do usuniecia.")
         
@@ -112,8 +122,10 @@ class UserGroupManager:
     
     def updateDriver(self, id):
         """Updatuje timestamp drivera. Potrzebne do sprawdzania bezczynnosci."""
-        username = self.getDriverUsername(id)        
+        username = self.getDriverUsername(id)
+        
         if username:
+            Logger.log(self.name, "updateDriver()", "Zupdatowalem driver usera: "+username)
             id,host,_ = self.drivers[username]
             self.drivers[username]=(id,host,time.localtime())
     
@@ -123,10 +135,10 @@ class UserGroupManager:
         t = time.localtime()
         for u in self.drivers.keys():
             id,_,timestamp = self.drivers[u]  
-            self.delUser(u)
-            self.delDriver(id)      
             if  time.mktime(t) - time.mktime(timestamp) >= self.timeout:            
                 Logger.log(self.name, "checkTimeouts()", "Usuwanie sterownika z powodu bezczynnosci: "+u)
+                self.delUser(u)
+                self.delDriver(id)      
                 
         self.timer.cancel()
         self.timer = Timer(self.timeout, self.checkDriverTimeouts)                
