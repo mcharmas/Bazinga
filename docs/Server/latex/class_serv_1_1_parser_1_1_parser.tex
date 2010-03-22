@@ -1,0 +1,176 @@
+\hypertarget{class_serv_1_1_parser_1_1_parser}{
+\section{Dokumentacja klasy Serv::Parser::Parser}
+\label{class_serv_1_1_parser_1_1_parser}\index{Serv::Parser::Parser@{Serv::Parser::Parser}}
+}
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_8627f07c762983eff029ad167a021e38}{\_\-\_\-init\_\-\_\-}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_060ed5ba3cbf55b63ecc3f3aa006da04}{handleData}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_e092cef5abd35ec04fa61e71377e1303}{loginDriver}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_ec3286787a7c8642127416c77e1c2c8f}{loginApplication}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_a6c504eb2ef2712d8f05cec0e94f3eba}{checkDriver}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_8c0d6b83193d0e972e50887c7640181d}{checkApplication}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_fc14060e753dc6d502e33a46b168f6c0}{closeApplication}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_1e840af17ebce4b0a649dcebb10ba0dd}{closeDriver}
+\item 
+def \hyperlink{class_serv_1_1_parser_1_1_parser_dc1da4d6ff7eb9dbc114f8a426274aa0}{normalContent}
+\end{CompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_98309dc29b98b9dbbaba8175bc6fce00}{
+\hyperlink{class_serv_1_1_parser_1_1_parser_98309dc29b98b9dbbaba8175bc6fce00}{classname}}
+\label{class_serv_1_1_parser_1_1_parser_98309dc29b98b9dbbaba8175bc6fce00}
+
+\begin{CompactList}\small\item\em Nazwa klasy potrzebna do loggera. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_8e8fc28fb138a84f24593294eba5a237}{
+\hyperlink{class_serv_1_1_parser_1_1_parser_8e8fc28fb138a84f24593294eba5a237}{groupManager}}
+\label{class_serv_1_1_parser_1_1_parser_8e8fc28fb138a84f24593294eba5a237}
+
+\begin{CompactList}\small\item\em Manager grup. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_59f3263667252c32bbe04baf2db0c12e}{
+\hyperlink{class_serv_1_1_parser_1_1_parser_59f3263667252c32bbe04baf2db0c12e}{authenticator}}
+\label{class_serv_1_1_parser_1_1_parser_59f3263667252c32bbe04baf2db0c12e}
+
+\begin{CompactList}\small\item\em Authenticator. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_parser_1_1_parser_db376d9d8d99afa93fa43b3ca8153e9f}{
+\hyperlink{class_serv_1_1_parser_1_1_parser_db376d9d8d99afa93fa43b3ca8153e9f}{dataSenderSocket}}
+\label{class_serv_1_1_parser_1_1_parser_db376d9d8d99afa93fa43b3ca8153e9f}
+
+\begin{CompactList}\small\item\em Socket ktorym sa wysylane dane do userow. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+
+
+\footnotesize\begin{verbatim}Klasa parsujaca dane przychodzace do servera.\end{verbatim}
+\normalsize
+ 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_serv_1_1_parser_1_1_parser_8627f07c762983eff029ad167a021e38}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::\_\-\_\-init\_\-\_\- ( {\em self})}}
+\label{class_serv_1_1_parser_1_1_parser_8627f07c762983eff029ad167a021e38}
+
+
+
+
+\footnotesize\begin{verbatim}Konstruktor.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_8c0d6b83193d0e972e50887c7640181d}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!checkApplication@{checkApplication}}
+\index{checkApplication@{checkApplication}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{checkApplication}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::checkApplication ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_8c0d6b83193d0e972e50887c7640181d}
+
+
+
+
+\footnotesize\begin{verbatim}Obsluguje rzadnie check. Aktualizuje klienta w grupie zeby potwierdzic ciaglosc polaczenia oraz odsyla confirm do klienta.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_a6c504eb2ef2712d8f05cec0e94f3eba}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!checkDriver@{checkDriver}}
+\index{checkDriver@{checkDriver}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{checkDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::checkDriver ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_a6c504eb2ef2712d8f05cec0e94f3eba}
+
+
+
+
+\footnotesize\begin{verbatim}ASDF, Szymon napisal, Szymon wie co to robi, pytac Szymona\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_fc14060e753dc6d502e33a46b168f6c0}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!closeApplication@{closeApplication}}
+\index{closeApplication@{closeApplication}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{closeApplication}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::closeApplication ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_fc14060e753dc6d502e33a46b168f6c0}
+
+
+
+
+\footnotesize\begin{verbatim}Konczy sesje z uzytkownikiem usuwajac go rowniez z grupy.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_1e840af17ebce4b0a649dcebb10ba0dd}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!closeDriver@{closeDriver}}
+\index{closeDriver@{closeDriver}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{closeDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::closeDriver ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_1e840af17ebce4b0a649dcebb10ba0dd}
+
+
+
+
+\footnotesize\begin{verbatim}Zamyka sesje drivera zamykajac wczesniej sesje aplikacji.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_060ed5ba3cbf55b63ecc3f3aa006da04}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!handleData@{handleData}}
+\index{handleData@{handleData}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{handleData}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::handleData ( {\em self}, \/   {\em data}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_060ed5ba3cbf55b63ecc3f3aa006da04}
+
+
+
+
+\footnotesize\begin{verbatim}Dokonuje podstawowego podzialu danych do przetworzenia dalej. Tutaj wykonywany jest poczatek parsowania pakietu.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_ec3286787a7c8642127416c77e1c2c8f}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!loginApplication@{loginApplication}}
+\index{loginApplication@{loginApplication}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{loginApplication}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::loginApplication ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_ec3286787a7c8642127416c77e1c2c8f}
+
+
+
+
+\footnotesize\begin{verbatim}Obsluguje logowanie klienta w jeszcze bardziej skomplikowany sposob:
+1)sprawdza login i haslo
+2)jesli ok:
+3)sprawdza czy user ma drivera, jesli ok:
+    dodaje do grupy, nadaje sid i wysyla ACK
+  nie ok:
+    wysyla SDEN z info "NO DRIVER" (sprawdzajac czy przypadkiem wczesniej nie byl zalogowany)
+4) jesli dupne login i haslo to wysyla SDEN z info "BAD CREDENTIALS"        
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_e092cef5abd35ec04fa61e71377e1303}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!loginDriver@{loginDriver}}
+\index{loginDriver@{loginDriver}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{loginDriver}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::loginDriver ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_e092cef5abd35ec04fa61e71377e1303}
+
+
+
+
+\footnotesize\begin{verbatim}Oblsuguje logowanie sterownika w bardzo skomplikowany i zawily sposob...
+1) sprawdza czy dobry login i haslo
+2) jesli tak - dadaje sie do listy driverow (oczekujace na polaczenie klienta)
+3) jesli nie to olewa, olewanie jest dobre        
+\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_parser_1_1_parser_dc1da4d6ff7eb9dbc114f8a426274aa0}{
+\index{Serv::Parser::Parser@{Serv::Parser::Parser}!normalContent@{normalContent}}
+\index{normalContent@{normalContent}!Serv::Parser::Parser@{Serv::Parser::Parser}}
+\subsubsection[{normalContent}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Parser::Parser::normalContent ( {\em self}, \/   {\em packet}, \/   {\em client})}}
+\label{class_serv_1_1_parser_1_1_parser_dc1da4d6ff7eb9dbc114f8a426274aa0}
+
+
+
+
+\footnotesize\begin{verbatim}Obslugiwanie pakietow z normalna zawartoscia czyli do rozeslania dalej.
+Rozsyla dane po uzytkownikach grupy nadawcy pakietu oraz uaktualnia timestamp z ostatnia aktywnoscia uzytkownika.         
+\end{verbatim}
+\normalsize
+ 
+
+Dokumentacja dla tej klasy została wygenerowana z pliku:\begin{CompactItemize}
+\item 
+Parser.py\end{CompactItemize}

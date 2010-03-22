@@ -1,0 +1,136 @@
+\hypertarget{class_b_ob}{
+\section{Dokumentacja klasy BOb}
+\label{class_b_ob}\index{BOb@{BOb}}
+}
+Klasa reprezenujaca polozenie obiektu (BOb(ject)) i jego wielkosc.  
+
+
+{\tt \#include $<$bob.h$>$}
+
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_b_ob_cda4962a7ee72394a87ba34e09eb23f6}{
+\hyperlink{class_b_ob_cda4962a7ee72394a87ba34e09eb23f6}{BOb} (quint16 \hyperlink{class_b_ob_5dcc6a3c2f4ffaf3d630187e853dd876}{x}, quint16 \hyperlink{class_b_ob_da96bf49e446d3f9a5ce02f36e44c9b4}{y}, quint16 \hyperlink{class_b_ob_3e1652784396111952cd16a77a666a2b}{width}, quint16 \hyperlink{class_b_ob_c406681bc6029dc6e41aa53791e9f210}{height})}
+\label{class_b_ob_cda4962a7ee72394a87ba34e09eb23f6}
+
+\begin{CompactList}\small\item\em Tworzy obiekt z podanych liczb. \item\end{CompactList}\item 
+\hypertarget{class_b_ob_be1a4712878bfad0ccdbf9b2839c6a70}{
+\hyperlink{class_b_ob_be1a4712878bfad0ccdbf9b2839c6a70}{BOb} ()}
+\label{class_b_ob_be1a4712878bfad0ccdbf9b2839c6a70}
+
+\begin{CompactList}\small\item\em Pusty konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_b_ob_b71739ff83cf58d15b42f26274c583d1}{BOb} (QByteArray \&arr, int offset)
+\begin{CompactList}\small\item\em Tworzy obiekt z danych w tablicy. \item\end{CompactList}\item 
+void \hyperlink{class_b_ob_11fbd7ab4c8dda600232b40b02a20cbe}{appendToArray} (QByteArray \&arr) const 
+\begin{CompactList}\small\item\em Zapisuje obiekt na koniec podanej tablicy. \item\end{CompactList}\item 
+\hypertarget{class_b_ob_17bbb520d60e0a98312b185f5e9bc928}{
+QString \hyperlink{class_b_ob_17bbb520d60e0a98312b185f5e9bc928}{toString} () const }
+\label{class_b_ob_17bbb520d60e0a98312b185f5e9bc928}
+
+\begin{CompactList}\small\item\em Zwraca stringa w postaci \mbox{[}x, y, w, h\mbox{]}. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{CompactItemize}
+\item 
+quint16 \hyperlink{class_b_ob_5dcc6a3c2f4ffaf3d630187e853dd876}{x}
+\begin{CompactList}\small\item\em Wspolrzedna X. \item\end{CompactList}\item 
+quint16 \hyperlink{class_b_ob_da96bf49e446d3f9a5ce02f36e44c9b4}{y}
+\begin{CompactList}\small\item\em Wspolrzedna Y. \item\end{CompactList}\item 
+quint16 \hyperlink{class_b_ob_3e1652784396111952cd16a77a666a2b}{width}
+\begin{CompactList}\small\item\em Szerokosc obiektu. \item\end{CompactList}\item 
+quint16 \hyperlink{class_b_ob_c406681bc6029dc6e41aa53791e9f210}{height}
+\begin{CompactList}\small\item\em Wysokosc obiektu. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa reprezenujaca polozenie obiektu (BOb(ject)) i jego wielkosc. 
+
+Poniewaz dosc standardowa rozdzielczoscia kamer internetowych jest 640x480:
+
+\begin{itemize}
+\item x i width musza byc rzutowane na przedzial 0-639 \item y i height musza byc rzutowane na przedzial 0-479\end{itemize}
+Technicznie kazda liczba reprezentowana jest jako 10 bitow unsigned. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_b_ob_b71739ff83cf58d15b42f26274c583d1}{
+\index{BOb@{BOb}!BOb@{BOb}}
+\index{BOb@{BOb}!BOb@{BOb}}
+\subsubsection[{BOb}]{\setlength{\rightskip}{0pt plus 5cm}BOb::BOb (QByteArray \& {\em arr}, \/  int {\em offset})}}
+\label{class_b_ob_b71739ff83cf58d15b42f26274c583d1}
+
+
+Tworzy obiekt z danych w tablicy. 
+
+Obiekt tworzac sie przeczyta kolejnych 5 bajtow tablicy. Traktujac je nastepujaco:
+
+\begin{itemize}
+\item Z pierwszych 4 bajtow czyta po 8 mlodszych bitow kazdej liczby (x,y...) \item Z ostatniego bajtu czyta po 2 starsze bity z kazdej liczby\end{itemize}
+\begin{Desc}
+\item[Parametry:]
+\begin{description}
+\item[{\em arr}]tablica, z ktorej ma byc czytane \item[{\em offset}]przesuniecie w tabeli od miejsca w ktorym ma czytac. \end{description}
+\end{Desc}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_b_ob_11fbd7ab4c8dda600232b40b02a20cbe}{
+\index{BOb@{BOb}!appendToArray@{appendToArray}}
+\index{appendToArray@{appendToArray}!BOb@{BOb}}
+\subsubsection[{appendToArray}]{\setlength{\rightskip}{0pt plus 5cm}void BOb::appendToArray (QByteArray \& {\em arr}) const}}
+\label{class_b_ob_11fbd7ab4c8dda600232b40b02a20cbe}
+
+
+Zapisuje obiekt na koniec podanej tablicy. 
+
+Zapis jest prowadzony zgodnie z formatem opisanym w konstruktorze \hyperlink{class_b_ob_b71739ff83cf58d15b42f26274c583d1}{BOb(QByteArray \& arr, int offset)} .
+
+\begin{Desc}
+\item[Parametry:]
+\begin{description}
+\item[{\em arr}]Tablica do ktorej ma sie dodac. \end{description}
+\end{Desc}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_b_ob_c406681bc6029dc6e41aa53791e9f210}{
+\index{BOb@{BOb}!height@{height}}
+\index{height@{height}!BOb@{BOb}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}quint16 {\bf BOb::height}}}
+\label{class_b_ob_c406681bc6029dc6e41aa53791e9f210}
+
+
+Wysokosc obiektu. 
+
+Wartosc musi byc z przedzialu 0-479. \hypertarget{class_b_ob_3e1652784396111952cd16a77a666a2b}{
+\index{BOb@{BOb}!width@{width}}
+\index{width@{width}!BOb@{BOb}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}quint16 {\bf BOb::width}}}
+\label{class_b_ob_3e1652784396111952cd16a77a666a2b}
+
+
+Szerokosc obiektu. 
+
+Wartosc musi byc z przedzialu 0-639. \hypertarget{class_b_ob_5dcc6a3c2f4ffaf3d630187e853dd876}{
+\index{BOb@{BOb}!x@{x}}
+\index{x@{x}!BOb@{BOb}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}quint16 {\bf BOb::x}}}
+\label{class_b_ob_5dcc6a3c2f4ffaf3d630187e853dd876}
+
+
+Wspolrzedna X. 
+
+Wartosc musi byc z przedzialu 0-639. \hypertarget{class_b_ob_da96bf49e446d3f9a5ce02f36e44c9b4}{
+\index{BOb@{BOb}!y@{y}}
+\index{y@{y}!BOb@{BOb}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}quint16 {\bf BOb::y}}}
+\label{class_b_ob_da96bf49e446d3f9a5ce02f36e44c9b4}
+
+
+Wspolrzedna Y. 
+
+Wartosc musi byc z przedzialu 0-479. 
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
+\item 
+bob.h\item 
+bob.cpp\end{CompactItemize}

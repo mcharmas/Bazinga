@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Bazinga Client Library: Dokumentacja klasy BConnectionException</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&nbsp;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja klasy BConnectionException</h1><!-- doxytag: class="BConnectionException" -->Klasa opisujaca wyjatek polazenia z serwerem Bazinga.  
+<a href="#_details">Więcej...</a>
+<p>
+<code>#include &lt;<a class="el" href="bconnectionexception_8h-source.html">bconnectionexception.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_b_connection_exception-members.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8434b332707e6b981af493ac142ddc34"></a><!-- doxytag: member="BConnectionException::BConnectionException" ref="8434b332707e6b981af493ac142ddc34" args="(char *cause, BDatagram *datagram=NULL)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_exception.html#8434b332707e6b981af493ac142ddc34">BConnectionException</a> (char *cause, <a class="el" href="class_b_datagram.html">BDatagram</a> *datagram=NULL)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Utworz wyjatek z podana przyczyna i datagramem. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e805b541430e9a3e2af7750a4385ca64"></a><!-- doxytag: member="BConnectionException::BConnectionException" ref="e805b541430e9a3e2af7750a4385ca64" args="(const QString &amp;cause, BDatagram *datagram=NULL)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_exception.html#e805b541430e9a3e2af7750a4385ca64">BConnectionException</a> (const QString &amp;cause, <a class="el" href="class_b_datagram.html">BDatagram</a> *datagram=NULL)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Utworz wyjatek z podana przyczyna i datagramem. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a28e0f3ae8e5dc4a2154f106a289e470"></a><!-- doxytag: member="BConnectionException::BConnectionException" ref="a28e0f3ae8e5dc4a2154f106a289e470" args="(BConnectionException &amp;old)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_exception.html#a28e0f3ae8e5dc4a2154f106a289e470">BConnectionException</a> (<a class="el" href="class_b_connection_exception.html">BConnectionException</a> &amp;old)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor kopiujacy. Przejmuje datagram po starym. W old datagram ustawiany jest na NULL. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ba3b955d554c45bbd279bd75e65e74f5"></a><!-- doxytag: member="BConnectionException::~BConnectionException" ref="ba3b955d554c45bbd279bd75e65e74f5" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_exception.html#ba3b955d554c45bbd279bd75e65e74f5">~BConnectionException</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destruktor, kasuje ew. datagram. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">const QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_exception.html#645db90a648e008820d2506a67aca2ec">toString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zwraca opis wyjatku.  <a href="#645db90a648e008820d2506a67aca2ec"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_b_datagram.html">BDatagram</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_exception.html#430b5f1f10ea49111da8ad333ec9344f">getDatagram</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zwraca datagram.  <a href="#430b5f1f10ea49111da8ad333ec9344f"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa opisujaca wyjatek polazenia z serwerem Bazinga. 
+<p>
+Moze zawierac w sobie datagram powodujacy problem. <hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="430b5f1f10ea49111da8ad333ec9344f"></a><!-- doxytag: member="BConnectionException::getDatagram" ref="430b5f1f10ea49111da8ad333ec9344f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_b_datagram.html">BDatagram</a> * BConnectionException::getDatagram           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zwraca datagram. 
+<p>
+Ewentualnego datagramu nie nalezy usuwac. Zrobi to destruktor wyjatku.<p>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>Jesli nie ma datagramu, zwraca NULL. </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="645db90a648e008820d2506a67aca2ec"></a><!-- doxytag: member="BConnectionException::toString" ref="645db90a648e008820d2506a67aca2ec" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString BConnectionException::toString           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zwraca opis wyjatku. 
+<p>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>powod + informacja czy jest w wyjatku zawarty datagram. </dd></dl>
+
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="bconnectionexception_8h-source.html">bconnectionexception.h</a><li>bconnectionexception.cpp</ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Mar 22 17:44:35 2010 dla Bazinga Client Library programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

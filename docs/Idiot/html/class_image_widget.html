@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Bazinga Idiot Client: Dokumentacja klasy ImageWidget</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&nbsp;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja klasy ImageWidget</h1><!-- doxytag: class="ImageWidget" -->Wyświetla obiekty od klientów w różnych kolorach.  
+<a href="#_details">Więcej...</a>
+<p>
+<code>#include &lt;<a class="el" href="imagewidget_8h-source.html">imagewidget.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_image_widget-members.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="29f5483569b0ac4abd6b25bb640f9250"></a><!-- doxytag: member="ImageWidget::ImageWidget" ref="29f5483569b0ac4abd6b25bb640f9250" args="(QWidget *parent=0)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_widget.html#29f5483569b0ac4abd6b25bb640f9250">ImageWidget</a> (QWidget *parent=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="d7ce3e83b4756c1cadb25d27439eea9b"></a><!-- doxytag: member="ImageWidget::~ImageWidget" ref="d7ce3e83b4756c1cadb25d27439eea9b" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_widget.html#d7ce3e83b4756c1cadb25d27439eea9b">~ImageWidget</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destruktor. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_widget.html#a86269777fd7075bc223a5c8e011252b">setBObs</a> (quint32 sessid, BObList *list)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ustawia listę obiektów dla danego id sesji.  <a href="#a86269777fd7075bc223a5c8e011252b"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Metody chronione</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_widget.html#ea7cb36d8900749ab60d1e097fa1adfb">paintEvent</a> (QPaintEvent *ev)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maluje obiekty na widgecie.  <a href="#ea7cb36d8900749ab60d1e097fa1adfb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="531744038d8e49b411d849ef7207b9c3"></a><!-- doxytag: member="ImageWidget::mouseReleaseEvent" ref="531744038d8e49b411d849ef7207b9c3" args="(QMouseEvent *)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_widget.html#531744038d8e49b411d849ef7207b9c3">mouseReleaseEvent</a> (QMouseEvent *)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Klikniecie powoduje wyczyszczenie ekranu. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Wyświetla obiekty od klientów w różnych kolorach. <hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="ea7cb36d8900749ab60d1e097fa1adfb"></a><!-- doxytag: member="ImageWidget::paintEvent" ref="ea7cb36d8900749ab60d1e097fa1adfb" args="(QPaintEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageWidget::paintEvent           </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *&nbsp;</td>
+          <td class="paramname"> <em>ev</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Maluje obiekty na widgecie. 
+<p>
+Przyporządkowuje każdemu sessid przekazanego w <a class="el" href="class_image_widget.html#a86269777fd7075bc223a5c8e011252b" title="Ustawia listę obiektów dla danego id sesji.">setBObs()</a> kolor. To samo id sesji zawsze dostanie ten sam kolor. Kolory wybierane są spośród ok. 20 zdefiniowanych domyślnie w Qt. 
+</div>
+</div><p>
+<a class="anchor" name="a86269777fd7075bc223a5c8e011252b"></a><!-- doxytag: member="ImageWidget::setBObs" ref="a86269777fd7075bc223a5c8e011252b" args="(quint32 sessid, BObList *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageWidget::setBObs           </td>
+          <td>(</td>
+          <td class="paramtype">quint32&nbsp;</td>
+          <td class="paramname"> <em>sessid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BObList *&nbsp;</td>
+          <td class="paramname"> <em>list</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Ustawia listę obiektów dla danego id sesji. 
+<p>
+Wewnętrznie trzymane jest to uzywając QMap z id sesji jako kluczem. Jeśli stara lista dla danego id isntniała to zostaje skasowana. przekazanie list == 0 owocuje całkowitym skasowaniem danego sessid z mapy. 
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="imagewidget_8h-source.html">imagewidget.h</a><li>imagewidget.cpp</ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Mar 22 17:44:35 2010 dla Bazinga Idiot Client programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

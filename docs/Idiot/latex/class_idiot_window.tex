@@ -1,0 +1,74 @@
+\hypertarget{class_idiot_window}{
+\section{Dokumentacja klasy IdiotWindow}
+\label{class_idiot_window}\index{IdiotWindow@{IdiotWindow}}
+}
+Klasa wyświetlająca okno programu.  
+
+
+{\tt \#include $<$idiotwindow.h$>$}
+
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_idiot_window_028f2a727c252dcb9448a08d1379d699}{IdiotWindow} (QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_idiot_window_2a5adb99723cac75bcf4c843653ef76b}{$\sim$IdiotWindow} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Metody chronione}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_idiot_window_67aa3314cc4dc981af280288f6f16b96}{
+void \hyperlink{class_idiot_window_67aa3314cc4dc981af280288f6f16b96}{changeEvent} (QEvent $\ast$e)}
+\label{class_idiot_window_67aa3314cc4dc981af280288f6f16b96}
+
+\begin{CompactList}\small\item\em Związane z Qt, nie dotyczy programu. \item\end{CompactList}\item 
+void \hyperlink{class_idiot_window_0e90dfa970f643c1d42d1449d648cf50}{timerEvent} (QTimerEvent $\ast$ev)
+\begin{CompactList}\small\item\em Sprawdza, czy przyszły dane. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa wyświetlająca okno programu. 
+
+Składa się tylko z dwóch pól: \begin{itemize}
+\item po lewej kolorowa reprezentacja otrzymanych obiektow \hyperlink{class_image_widget}{ImageWidget} \item po prawej panel do nawiązania połączenia BConnectionWidget \end{itemize}
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_idiot_window_028f2a727c252dcb9448a08d1379d699}{
+\index{IdiotWindow@{IdiotWindow}!IdiotWindow@{IdiotWindow}}
+\index{IdiotWindow@{IdiotWindow}!IdiotWindow@{IdiotWindow}}
+\subsubsection[{IdiotWindow}]{\setlength{\rightskip}{0pt plus 5cm}IdiotWindow::IdiotWindow (QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_idiot_window_028f2a727c252dcb9448a08d1379d699}
+
+
+Konstruktor. 
+
+Włącza timer co 10 ms. \begin{Desc}
+\item[Zobacz również:]\hyperlink{class_idiot_window_0e90dfa970f643c1d42d1449d648cf50}{timerEvent(QTimerEvent$\ast$)} \end{Desc}
+\hypertarget{class_idiot_window_2a5adb99723cac75bcf4c843653ef76b}{
+\index{IdiotWindow@{IdiotWindow}!$\sim$IdiotWindow@{$\sim$IdiotWindow}}
+\index{$\sim$IdiotWindow@{$\sim$IdiotWindow}!IdiotWindow@{IdiotWindow}}
+\subsubsection[{$\sim$IdiotWindow}]{\setlength{\rightskip}{0pt plus 5cm}IdiotWindow::$\sim$IdiotWindow ()}}
+\label{class_idiot_window_2a5adb99723cac75bcf4c843653ef76b}
+
+
+Destruktor. 
+
+Rozłącza z serwerem. 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_idiot_window_0e90dfa970f643c1d42d1449d648cf50}{
+\index{IdiotWindow@{IdiotWindow}!timerEvent@{timerEvent}}
+\index{timerEvent@{timerEvent}!IdiotWindow@{IdiotWindow}}
+\subsubsection[{timerEvent}]{\setlength{\rightskip}{0pt plus 5cm}void IdiotWindow::timerEvent (QTimerEvent $\ast$ {\em ev})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_idiot_window_0e90dfa970f643c1d42d1449d648cf50}
+
+
+Sprawdza, czy przyszły dane. 
+
+Jeśli przyszły nowe dane, tworzy z datagramu liste obiektow i przekazuje je do \hyperlink{class_image_widget_a86269777fd7075bc223a5c8e011252b}{ImageWidget::setBObs(quint32, BObList$\ast$)} 
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
+\item 
+idiotwindow.h\item 
+idiotwindow.cpp\end{CompactItemize}

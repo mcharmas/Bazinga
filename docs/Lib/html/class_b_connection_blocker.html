@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Bazinga Client Library: Dokumentacja klasy BConnectionBlocker</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&nbsp;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja klasy BConnectionBlocker</h1><!-- doxytag: class="BConnectionBlocker" -->Blokuje albo zezwala na nawiazanie polaczenia w <a class="el" href="class_b_connection_widget.html" title="Widget z wszystkimi polami potrzebnymi do logowania.">BConnectionWidget</a>.  
+<a href="#_details">Więcej...</a>
+<p>
+<code>#include &lt;<a class="el" href="bconnectionblocker_8h-source.html">bconnectionblocker.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_b_connection_blocker-members.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_blocker.html#2ebcdef0e5570c7331036dd5b6ba4448">canConnect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zezwala/zabrania nawiazanie polaczenia.  <a href="#2ebcdef0e5570c7331036dd5b6ba4448"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_blocker.html#81e8782c93ac1943a7e19b4ed7ced792">canDisconnect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zezwala/zabrania zerwanie polaczenia.  <a href="#81e8782c93ac1943a7e19b4ed7ced792"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="dbf0d87dd3869926916e7bd956fbbc11"></a><!-- doxytag: member="BConnectionBlocker::toString" ref="dbf0d87dd3869926916e7bd956fbbc11" args="()" -->
+virtual QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_connection_blocker.html#dbf0d87dd3869926916e7bd956fbbc11">toString</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zwraca komunikat ostatniego bledu. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Blokuje albo zezwala na nawiazanie polaczenia w <a class="el" href="class_b_connection_widget.html" title="Widget z wszystkimi polami potrzebnymi do logowania.">BConnectionWidget</a>. 
+<p>
+Klasa dziedziczaca moze zaimplementowac metody <a class="el" href="class_b_connection_blocker.html#2ebcdef0e5570c7331036dd5b6ba4448" title="Zezwala/zabrania nawiazanie polaczenia.">canConnect()</a> i <a class="el" href="class_b_connection_blocker.html#81e8782c93ac1943a7e19b4ed7ced792" title="Zezwala/zabrania zerwanie polaczenia.">canDisconnect()</a> zeby zablokowac laczenie/rozlaczenie w wybranych przypadkach.<p>
+Przydaje sie to, jesli chcemy, by widget nie pozwalal na polaczenie, jesli np. nie zostaly ustawione wszystkie potrzebne parametry gry. <hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="2ebcdef0e5570c7331036dd5b6ba4448"></a><!-- doxytag: member="BConnectionBlocker::canConnect" ref="2ebcdef0e5570c7331036dd5b6ba4448" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BConnectionBlocker::canConnect           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zezwala/zabrania nawiazanie polaczenia. 
+<p>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>domyslna implementacja zwraca true </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="81e8782c93ac1943a7e19b4ed7ced792"></a><!-- doxytag: member="BConnectionBlocker::canDisconnect" ref="81e8782c93ac1943a7e19b4ed7ced792" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BConnectionBlocker::canDisconnect           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Zezwala/zabrania zerwanie polaczenia. 
+<p>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>domyslna implementacja zwraca true </dd></dl>
+
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="bconnectionblocker_8h-source.html">bconnectionblocker.h</a><li>bconnectionblocker.cpp</ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Mar 22 17:44:35 2010 dla Bazinga Client Library programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

@@ -1,0 +1,106 @@
+\hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader}{
+\section{Dokumentacja klasy Serv::UserDBReader::UserDBReader}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader}\index{Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}}
+}
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+def \hyperlink{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_f3811b4b6123fe47153f9d87631322a9}{\_\-\_\-init\_\-\_\-}
+\item 
+def \hyperlink{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_84890922ae8efd8ecec178874ec296f6}{getUserList}
+\item 
+def \hyperlink{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_1fa47b601f3968090cf56b959f50ca94}{checkUser}
+\item 
+def \hyperlink{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_e3a006e064956d5d09ad1bcaa4c3315f}{userExists}
+\item 
+def \hyperlink{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_d77c35dbbb9ddf154ab8809463a254c0}{getUserPasswd}
+\end{CompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_69dbf266bd3f0f66f21f30d5bd5fef82}{
+\hyperlink{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_69dbf266bd3f0f66f21f30d5bd5fef82}{userList}}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_69dbf266bd3f0f66f21f30d5bd5fef82}
+
+\begin{CompactList}\small\item\em Mapa uzytkownikow z haslami. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Statyczne atrybuty publiczne}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_3988928f49345ddb03b5c11800721c3d}{
+string \textbf{path} = 'users.conf'}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_3988928f49345ddb03b5c11800721c3d}
+
+\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+
+
+\footnotesize\begin{verbatim}Klasa zczytuje z pliku baze danych z uzytkownikami
+format linii:   user;;haslo
+Plik musi znajdowac sie w katalogu z ktorego odpalamy serwer.
+\end{verbatim}
+\normalsize
+ 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_f3811b4b6123fe47153f9d87631322a9}{
+\index{Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserDBReader::UserDBReader::\_\-\_\-init\_\-\_\- ( {\em self})}}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_f3811b4b6123fe47153f9d87631322a9}
+
+
+
+
+\footnotesize\begin{verbatim}Konstruktor.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_1fa47b601f3968090cf56b959f50ca94}{
+\index{Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}!checkUser@{checkUser}}
+\index{checkUser@{checkUser}!Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}}
+\subsubsection[{checkUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserDBReader::UserDBReader::checkUser ( {\em self}, \/   {\em user}, \/   {\em passwd})}}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_1fa47b601f3968090cf56b959f50ca94}
+
+
+
+
+\footnotesize\begin{verbatim}Sprawdza czy login i haslo uzytkownika sie zgadzaja oraz pod warunkiem ze uzytkownik istnieje.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_84890922ae8efd8ecec178874ec296f6}{
+\index{Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}!getUserList@{getUserList}}
+\index{getUserList@{getUserList}!Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}}
+\subsubsection[{getUserList}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserDBReader::UserDBReader::getUserList ( {\em self}, \/   {\em file})}}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_84890922ae8efd8ecec178874ec296f6}
+
+
+
+
+\footnotesize\begin{verbatim}Pobiera z pliku liste uzytkownikow.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_d77c35dbbb9ddf154ab8809463a254c0}{
+\index{Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}!getUserPasswd@{getUserPasswd}}
+\index{getUserPasswd@{getUserPasswd}!Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}}
+\subsubsection[{getUserPasswd}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserDBReader::UserDBReader::getUserPasswd ( {\em self}, \/   {\em user}, \/   {\em passwd})}}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_d77c35dbbb9ddf154ab8809463a254c0}
+
+
+
+
+\footnotesize\begin{verbatim}Sprawdza czy nazwa uzytkownika i haslo zgadzaja sie bez kontroli czy uzytkownik istnieje.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_e3a006e064956d5d09ad1bcaa4c3315f}{
+\index{Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}!userExists@{userExists}}
+\index{userExists@{userExists}!Serv::UserDBReader::UserDBReader@{Serv::UserDBReader::UserDBReader}}
+\subsubsection[{userExists}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::UserDBReader::UserDBReader::userExists ( {\em self}, \/   {\em user})}}
+\label{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader_e3a006e064956d5d09ad1bcaa4c3315f}
+
+
+
+
+\footnotesize\begin{verbatim}Sprwadza czy uzytkownik w bazie istnieje.\end{verbatim}
+\normalsize
+ 
+
+Dokumentacja dla tej klasy została wygenerowana z pliku:\begin{CompactItemize}
+\item 
+UserDBReader.py\end{CompactItemize}

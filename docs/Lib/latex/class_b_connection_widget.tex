@@ -1,0 +1,189 @@
+\hypertarget{class_b_connection_widget}{
+\section{Dokumentacja klasy BConnectionWidget}
+\label{class_b_connection_widget}\index{BConnectionWidget@{BConnectionWidget}}
+}
+Widget z wszystkimi polami potrzebnymi do logowania.  
+
+
+{\tt \#include $<$bconnectionwidget.h$>$}
+
+\subsection*{Sloty publiczne}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_b_connection_widget_7c9d3a266939c6719fe198f9b3d67636}{serverConnected} (quint32 sessid)
+\begin{CompactList}\small\item\em Informuj o nawiazaniu polaczenia. \item\end{CompactList}\item 
+void \hyperlink{class_b_connection_widget_159829b06e46c68a354ec999d4b15b61}{serverDisconnected} ()
+\begin{CompactList}\small\item\em Informuj o rozlaczeniu. \item\end{CompactList}\item 
+\hypertarget{class_b_connection_widget_049a2058a096bd48f3eb5c51bfe765f6}{
+void \hyperlink{class_b_connection_widget_049a2058a096bd48f3eb5c51bfe765f6}{pushConnectButton} ()}
+\label{class_b_connection_widget_049a2058a096bd48f3eb5c51bfe765f6}
+
+\begin{CompactList}\small\item\em Programowo przydus przycisk polaczenia. \item\end{CompactList}\item 
+\hypertarget{class_b_connection_widget_c3ec650c9ba4e9d32c68079431e570ed}{
+void \hyperlink{class_b_connection_widget_c3ec650c9ba4e9d32c68079431e570ed}{saveSettings} ()}
+\label{class_b_connection_widget_c3ec650c9ba4e9d32c68079431e570ed}
+
+\begin{CompactList}\small\item\em zapisz ustawienia \item\end{CompactList}\item 
+\hypertarget{class_b_connection_widget_4dae54d1ade03d63d57685be40b48503}{
+void \hyperlink{class_b_connection_widget_4dae54d1ade03d63d57685be40b48503}{readSettings} ()}
+\label{class_b_connection_widget_4dae54d1ade03d63d57685be40b48503}
+
+\begin{CompactList}\small\item\em odczytaj ustawienia \item\end{CompactList}\end{CompactItemize}
+\subsection*{Sygnały}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_b_connection_widget_2eef5117ae0e5b76ca02a86d00fbd70a}{connectButtonClicked} ()
+\begin{CompactList}\small\item\em Emitowany zaraz po wcisniecu przycisku polaczenia. \item\end{CompactList}\item 
+void \hyperlink{class_b_connection_widget_8d14da5ae492c481f88adfbcdabf47d2}{throwException} (\hyperlink{class_b_connection_exception}{BConnectionException} $\ast$)
+\begin{CompactList}\small\item\em Sygnal, ktory jest emitowany, jesli wewnatrz zostanie wykryty jakis wyjatek. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_b_connection_widget_f549f688fe132260b6a1333cde59dba7}{BConnectionWidget} (QWidget $\ast$parent=0, \hyperlink{class_b_connection}{BConnection} $\ast$connection=NULL, QSettings $\ast$settings=NULL, bool useToken=true, \hyperlink{class_b_connection_blocker}{BConnectionBlocker} $\ast$blocker=NULL)
+\begin{CompactList}\small\item\em konstruktor \item\end{CompactList}\item 
+void \hyperlink{class_b_connection_widget_45070066f5da8af537f422d8b37c7d6e}{setSettingsObject} (QSettings $\ast$settings)
+\begin{CompactList}\small\item\em Ustaw obiekt do skladowania ustawien. \item\end{CompactList}\item 
+void \hyperlink{class_b_connection_widget_976657d9910495a76d16b7c90d0b54fc}{setBlockerObject} (\hyperlink{class_b_connection_blocker}{BConnectionBlocker} $\ast$blocker)
+\begin{CompactList}\small\item\em Ustaw obiekt blokujacy. \item\end{CompactList}\item 
+void \hyperlink{class_b_connection_widget_476033357eea69f9ef4a7f4235a97556}{setConnectionObject} (\hyperlink{class_b_connection}{BConnection} $\ast$connection)
+\begin{CompactList}\small\item\em Ustaw obiekt polaczenia. \item\end{CompactList}\item 
+void \hyperlink{class_b_connection_widget_80d71ca868172dc623b9fa6c1ab938a6}{setUseToken} (bool use)
+\begin{CompactList}\small\item\em Uzywaj pola na token albo nie. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Metody chronione}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_b_connection_widget_7396f6332ea7735a6a330fc11927d183}{changeEvent} (QEvent $\ast$e)
+\begin{CompactList}\small\item\em wygenerowane przez QtDesignera \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Widget z wszystkimi polami potrzebnymi do logowania. 
+
+\begin{itemize}
+\item Widget moze zapisac ustawienia w obiekcie typu QSettings, jesli podano. \item Moze sie odwolywac do obiektu powstrzymujacego logowanie typu \hyperlink{class_b_connection_blocker}{BConnectionBlocker}. \end{itemize}
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_b_connection_widget_f549f688fe132260b6a1333cde59dba7}{
+\index{BConnectionWidget@{BConnectionWidget}!BConnectionWidget@{BConnectionWidget}}
+\index{BConnectionWidget@{BConnectionWidget}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{BConnectionWidget}]{\setlength{\rightskip}{0pt plus 5cm}BConnectionWidget::BConnectionWidget (QWidget $\ast$ {\em parent} = {\tt 0}, \/  {\bf BConnection} $\ast$ {\em connection} = {\tt NULL}, \/  QSettings $\ast$ {\em settings} = {\tt NULL}, \/  bool {\em useToken} = {\tt true}, \/  {\bf BConnectionBlocker} $\ast$ {\em blocker} = {\tt NULL})}}
+\label{class_b_connection_widget_f549f688fe132260b6a1333cde59dba7}
+
+
+konstruktor 
+
+\begin{Desc}
+\item[Zobacz również:]\hyperlink{class_b_connection_widget_45070066f5da8af537f422d8b37c7d6e}{setSettingsObject(QSettings $\ast$ settings)}, \hyperlink{class_b_connection_widget_976657d9910495a76d16b7c90d0b54fc}{setBlockerObject(BConnectionBlocker $\ast$ blocker)}, \hyperlink{class_b_connection_widget_80d71ca868172dc623b9fa6c1ab938a6}{setUseToken(bool use)} \end{Desc}
+\begin{Desc}
+\item[Parametry:]
+\begin{description}
+\item[{\em parent}]widget-rodzic \item[{\em connection}]obiekt polaczenia, bardzo potrzebny IMHO ;) \item[{\em settings}]Jesli podano, ustawienia zostana odczytane i zapisane z/do tego obiektu. \item[{\em useToken}]Uzywaj pola token, wylaczenie spowoduje znikniecie pola tokenu z formularza \item[{\em blocker}]Ustaw obiekt blokujacy \end{description}
+\end{Desc}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_b_connection_widget_7396f6332ea7735a6a330fc11927d183}{
+\index{BConnectionWidget@{BConnectionWidget}!changeEvent@{changeEvent}}
+\index{changeEvent@{changeEvent}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{changeEvent}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::changeEvent (QEvent $\ast$ {\em e})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_b_connection_widget_7396f6332ea7735a6a330fc11927d183}
+
+
+wygenerowane przez QtDesignera 
+
+Chyba chodzi o dynamiczna zmiane jezyka \hypertarget{class_b_connection_widget_2eef5117ae0e5b76ca02a86d00fbd70a}{
+\index{BConnectionWidget@{BConnectionWidget}!connectButtonClicked@{connectButtonClicked}}
+\index{connectButtonClicked@{connectButtonClicked}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{connectButtonClicked}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::connectButtonClicked ()\hspace{0.3cm}{\tt  \mbox{[}signal\mbox{]}}}}
+\label{class_b_connection_widget_2eef5117ae0e5b76ca02a86d00fbd70a}
+
+
+Emitowany zaraz po wcisniecu przycisku polaczenia. 
+
+Na wszelki przypadek, gdyby programista chcial wiedziec, kiedy uzytkownik wciska przycisk.
+
+Emitowane tuz po wcisniecu polaczenia i jeszcze przed podjeciem akcji polaczenia/rozlaczenia/rezygnacji z proby nawiazania polaczenia. \hypertarget{class_b_connection_widget_7c9d3a266939c6719fe198f9b3d67636}{
+\index{BConnectionWidget@{BConnectionWidget}!serverConnected@{serverConnected}}
+\index{serverConnected@{serverConnected}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{serverConnected}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::serverConnected (quint32 {\em sessid})\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_b_connection_widget_7c9d3a266939c6719fe198f9b3d67636}
+
+
+Informuj o nawiazaniu polaczenia. 
+
+Widget sam dba o odpowienie podpiecie tu sygnalu z obiektu polaczenia. \hypertarget{class_b_connection_widget_159829b06e46c68a354ec999d4b15b61}{
+\index{BConnectionWidget@{BConnectionWidget}!serverDisconnected@{serverDisconnected}}
+\index{serverDisconnected@{serverDisconnected}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{serverDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::serverDisconnected ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_b_connection_widget_159829b06e46c68a354ec999d4b15b61}
+
+
+Informuj o rozlaczeniu. 
+
+\begin{Desc}
+\item[Zobacz również:]\hyperlink{class_b_connection_widget_7c9d3a266939c6719fe198f9b3d67636}{serverConnected(quint32 sessid)}; \end{Desc}
+\hypertarget{class_b_connection_widget_976657d9910495a76d16b7c90d0b54fc}{
+\index{BConnectionWidget@{BConnectionWidget}!setBlockerObject@{setBlockerObject}}
+\index{setBlockerObject@{setBlockerObject}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{setBlockerObject}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::setBlockerObject ({\bf BConnectionBlocker} $\ast$ {\em blocker})}}
+\label{class_b_connection_widget_976657d9910495a76d16b7c90d0b54fc}
+
+
+Ustaw obiekt blokujacy. 
+
+Obiekt blokujacy jest odpytywany przed proba polaczenia ( \hyperlink{class_b_connection_blocker_2ebcdef0e5570c7331036dd5b6ba4448}{BConnectionBlocker::canConnect()} ) i rozlaczenia (\hyperlink{class_b_connection_blocker_81e8782c93ac1943a7e19b4ed7ced792}{BConnectionBlocker::canDisconnect()} ) czy mozna nawiazywac polaczenie.
+
+Moze to byc przydatne dla uzytkownika tej klasy, jesli chce okreslic swoje warunki nawiazania/przerwania polaczenia. \hypertarget{class_b_connection_widget_476033357eea69f9ef4a7f4235a97556}{
+\index{BConnectionWidget@{BConnectionWidget}!setConnectionObject@{setConnectionObject}}
+\index{setConnectionObject@{setConnectionObject}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{setConnectionObject}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::setConnectionObject ({\bf BConnection} $\ast$ {\em connection})}}
+\label{class_b_connection_widget_476033357eea69f9ef4a7f4235a97556}
+
+
+Ustaw obiekt polaczenia. 
+
+Bez tego nie ma za bardzo sensu uzycie tej klasy.
+
+Widget sam sobie ustawia polaczenia do \hyperlink{class_b_connection_90dca3f0343427e31bb4544a8accf56d}{BConnection::connected(quint32 sessid)} do \hyperlink{class_b_connection_widget_7c9d3a266939c6719fe198f9b3d67636}{serverConnected(quint32 sessid)}) i analogicznie \hyperlink{class_b_connection_20fa85863f4cb396d3141e01d4928fd4}{BConnection::disconnected()} do \hyperlink{class_b_connection_widget_159829b06e46c68a354ec999d4b15b61}{serverDisconnected()}. \hypertarget{class_b_connection_widget_45070066f5da8af537f422d8b37c7d6e}{
+\index{BConnectionWidget@{BConnectionWidget}!setSettingsObject@{setSettingsObject}}
+\index{setSettingsObject@{setSettingsObject}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{setSettingsObject}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::setSettingsObject (QSettings $\ast$ {\em settings})}}
+\label{class_b_connection_widget_45070066f5da8af537f422d8b37c7d6e}
+
+
+Ustaw obiekt do skladowania ustawien. 
+
+W podanym obiekcie zostana zapisane ustawienia logowania w odpowiednich kluczach: \begin{itemize}
+\item user/login \item user/save\_\-password - true/false \item user/password - jesli zaznaczono zapisywanie hasla \item user/token - jesli useToken \item user/port - lokalny port do nasluchiwania \item server/address \item server/port\end{itemize}
+Pierwszy odczyt ustawien odbywa sie w wywolaniu tej funkcji
+
+Zapisywanie odbywa sie przy kazdej probie nawiazania polaczenia. \hypertarget{class_b_connection_widget_80d71ca868172dc623b9fa6c1ab938a6}{
+\index{BConnectionWidget@{BConnectionWidget}!setUseToken@{setUseToken}}
+\index{setUseToken@{setUseToken}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{setUseToken}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::setUseToken (bool {\em use})}}
+\label{class_b_connection_widget_80d71ca868172dc623b9fa6c1ab938a6}
+
+
+Uzywaj pola na token albo nie. 
+
+Jesli use, pokaz pole na token. Spowoduje rowniez to, ze token nie bedzie zapisny w ustawieniach. \hypertarget{class_b_connection_widget_8d14da5ae492c481f88adfbcdabf47d2}{
+\index{BConnectionWidget@{BConnectionWidget}!throwException@{throwException}}
+\index{throwException@{throwException}!BConnectionWidget@{BConnectionWidget}}
+\subsubsection[{throwException}]{\setlength{\rightskip}{0pt plus 5cm}void BConnectionWidget::throwException ({\bf BConnectionException} $\ast$ {\em \_\-t1})\hspace{0.3cm}{\tt  \mbox{[}signal\mbox{]}}}}
+\label{class_b_connection_widget_8d14da5ae492c481f88adfbcdabf47d2}
+
+
+Sygnal, ktory jest emitowany, jesli wewnatrz zostanie wykryty jakis wyjatek. 
+
+Przydatne do wylapywania wyjatkow przez programiste uzywajacego tej klasy.
+
+\begin{Desc}
+\item[Ostrzeżenie:]Nie kasuj rzucanego obiektu na wlasna reke. Zostanie on skasowany po obsludze przez wszystkich obiorcow tego sygnalu. \end{Desc}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
+\item 
+bconnectionwidget.h\item 
+bconnectionwidget.cpp\item 
+moc\_\-bconnectionwidget.cpp\end{CompactItemize}

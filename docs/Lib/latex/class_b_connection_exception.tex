@@ -1,0 +1,74 @@
+\hypertarget{class_b_connection_exception}{
+\section{Dokumentacja klasy BConnectionException}
+\label{class_b_connection_exception}\index{BConnectionException@{BConnectionException}}
+}
+Klasa opisujaca wyjatek polazenia z serwerem Bazinga.  
+
+
+{\tt \#include $<$bconnectionexception.h$>$}
+
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_b_connection_exception_8434b332707e6b981af493ac142ddc34}{
+\hyperlink{class_b_connection_exception_8434b332707e6b981af493ac142ddc34}{BConnectionException} (char $\ast$cause, \hyperlink{class_b_datagram}{BDatagram} $\ast$datagram=NULL)}
+\label{class_b_connection_exception_8434b332707e6b981af493ac142ddc34}
+
+\begin{CompactList}\small\item\em Utworz wyjatek z podana przyczyna i datagramem. \item\end{CompactList}\item 
+\hypertarget{class_b_connection_exception_e805b541430e9a3e2af7750a4385ca64}{
+\hyperlink{class_b_connection_exception_e805b541430e9a3e2af7750a4385ca64}{BConnectionException} (const QString \&cause, \hyperlink{class_b_datagram}{BDatagram} $\ast$datagram=NULL)}
+\label{class_b_connection_exception_e805b541430e9a3e2af7750a4385ca64}
+
+\begin{CompactList}\small\item\em Utworz wyjatek z podana przyczyna i datagramem. \item\end{CompactList}\item 
+\hypertarget{class_b_connection_exception_a28e0f3ae8e5dc4a2154f106a289e470}{
+\hyperlink{class_b_connection_exception_a28e0f3ae8e5dc4a2154f106a289e470}{BConnectionException} (\hyperlink{class_b_connection_exception}{BConnectionException} \&old)}
+\label{class_b_connection_exception_a28e0f3ae8e5dc4a2154f106a289e470}
+
+\begin{CompactList}\small\item\em Konstruktor kopiujacy. Przejmuje datagram po starym. W old datagram ustawiany jest na NULL. \item\end{CompactList}\item 
+\hypertarget{class_b_connection_exception_ba3b955d554c45bbd279bd75e65e74f5}{
+\hyperlink{class_b_connection_exception_ba3b955d554c45bbd279bd75e65e74f5}{$\sim$BConnectionException} ()}
+\label{class_b_connection_exception_ba3b955d554c45bbd279bd75e65e74f5}
+
+\begin{CompactList}\small\item\em Destruktor, kasuje ew. datagram. \item\end{CompactList}\item 
+const QString \hyperlink{class_b_connection_exception_645db90a648e008820d2506a67aca2ec}{toString} ()
+\begin{CompactList}\small\item\em Zwraca opis wyjatku. \item\end{CompactList}\item 
+\hyperlink{class_b_datagram}{BDatagram} $\ast$ \hyperlink{class_b_connection_exception_430b5f1f10ea49111da8ad333ec9344f}{getDatagram} ()
+\begin{CompactList}\small\item\em Zwraca datagram. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa opisujaca wyjatek polazenia z serwerem Bazinga. 
+
+Moze zawierac w sobie datagram powodujacy problem. 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_b_connection_exception_430b5f1f10ea49111da8ad333ec9344f}{
+\index{BConnectionException@{BConnectionException}!getDatagram@{getDatagram}}
+\index{getDatagram@{getDatagram}!BConnectionException@{BConnectionException}}
+\subsubsection[{getDatagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BDatagram} $\ast$ BConnectionException::getDatagram ()}}
+\label{class_b_connection_exception_430b5f1f10ea49111da8ad333ec9344f}
+
+
+Zwraca datagram. 
+
+Ewentualnego datagramu nie nalezy usuwac. Zrobi to destruktor wyjatku.
+
+\begin{Desc}
+\item[Zwraca:]Jesli nie ma datagramu, zwraca NULL. \end{Desc}
+\hypertarget{class_b_connection_exception_645db90a648e008820d2506a67aca2ec}{
+\index{BConnectionException@{BConnectionException}!toString@{toString}}
+\index{toString@{toString}!BConnectionException@{BConnectionException}}
+\subsubsection[{toString}]{\setlength{\rightskip}{0pt plus 5cm}const QString BConnectionException::toString ()}}
+\label{class_b_connection_exception_645db90a648e008820d2506a67aca2ec}
+
+
+Zwraca opis wyjatku. 
+
+\begin{Desc}
+\item[Zwraca:]powod + informacja czy jest w wyjatku zawarty datagram. \end{Desc}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
+\item 
+bconnectionexception.h\item 
+bconnectionexception.cpp\end{CompactItemize}

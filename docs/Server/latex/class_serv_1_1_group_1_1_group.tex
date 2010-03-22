@@ -1,0 +1,136 @@
+\hypertarget{class_serv_1_1_group_1_1_group}{
+\section{Dokumentacja klasy Serv::Group::Group}
+\label{class_serv_1_1_group_1_1_group}\index{Serv::Group::Group@{Serv::Group::Group}}
+}
+\subsection*{Metody publiczne}
+\begin{CompactItemize}
+\item 
+def \hyperlink{class_serv_1_1_group_1_1_group_ee5bd24c2c39d9c06c11aec410690c3d}{\_\-\_\-init\_\-\_\-}
+\item 
+def \hyperlink{class_serv_1_1_group_1_1_group_cbb0137781676208d4de16b90d8d9cc0}{sendData}
+\item 
+def \hyperlink{class_serv_1_1_group_1_1_group_ff52dadf0f67e54340f9602cc3a6fbba}{checkTimeouts}
+\item 
+def \hyperlink{class_serv_1_1_group_1_1_group_0a4183d2362794bd55741a35e4b5a91d}{addUser}
+\item 
+def \hyperlink{class_serv_1_1_group_1_1_group_48768b6b5440e56d42d632085b2a8aef}{delUser}
+\item 
+def \hyperlink{class_serv_1_1_group_1_1_group_51e7ce8393ee398260d4e12e904da5ab}{isEmpty}
+\end{CompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_serv_1_1_group_1_1_group_8da1d96bcde84573f936683336b10064}{
+\hyperlink{class_serv_1_1_group_1_1_group_8da1d96bcde84573f936683336b10064}{users}}
+\label{class_serv_1_1_group_1_1_group_8da1d96bcde84573f936683336b10064}
+
+\begin{CompactList}\small\item\em Tablica uzytkownikow. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_group_1_1_group_d89e6d491f6237fb219f1affca48684b}{
+\hyperlink{class_serv_1_1_group_1_1_group_d89e6d491f6237fb219f1affca48684b}{manager}}
+\label{class_serv_1_1_group_1_1_group_d89e6d491f6237fb219f1affca48684b}
+
+\begin{CompactList}\small\item\em Manager danej grupy. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_group_1_1_group_87949bedd26e03b7117116b517d239de}{
+\hyperlink{class_serv_1_1_group_1_1_group_87949bedd26e03b7117116b517d239de}{timeout}}
+\label{class_serv_1_1_group_1_1_group_87949bedd26e03b7117116b517d239de}
+
+\begin{CompactList}\small\item\em Timeout po ktorym uzytkownik jest rozlaczany. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_group_1_1_group_bfb82fc7970fba46ba77edf1fae41dea}{
+\hyperlink{class_serv_1_1_group_1_1_group_bfb82fc7970fba46ba77edf1fae41dea}{id}}
+\label{class_serv_1_1_group_1_1_group_bfb82fc7970fba46ba77edf1fae41dea}
+
+\begin{CompactList}\small\item\em Id grupy. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_group_1_1_group_0b9cb49f5d6e2b732f8b4b4ea685999d}{
+\hyperlink{class_serv_1_1_group_1_1_group_0b9cb49f5d6e2b732f8b4b4ea685999d}{name}}
+\label{class_serv_1_1_group_1_1_group_0b9cb49f5d6e2b732f8b4b4ea685999d}
+
+\begin{CompactList}\small\item\em Nazwa potrzebna do debugowania. \item\end{CompactList}\item 
+\hypertarget{class_serv_1_1_group_1_1_group_f32cede000e34bd216170b4969c2e938}{
+\hyperlink{class_serv_1_1_group_1_1_group_f32cede000e34bd216170b4969c2e938}{timer}}
+\label{class_serv_1_1_group_1_1_group_f32cede000e34bd216170b4969c2e938}
+
+\begin{CompactList}\small\item\em Timer wywolujacy funkcje czyszczenia grupy z bezczynnych uzytkownikow. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Opis szczegółowy}
+
+
+\footnotesize\begin{verbatim}Grupa przechowujaca userow.
+Posiada timer sprawdzajacy co timeout bezczynnosc userow po ich timestampach
+po bezczynnosci user jest usuwany    
+\end{verbatim}
+\normalsize
+ 
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_serv_1_1_group_1_1_group_ee5bd24c2c39d9c06c11aec410690c3d}{
+\index{Serv::Group::Group@{Serv::Group::Group}!\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}}
+\index{\_\-\_\-init\_\-\_\-@{\_\-\_\-init\_\-\_\-}!Serv::Group::Group@{Serv::Group::Group}}
+\subsubsection[{\_\-\_\-init\_\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Group::Group::\_\-\_\-init\_\-\_\- ( {\em self}, \/   {\em manager}, \/   {\em id} = {\tt 0})}}
+\label{class_serv_1_1_group_1_1_group_ee5bd24c2c39d9c06c11aec410690c3d}
+
+
+
+
+\footnotesize\begin{verbatim}Konstruktor\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_group_1_1_group_0a4183d2362794bd55741a35e4b5a91d}{
+\index{Serv::Group::Group@{Serv::Group::Group}!addUser@{addUser}}
+\index{addUser@{addUser}!Serv::Group::Group@{Serv::Group::Group}}
+\subsubsection[{addUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Group::Group::addUser ( {\em self}, \/   {\em user})}}
+\label{class_serv_1_1_group_1_1_group_0a4183d2362794bd55741a35e4b5a91d}
+
+
+
+
+\footnotesize\begin{verbatim}Dodaje usera do grupy.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_group_1_1_group_ff52dadf0f67e54340f9602cc3a6fbba}{
+\index{Serv::Group::Group@{Serv::Group::Group}!checkTimeouts@{checkTimeouts}}
+\index{checkTimeouts@{checkTimeouts}!Serv::Group::Group@{Serv::Group::Group}}
+\subsubsection[{checkTimeouts}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Group::Group::checkTimeouts ( {\em self})}}
+\label{class_serv_1_1_group_1_1_group_ff52dadf0f67e54340f9602cc3a6fbba}
+
+
+
+
+\footnotesize\begin{verbatim}Funkcja wywolywana cyklicznie, sprawdzajaca bezczynnosci uzytkownikow.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_group_1_1_group_48768b6b5440e56d42d632085b2a8aef}{
+\index{Serv::Group::Group@{Serv::Group::Group}!delUser@{delUser}}
+\index{delUser@{delUser}!Serv::Group::Group@{Serv::Group::Group}}
+\subsubsection[{delUser}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Group::Group::delUser ( {\em self}, \/   {\em user})}}
+\label{class_serv_1_1_group_1_1_group_48768b6b5440e56d42d632085b2a8aef}
+
+
+
+
+\footnotesize\begin{verbatim}Usuwa usera z grupy.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_group_1_1_group_51e7ce8393ee398260d4e12e904da5ab}{
+\index{Serv::Group::Group@{Serv::Group::Group}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Serv::Group::Group@{Serv::Group::Group}}
+\subsubsection[{isEmpty}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Group::Group::isEmpty ( {\em self})}}
+\label{class_serv_1_1_group_1_1_group_51e7ce8393ee398260d4e12e904da5ab}
+
+
+
+
+\footnotesize\begin{verbatim}Zwraca czy grupa jest pusta.\end{verbatim}
+\normalsize
+ \hypertarget{class_serv_1_1_group_1_1_group_cbb0137781676208d4de16b90d8d9cc0}{
+\index{Serv::Group::Group@{Serv::Group::Group}!sendData@{sendData}}
+\index{sendData@{sendData}!Serv::Group::Group@{Serv::Group::Group}}
+\subsubsection[{sendData}]{\setlength{\rightskip}{0pt plus 5cm}def Serv::Group::Group::sendData ( {\em self}, \/   {\em data})}}
+\label{class_serv_1_1_group_1_1_group_cbb0137781676208d4de16b90d8d9cc0}
+
+
+
+
+\footnotesize\begin{verbatim}Funkcja wysylajaca dane do wszystkich z grupy.\end{verbatim}
+\normalsize
+ 
+
+Dokumentacja dla tej klasy została wygenerowana z pliku:\begin{CompactItemize}
+\item 
+Group.py\end{CompactItemize}

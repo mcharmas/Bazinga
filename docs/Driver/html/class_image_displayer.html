@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Bazinga Camera Driver: Dokumentacja klasy ImageDisplayer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;klas</span></a></li>
+      <li><a href="hierarchy.html"><span>Hierarchia&nbsp;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&nbsp;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja klasy ImageDisplayer</h1><!-- doxytag: class="ImageDisplayer" -->Klasa wyświetlają obraz z kamery.  
+<a href="#_details">Więcej...</a>
+<p>
+<code>#include &lt;<a class="el" href="imagedisplayer_8h-source.html">imagedisplayer.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_image_displayer-members.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b9c0301e7ed29ff2debf5e7f11c95aff"></a><!-- doxytag: member="ImageDisplayer::ImageDisplayer" ref="b9c0301e7ed29ff2debf5e7f11c95aff" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_displayer.html#b9c0301e7ed29ff2debf5e7f11c95aff">ImageDisplayer</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">konstruktor w pełnej krasie i bez argumentów <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="de6ee3928461e16ae867a744b647121e"></a><!-- doxytag: member="ImageDisplayer::ImageDisplayer" ref="de6ee3928461e16ae867a744b647121e" args="(QGroupBox *&amp;)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_displayer.html#de6ee3928461e16ae867a744b647121e">ImageDisplayer</a> (QGroupBox *&amp;)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Bardziej złożony konstruktor, ustawia parenta. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_displayer.html#a801ce426124fdd201a56e44e8b24610">setImage</a> (QImage *<a class="el" href="class_image_displayer.html#425fc06c5474754684575cd80e378bd1">image</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ustaw obrazek.  <a href="#a801ce426124fdd201a56e44e8b24610"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Metody chronione</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b892b4b10728fa072aedfa5a315cd319"></a><!-- doxytag: member="ImageDisplayer::paintEvent" ref="b892b4b10728fa072aedfa5a315cd319" args="(QPaintEvent *)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_displayer.html#b892b4b10728fa072aedfa5a315cd319">paintEvent</a> (QPaintEvent *)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Maluje obrazek. <br></td></tr>
+<tr><td colspan="2"><br><h2>Atrybuty chronione</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="425fc06c5474754684575cd80e378bd1"></a><!-- doxytag: member="ImageDisplayer::image" ref="425fc06c5474754684575cd80e378bd1" args="" -->
+QImage *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_displayer.html#425fc06c5474754684575cd80e378bd1">image</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wskaźnik do obrazka malowanego na widgetcie. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa wyświetlają obraz z kamery. <hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="a801ce426124fdd201a56e44e8b24610"></a><!-- doxytag: member="ImageDisplayer::setImage" ref="a801ce426124fdd201a56e44e8b24610" args="(QImage *image)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageDisplayer::setImage           </td>
+          <td>(</td>
+          <td class="paramtype">QImage *&nbsp;</td>
+          <td class="paramname"> <em>image</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Ustaw obrazek. 
+<p>
+Zazwyczaj potrzeba ustawić tylko raz, bo kamera zapisuje zawsze do tego samego obiektu 
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="imagedisplayer_8h-source.html">imagedisplayer.h</a><li>imagedisplayer.cpp</ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Mar 22 17:44:35 2010 dla Bazinga Camera Driver programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>
