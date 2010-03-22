@@ -2,62 +2,63 @@
 \section{Dokumentacja klasy ImageWidget}
 \label{class_image_widget}\index{ImageWidget@{ImageWidget}}
 }
-
-
 Wyświetla obiekty od klientów w różnych kolorach.  
 
 
-
-
-{\ttfamily \#include $<$imagewidget.h$>$}
+{\tt \#include $<$imagewidget.h$>$}
 
 \subsection*{Metody publiczne}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hypertarget{class_image_widget_a29f5483569b0ac4abd6b25bb640f9250}{
-\hyperlink{class_image_widget_a29f5483569b0ac4abd6b25bb640f9250}{ImageWidget} (QWidget $\ast$parent=0)}
-\label{class_image_widget_a29f5483569b0ac4abd6b25bb640f9250}
+\hypertarget{class_image_widget_29f5483569b0ac4abd6b25bb640f9250}{
+\hyperlink{class_image_widget_29f5483569b0ac4abd6b25bb640f9250}{ImageWidget} (QWidget $\ast$parent=0)}
+\label{class_image_widget_29f5483569b0ac4abd6b25bb640f9250}
 
-\begin{DoxyCompactList}\small\item\em Konstruktor. \item\end{DoxyCompactList}\item 
-\hypertarget{class_image_widget_ad7ce3e83b4756c1cadb25d27439eea9b}{
-\hyperlink{class_image_widget_ad7ce3e83b4756c1cadb25d27439eea9b}{$\sim$ImageWidget} ()}
-\label{class_image_widget_ad7ce3e83b4756c1cadb25d27439eea9b}
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hypertarget{class_image_widget_d7ce3e83b4756c1cadb25d27439eea9b}{
+\hyperlink{class_image_widget_d7ce3e83b4756c1cadb25d27439eea9b}{$\sim$ImageWidget} ()}
+\label{class_image_widget_d7ce3e83b4756c1cadb25d27439eea9b}
 
-\begin{DoxyCompactList}\small\item\em Destruktor. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_image_widget_aa86269777fd7075bc223a5c8e011252b}{setBObs} (quint32 sessid, BObList $\ast$list)
-\begin{DoxyCompactList}\small\item\em Ustawia listę obiektów dla danego id sesji. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\item 
+void \hyperlink{class_image_widget_a86269777fd7075bc223a5c8e011252b}{setBObs} (quint32 sessid, BObList $\ast$list)
+\begin{CompactList}\small\item\em Ustawia listę obiektów dla danego id sesji. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Metody chronione}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-void \hyperlink{class_image_widget_aea7cb36d8900749ab60d1e097fa1adfb}{paintEvent} (QPaintEvent $\ast$ev)
-\begin{DoxyCompactList}\small\item\em Maluje obiekty na widgecie. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_image_widget_ea7cb36d8900749ab60d1e097fa1adfb}{paintEvent} (QPaintEvent $\ast$ev)
+\begin{CompactList}\small\item\em Maluje obiekty na widgecie. \item\end{CompactList}\item 
+\hypertarget{class_image_widget_531744038d8e49b411d849ef7207b9c3}{
+void \hyperlink{class_image_widget_531744038d8e49b411d849ef7207b9c3}{mouseReleaseEvent} (QMouseEvent $\ast$)}
+\label{class_image_widget_531744038d8e49b411d849ef7207b9c3}
+
+\begin{CompactList}\small\item\em Klikniecie powoduje wyczyszczenie ekranu. \item\end{CompactList}\end{CompactItemize}
 
 
 \subsection{Opis szczegółowy}
 Wyświetla obiekty od klientów w różnych kolorach. 
 
 \subsection{Dokumentacja funkcji składowych}
-\hypertarget{class_image_widget_aea7cb36d8900749ab60d1e097fa1adfb}{
+\hypertarget{class_image_widget_ea7cb36d8900749ab60d1e097fa1adfb}{
 \index{ImageWidget@{ImageWidget}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!ImageWidget@{ImageWidget}}
-\subsubsection[{paintEvent}]{\setlength{\rightskip}{0pt plus 5cm}void ImageWidget::paintEvent (QPaintEvent $\ast$ {\em ev})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_image_widget_aea7cb36d8900749ab60d1e097fa1adfb}
+\subsubsection[{paintEvent}]{\setlength{\rightskip}{0pt plus 5cm}void ImageWidget::paintEvent (QPaintEvent $\ast$ {\em ev})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{class_image_widget_ea7cb36d8900749ab60d1e097fa1adfb}
 
 
 Maluje obiekty na widgecie. 
 
-Przyporządkowuje każdemu sessid przekazanego w \hyperlink{class_image_widget_aa86269777fd7075bc223a5c8e011252b}{setBObs()} kolor. To samo id sesji zawsze dostanie ten sam kolor. Kolory wybierane są spośród ok. 20 zdefiniowanych domyślnie w Qt. \hypertarget{class_image_widget_aa86269777fd7075bc223a5c8e011252b}{
+Przyporządkowuje każdemu sessid przekazanego w \hyperlink{class_image_widget_a86269777fd7075bc223a5c8e011252b}{setBObs()} kolor. To samo id sesji zawsze dostanie ten sam kolor. Kolory wybierane są spośród ok. 20 zdefiniowanych domyślnie w Qt. \hypertarget{class_image_widget_a86269777fd7075bc223a5c8e011252b}{
 \index{ImageWidget@{ImageWidget}!setBObs@{setBObs}}
 \index{setBObs@{setBObs}!ImageWidget@{ImageWidget}}
 \subsubsection[{setBObs}]{\setlength{\rightskip}{0pt plus 5cm}void ImageWidget::setBObs (quint32 {\em sessid}, \/  BObList $\ast$ {\em list})}}
-\label{class_image_widget_aa86269777fd7075bc223a5c8e011252b}
+\label{class_image_widget_a86269777fd7075bc223a5c8e011252b}
 
 
 Ustawia listę obiektów dla danego id sesji. 
 
 Wewnętrznie trzymane jest to uzywając QMap z id sesji jako kluczem. Jeśli stara lista dla danego id isntniała to zostaje skasowana. przekazanie list == 0 owocuje całkowitym skasowaniem danego sessid z mapy. 
 
-Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
 imagewidget.h\item 
-imagewidget.cpp\end{DoxyCompactItemize}
+imagewidget.cpp\end{CompactItemize}
