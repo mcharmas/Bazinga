@@ -2,83 +2,76 @@
 \section{Dokumentacja klasy Points2}
 \label{class_points2}\index{Points2@{Points2}}
 }
-
-
 Klasa śledząca zdefiniowane przez użytkownika punkty.  
 
 
+{\tt \#include $<$points.h$>$}
 
-
-{\ttfamily \#include $<$points.h$>$}
-
-Diagram dziedziczenia dla Points2\begin{figure}[H]
+Diagram dziedziczenia dla Points2:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2cm]{class_points2}
 \end{center}
 \end{figure}
 \subsection*{Sygnały}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hypertarget{class_points2_a40606e5bff8ad0c1fc1887669d6e8e6e}{
-void \hyperlink{class_points2_a40606e5bff8ad0c1fc1887669d6e8e6e}{bobjects} (BObList $\ast$list)}
-\label{class_points2_a40606e5bff8ad0c1fc1887669d6e8e6e}
+\hypertarget{class_points2_40606e5bff8ad0c1fc1887669d6e8e6e}{
+void \hyperlink{class_points2_40606e5bff8ad0c1fc1887669d6e8e6e}{bobjects} (BObList $\ast$list)}
+\label{class_points2_40606e5bff8ad0c1fc1887669d6e8e6e}
 
-\begin{DoxyCompactList}\small\item\em emituje listę wykrytych obiektów \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{CompactList}\small\item\em emituje listę wykrytych obiektów \item\end{CompactList}\end{CompactItemize}
 \subsection*{Metody publiczne}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hypertarget{class_points2_a8ae4636b6fcd263753884959bb7d9ede}{
-\hyperlink{class_points2_a8ae4636b6fcd263753884959bb7d9ede}{Points2} (\hyperlink{class_video_input}{VideoInput} $\ast$input)}
-\label{class_points2_a8ae4636b6fcd263753884959bb7d9ede}
+\hypertarget{class_points2_8ae4636b6fcd263753884959bb7d9ede}{
+\hyperlink{class_points2_8ae4636b6fcd263753884959bb7d9ede}{Points2} (\hyperlink{class_video_input}{VideoInput} $\ast$input)}
+\label{class_points2_8ae4636b6fcd263753884959bb7d9ede}
 
-\begin{DoxyCompactList}\small\item\em Tworzy obiekt pobierający z wejścia input. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_points2_af46dd0cd21f73b3214d5f766349b8450}{retreiveFrame} (cv::Mat \&)
-\begin{DoxyCompactList}\small\item\em Odbiera ramkę jako cv::Mat. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{CompactList}\small\item\em Tworzy obiekt pobierający z wejścia input. \item\end{CompactList}\item 
+void \hyperlink{class_points2_f46dd0cd21f73b3214d5f766349b8450}{retreiveFrame} (cv::Mat \&)
+\begin{CompactList}\small\item\em Odbiera ramkę jako cv::Mat. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Statyczne metody publiczne}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hypertarget{class_points2_af00905a8a3803e51af17d1d3dbd7f33c}{
-static void \hyperlink{class_points2_af00905a8a3803e51af17d1d3dbd7f33c}{addPoint} (int, int)}
-\label{class_points2_af00905a8a3803e51af17d1d3dbd7f33c}
+\hypertarget{class_points2_f00905a8a3803e51af17d1d3dbd7f33c}{
+static void \hyperlink{class_points2_f00905a8a3803e51af17d1d3dbd7f33c}{addPoint} (int, int)}
+\label{class_points2_f00905a8a3803e51af17d1d3dbd7f33c}
 
-\begin{DoxyCompactList}\small\item\em Dodaj punkt do śledzenia. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{CompactList}\small\item\em Dodaj punkt do śledzenia. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Statyczne atrybuty publiczne}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hypertarget{class_points2_a47f061a9802f8541f71ff3c805bd457f}{
-static CvPoint \hyperlink{class_points2_a47f061a9802f8541f71ff3c805bd457f}{pt} = cvPoint(0,0)}
-\label{class_points2_a47f061a9802f8541f71ff3c805bd457f}
+\hypertarget{class_points2_47f061a9802f8541f71ff3c805bd457f}{
+static CvPoint \hyperlink{class_points2_47f061a9802f8541f71ff3c805bd457f}{pt} = cvPoint(0,0)}
+\label{class_points2_47f061a9802f8541f71ff3c805bd457f}
 
-\begin{DoxyCompactList}\small\item\em Radek, pochwal się do czego to służy. \item\end{DoxyCompactList}\item 
-\hypertarget{class_points2_a27c9b3b569a0ac996490da0c6721408a}{
-static int \hyperlink{class_points2_a27c9b3b569a0ac996490da0c6721408a}{add\_\-remove\_\-pt} = 0}
-\label{class_points2_a27c9b3b569a0ac996490da0c6721408a}
+\begin{CompactList}\small\item\em Bufor dodawanego punktu. \item\end{CompactList}\item 
+\hypertarget{class_points2_27c9b3b569a0ac996490da0c6721408a}{
+static int \hyperlink{class_points2_27c9b3b569a0ac996490da0c6721408a}{add\_\-remove\_\-pt} = 0}
+\label{class_points2_27c9b3b569a0ac996490da0c6721408a}
 
-\begin{DoxyCompactList}\small\item\em Radek, pochwal się do czego to służy. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{CompactList}\small\item\em Wskazuje czy punkt został dodany. \item\end{CompactList}\end{CompactItemize}
 
 
 \subsection{Opis szczegółowy}
 Klasa śledząca zdefiniowane przez użytkownika punkty. 
 
 \subsection{Dokumentacja funkcji składowych}
-\hypertarget{class_points2_af46dd0cd21f73b3214d5f766349b8450}{
+\hypertarget{class_points2_f46dd0cd21f73b3214d5f766349b8450}{
 \index{Points2@{Points2}!retreiveFrame@{retreiveFrame}}
 \index{retreiveFrame@{retreiveFrame}!Points2@{Points2}}
-\subsubsection[{retreiveFrame}]{\setlength{\rightskip}{0pt plus 5cm}void Points2::retreiveFrame (cv::Mat \& {\em mat})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_points2_af46dd0cd21f73b3214d5f766349b8450}
+\subsubsection[{retreiveFrame}]{\setlength{\rightskip}{0pt plus 5cm}void Points2::retreiveFrame (cv::Mat \& {\em mat})\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
+\label{class_points2_f46dd0cd21f73b3214d5f766349b8450}
 
 
 Odbiera ramkę jako cv::Mat. 
 
 do samodzielnej implementacji 
 
-Reimplementowana z \hyperlink{class_frame_retreiver_a72912583af45c00d267f215a0d0b9bb1}{FrameRetreiver}.
+Reimplementowana z \hyperlink{class_frame_retreiver_72912583af45c00d267f215a0d0b9bb1}{FrameRetreiver}.
 
-
-
-Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
 points.h\item 
-moc\_\-points.cpp\item 
-points.cpp\end{DoxyCompactItemize}
+points.cpp\end{CompactItemize}

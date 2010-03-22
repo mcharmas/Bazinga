@@ -1,13 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>Bazinga Camera Driver: Plik źródłowy configdialog.h</title>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-<!-- Wygenerowano przez Doxygen 1.6.3 -->
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
@@ -32,11 +29,11 @@
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;bconnectionwidget.h&gt;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &lt;boblist.h&gt;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;cameranotconnectedblocker.h&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;frameretreiver.h&quot;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;videoinput.h&quot;</span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;faces.h&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;points.h&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include "cameranotconnectedblocker.h"</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include "frameretreiver.h"</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include "videoinput.h"</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include "faces.h"</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include "points.h"</span>
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="keyword">namespace </span>Ui
 <a name="l00019"></a>00019 {
@@ -49,26 +46,26 @@
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="keyword">public</span>:
 <a name="l00030"></a>00030 
-<a name="l00033"></a>00033         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_camera_not_connected_blocker.html#a6a2b84c9469178c7bdc3a40279ba17eb" title="Pozwala na połączenie jeśli podłączona jest kamera.">CameraNotConnectedBlocker::canConnect</a>();
+<a name="l00033"></a>00033         <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="class_camera_not_connected_blocker.html#6a2b84c9469178c7bdc3a40279ba17eb" title="Pozwala na połączenie jeśli podłączona jest kamera.">CameraNotConnectedBlocker::canConnect</a>();
 <a name="l00034"></a>00034 
-<a name="l00038"></a>00038         <a class="code" href="class_config_dialog.html#ad16df8ed2e55bd5cc55e3ef9040b8b93" title="Konstruktor.">ConfigDialog</a>(QWidget *parent = 0);
+<a name="l00038"></a>00038         <a class="code" href="class_config_dialog.html#d16df8ed2e55bd5cc55e3ef9040b8b93" title="Konstruktor.">ConfigDialog</a>(QWidget *parent = 0);
 <a name="l00039"></a>00039 
-<a name="l00044"></a>00044         <a class="code" href="class_config_dialog.html#a485badac4dffa04603f800bb9d396e1d" title="Destruktor.">~ConfigDialog</a>();
+<a name="l00044"></a>00044         <a class="code" href="class_config_dialog.html#485badac4dffa04603f800bb9d396e1d" title="Destruktor.">~ConfigDialog</a>();
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046 <span class="keyword">public</span> slots:
-<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#a21d23a581bbbf582c4a25d7d7204e764" title="Podłącza kamerę.">connectCamera</a>();
+<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#21d23a581bbbf582c4a25d7d7204e764" title="Podłącza kamerę.">connectCamera</a>();
 <a name="l00049"></a>00049 
-<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#a4e9e42e4decdb4f6895f4b47d51b550e" title="Rozłącza kamerę.">disconnectCamera</a>();
+<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#4e9e42e4decdb4f6895f4b47d51b550e" title="Rozłącza kamerę.">disconnectCamera</a>();
 <a name="l00052"></a>00052 
-<a name="l00056"></a>00056         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#a5611fa4c9de2827139161cd75a7f4be6" title="Wywołaj, żeby poinformować okno o nawiązaniu połączenia.">serverConnected</a>(quint32 sessid);
+<a name="l00056"></a>00056         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#5611fa4c9de2827139161cd75a7f4be6" title="Wywołaj, żeby poinformować okno o nawiązaniu połączenia.">serverConnected</a>(quint32 sessid);
 <a name="l00057"></a>00057 
-<a name="l00061"></a>00061         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#a7782fa76c40b70438677baff0c2622f2" title="Wywołaj, żeby poinformować okno o rozwiązaniu połączenia.">serverDisconnected</a>();
+<a name="l00061"></a>00061         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#7782fa76c40b70438677baff0c2622f2" title="Wywołaj, żeby poinformować okno o rozwiązaniu połączenia.">serverDisconnected</a>();
 <a name="l00062"></a>00062 
-<a name="l00066"></a>00066         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#adfe6884aef5e1c04ce574c6c9a1a97d9" title="Zapisz ustawienia.">saveSettings</a>();
+<a name="l00066"></a>00066         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#dfe6884aef5e1c04ce574c6c9a1a97d9" title="Zapisz ustawienia.">saveSettings</a>();
 <a name="l00067"></a>00067 
-<a name="l00069"></a>00069         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#a06d4edc9ec519809ce9104b66b15dadf" title="Odczytaj ustawienia.">readSettings</a>();
+<a name="l00069"></a>00069         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#06d4edc9ec519809ce9104b66b15dadf" title="Odczytaj ustawienia.">readSettings</a>();
 <a name="l00070"></a>00070 
-<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#a99f28a7e313ccc20892503afdc3191b9" title="Wyświetl komunikat z treścią wyjątku.">catchException</a>(BConnectionException * e);
+<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="class_config_dialog.html#99f28a7e313ccc20892503afdc3191b9" title="Wyświetl komunikat z treścią wyjątku.">catchException</a>(BConnectionException * e);
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 <span class="keyword">private</span>:
 <a name="l00075"></a>00075         <span class="keywordtype">void</span> retreiveFrame(QImage &amp; image);
@@ -91,8 +88,8 @@
 <a name="l00092"></a>00092 
 <a name="l00093"></a>00093 <span class="preprocessor">#endif // CONFIGDIALOG_H</span>
 </pre></div></div>
-<hr class="footer"/><address style="text-align: right;"><small>Wygenerowano Mon Mar 15 22:10:02 2010 dla Bazinga Camera Driver programem&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Mar 22 17:27:52 2010 dla Bazinga Camera Driver programem&nbsp;
 <a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
 </html>

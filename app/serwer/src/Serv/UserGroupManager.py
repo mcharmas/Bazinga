@@ -24,10 +24,10 @@ class UserGroupManager:
         ##Nazwa klasy potrzeban do logowania
         self.name = "UserGroupManager"
         
-        #Interwal z jakim wywolywane jest sprawdzanie bezczynnosci driverow
+        ##Interwal z jakim wywolywane jest sprawdzanie bezczynnosci driverow
         self.timeout = 30
         
-        #Timer wywolujacy funkcje sprawdzania bezczynnosci
+        ##Timer wywolujacy funkcje sprawdzania bezczynnosci
         self.timer = Timer(self.timeout, self.checkDriverTimeouts)        
         self.timer.start()
         

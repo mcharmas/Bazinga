@@ -17,9 +17,9 @@ public:
 
 	//! \brief Dodaj punkt do śledzenia
     static void addPoint( int, int);
-	//! \brief Radek, pochwal się do czego to służy
+        //! \brief Bufor dodawanego punktu
     static CvPoint pt;
-	//! \brief Radek, pochwal się do czego to służy
+        //! \brief Wskazuje czy punkt został dodany.
     static int add_remove_pt;
 
 signals:

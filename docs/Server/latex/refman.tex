@@ -1,11 +1,10 @@
 \documentclass[a4paper]{book}
 \usepackage{a4wide}
 \usepackage{makeidx}
+\usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{float}
-\usepackage{listings}
-\usepackage{color}
 \usepackage{textcomp}
 \usepackage{alltt}
 \usepackage{times}
@@ -31,20 +30,18 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{doxygen}
-\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
 \makeindex
 \setcounter{tocdepth}{3}
 \renewcommand{\footrulewidth}{0.4pt}
 \begin{document}
-\hypersetup{pageanchor=false}
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}
 {\Large BazingaServer \\[1ex]\large 0.1 }\\
 \vspace*{1cm}
-{\large Wygenerowano przez Doxygen 1.6.3}\\
+{\large Wygenerowano przez Doxygen 1.5.8}\\
 \vspace*{0.5cm}
-{\small Mon Mar 15 20:17:30 2010}\\
+{\small Mon Mar 22 17:26:50 2010}\\
 \end{center}
 \end{titlepage}
 \clearemptydoublepage
@@ -52,7 +49,6 @@
 \tableofcontents
 \clearemptydoublepage
 \pagenumbering{arabic}
-\hypersetup{pageanchor=true}
 \chapter{Indeks przestrzeni nazw}
 \input{namespaces}
 \chapter{Indeks klas}
@@ -60,6 +56,7 @@
 \chapter{Dokumentacja przestrzeni nazw}
 \input{namespace_serv_1_1_u_d_p_client}
 \include{namespace_serv_1_1_u_d_p_client1}
+\include{namespace_serv_1_1_u_d_p_transfer}
 \chapter{Dokumentacja klas}
 \input{class_serv_1_1_packet_1_1_communicates}
 \include{class_serv_1_1_config_reader_1_1_config_reader}
@@ -70,7 +67,6 @@
 \include{class_serv_1_1_packet_1_1_sources}
 \include{class_serv_1_1_u_d_p_server_1_1_threaded_u_d_p_request_handler}
 \include{class_serv_1_1_u_d_p_server_1_1_threaded_u_d_p_server}
-\include{class_serv_1_1_u_d_p_server_1_1_u_d_p_server}
 \include{class_serv_1_1_user_1_1_user}
 \include{class_serv_1_1_user_authenticator_1_1_user_authenticator}
 \include{class_serv_1_1_user_d_b_reader_1_1_user_d_b_reader}

@@ -2,82 +2,78 @@
 \section{Dokumentacja klasy ConfigDialog}
 \label{class_config_dialog}\index{ConfigDialog@{ConfigDialog}}
 }
-
-
 Klasa wyświetlająca okno konfiguracyjne.  
 
 
+{\tt \#include $<$configdialog.h$>$}
 
-
-{\ttfamily \#include $<$configdialog.h$>$}
-
-Diagram dziedziczenia dla ConfigDialog\begin{figure}[H]
+Diagram dziedziczenia dla ConfigDialog:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2cm]{class_config_dialog}
 \end{center}
 \end{figure}
 \subsection*{Sloty publiczne}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hypertarget{class_config_dialog_a21d23a581bbbf582c4a25d7d7204e764}{
-void \hyperlink{class_config_dialog_a21d23a581bbbf582c4a25d7d7204e764}{connectCamera} ()}
-\label{class_config_dialog_a21d23a581bbbf582c4a25d7d7204e764}
+\hypertarget{class_config_dialog_21d23a581bbbf582c4a25d7d7204e764}{
+void \hyperlink{class_config_dialog_21d23a581bbbf582c4a25d7d7204e764}{connectCamera} ()}
+\label{class_config_dialog_21d23a581bbbf582c4a25d7d7204e764}
 
-\begin{DoxyCompactList}\small\item\em Podłącza kamerę. \item\end{DoxyCompactList}\item 
-\hypertarget{class_config_dialog_a4e9e42e4decdb4f6895f4b47d51b550e}{
-void \hyperlink{class_config_dialog_a4e9e42e4decdb4f6895f4b47d51b550e}{disconnectCamera} ()}
-\label{class_config_dialog_a4e9e42e4decdb4f6895f4b47d51b550e}
+\begin{CompactList}\small\item\em Podłącza kamerę. \item\end{CompactList}\item 
+\hypertarget{class_config_dialog_4e9e42e4decdb4f6895f4b47d51b550e}{
+void \hyperlink{class_config_dialog_4e9e42e4decdb4f6895f4b47d51b550e}{disconnectCamera} ()}
+\label{class_config_dialog_4e9e42e4decdb4f6895f4b47d51b550e}
 
-\begin{DoxyCompactList}\small\item\em Rozłącza kamerę. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_config_dialog_a5611fa4c9de2827139161cd75a7f4be6}{serverConnected} (quint32 sessid)
-\begin{DoxyCompactList}\small\item\em Wywołaj, żeby poinformować okno o nawiązaniu połączenia. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_config_dialog_a7782fa76c40b70438677baff0c2622f2}{serverDisconnected} ()
-\begin{DoxyCompactList}\small\item\em Wywołaj, żeby poinformować okno o rozwiązaniu połączenia. \item\end{DoxyCompactList}\item 
-void \hyperlink{class_config_dialog_adfe6884aef5e1c04ce574c6c9a1a97d9}{saveSettings} ()
-\begin{DoxyCompactList}\small\item\em Zapisz ustawienia. \item\end{DoxyCompactList}\item 
-\hypertarget{class_config_dialog_a06d4edc9ec519809ce9104b66b15dadf}{
-void \hyperlink{class_config_dialog_a06d4edc9ec519809ce9104b66b15dadf}{readSettings} ()}
-\label{class_config_dialog_a06d4edc9ec519809ce9104b66b15dadf}
+\begin{CompactList}\small\item\em Rozłącza kamerę. \item\end{CompactList}\item 
+void \hyperlink{class_config_dialog_5611fa4c9de2827139161cd75a7f4be6}{serverConnected} (quint32 sessid)
+\begin{CompactList}\small\item\em Wywołaj, żeby poinformować okno o nawiązaniu połączenia. \item\end{CompactList}\item 
+void \hyperlink{class_config_dialog_7782fa76c40b70438677baff0c2622f2}{serverDisconnected} ()
+\begin{CompactList}\small\item\em Wywołaj, żeby poinformować okno o rozwiązaniu połączenia. \item\end{CompactList}\item 
+void \hyperlink{class_config_dialog_dfe6884aef5e1c04ce574c6c9a1a97d9}{saveSettings} ()
+\begin{CompactList}\small\item\em Zapisz ustawienia. \item\end{CompactList}\item 
+\hypertarget{class_config_dialog_06d4edc9ec519809ce9104b66b15dadf}{
+void \hyperlink{class_config_dialog_06d4edc9ec519809ce9104b66b15dadf}{readSettings} ()}
+\label{class_config_dialog_06d4edc9ec519809ce9104b66b15dadf}
 
-\begin{DoxyCompactList}\small\item\em Odczytaj ustawienia. \item\end{DoxyCompactList}\item 
-\hypertarget{class_config_dialog_a99f28a7e313ccc20892503afdc3191b9}{
-void \hyperlink{class_config_dialog_a99f28a7e313ccc20892503afdc3191b9}{catchException} (BConnectionException $\ast$e)}
-\label{class_config_dialog_a99f28a7e313ccc20892503afdc3191b9}
+\begin{CompactList}\small\item\em Odczytaj ustawienia. \item\end{CompactList}\item 
+\hypertarget{class_config_dialog_99f28a7e313ccc20892503afdc3191b9}{
+void \hyperlink{class_config_dialog_99f28a7e313ccc20892503afdc3191b9}{catchException} (BConnectionException $\ast$e)}
+\label{class_config_dialog_99f28a7e313ccc20892503afdc3191b9}
 
-\begin{DoxyCompactList}\small\item\em Wyświetl komunikat z treścią wyjątku. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{CompactList}\small\item\em Wyświetl komunikat z treścią wyjątku. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Metody publiczne}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-\hyperlink{class_config_dialog_ad16df8ed2e55bd5cc55e3ef9040b8b93}{ConfigDialog} (QWidget $\ast$parent=0)
-\begin{DoxyCompactList}\small\item\em Konstruktor. \item\end{DoxyCompactList}\item 
-\hyperlink{class_config_dialog_a485badac4dffa04603f800bb9d396e1d}{$\sim$ConfigDialog} ()
-\begin{DoxyCompactList}\small\item\em Destruktor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{class_config_dialog_d16df8ed2e55bd5cc55e3ef9040b8b93}{ConfigDialog} (QWidget $\ast$parent=0)
+\begin{CompactList}\small\item\em Konstruktor. \item\end{CompactList}\item 
+\hyperlink{class_config_dialog_485badac4dffa04603f800bb9d396e1d}{$\sim$ConfigDialog} ()
+\begin{CompactList}\small\item\em Destruktor. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Przyjaciele}
-\begin{DoxyCompactItemize}
+\begin{CompactItemize}
 \item 
-bool \hyperlink{class_config_dialog_a3b0963bb150b18a9cbd3b46187f7ea26}{CameraNotConnectedBlocker::canConnect} ()
-\end{DoxyCompactItemize}
+bool \hyperlink{class_config_dialog_3b0963bb150b18a9cbd3b46187f7ea26}{CameraNotConnectedBlocker::canConnect} ()
+\end{CompactItemize}
 
 
 \subsection{Opis szczegółowy}
 Klasa wyświetlająca okno konfiguracyjne. 
 
 \subsection{Dokumentacja konstruktora i destruktora}
-\hypertarget{class_config_dialog_ad16df8ed2e55bd5cc55e3ef9040b8b93}{
+\hypertarget{class_config_dialog_d16df8ed2e55bd5cc55e3ef9040b8b93}{
 \index{ConfigDialog@{ConfigDialog}!ConfigDialog@{ConfigDialog}}
 \index{ConfigDialog@{ConfigDialog}!ConfigDialog@{ConfigDialog}}
-\subsubsection[{ConfigDialog}]{\setlength{\rightskip}{0pt plus 5cm}ConfigDialog::ConfigDialog (QWidget $\ast$ {\em parent} = {\ttfamily 0})}}
-\label{class_config_dialog_ad16df8ed2e55bd5cc55e3ef9040b8b93}
+\subsubsection[{ConfigDialog}]{\setlength{\rightskip}{0pt plus 5cm}ConfigDialog::ConfigDialog (QWidget $\ast$ {\em parent} = {\tt 0})}}
+\label{class_config_dialog_d16df8ed2e55bd5cc55e3ef9040b8b93}
 
 
 Konstruktor. 
 
-Ustawia connecty m/obiektami i włącza timer (2s) \hypertarget{class_config_dialog_a485badac4dffa04603f800bb9d396e1d}{
+Ustawia connecty m/obiektami i włącza timer (2s) \hypertarget{class_config_dialog_485badac4dffa04603f800bb9d396e1d}{
 \index{ConfigDialog@{ConfigDialog}!$\sim$ConfigDialog@{$\sim$ConfigDialog}}
 \index{$\sim$ConfigDialog@{$\sim$ConfigDialog}!ConfigDialog@{ConfigDialog}}
 \subsubsection[{$\sim$ConfigDialog}]{\setlength{\rightskip}{0pt plus 5cm}ConfigDialog::$\sim$ConfigDialog ()}}
-\label{class_config_dialog_a485badac4dffa04603f800bb9d396e1d}
+\label{class_config_dialog_485badac4dffa04603f800bb9d396e1d}
 
 
 Destruktor. 
@@ -85,29 +81,29 @@ Destruktor.
 Próbuje rozłączyć kamerę i połączenie. Zapisuje ustawienia 
 
 \subsection{Dokumentacja funkcji składowych}
-\hypertarget{class_config_dialog_adfe6884aef5e1c04ce574c6c9a1a97d9}{
+\hypertarget{class_config_dialog_dfe6884aef5e1c04ce574c6c9a1a97d9}{
 \index{ConfigDialog@{ConfigDialog}!saveSettings@{saveSettings}}
 \index{saveSettings@{saveSettings}!ConfigDialog@{ConfigDialog}}
-\subsubsection[{saveSettings}]{\setlength{\rightskip}{0pt plus 5cm}void ConfigDialog::saveSettings ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
-\label{class_config_dialog_adfe6884aef5e1c04ce574c6c9a1a97d9}
+\subsubsection[{saveSettings}]{\setlength{\rightskip}{0pt plus 5cm}void ConfigDialog::saveSettings ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_config_dialog_dfe6884aef5e1c04ce574c6c9a1a97d9}
 
 
 Zapisz ustawienia. 
 
-Zapisywane w destruktorze \hypertarget{class_config_dialog_a5611fa4c9de2827139161cd75a7f4be6}{
+Zapisywane w destruktorze \hypertarget{class_config_dialog_5611fa4c9de2827139161cd75a7f4be6}{
 \index{ConfigDialog@{ConfigDialog}!serverConnected@{serverConnected}}
 \index{serverConnected@{serverConnected}!ConfigDialog@{ConfigDialog}}
-\subsubsection[{serverConnected}]{\setlength{\rightskip}{0pt plus 5cm}void ConfigDialog::serverConnected (quint32 {\em sessid})\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
-\label{class_config_dialog_a5611fa4c9de2827139161cd75a7f4be6}
+\subsubsection[{serverConnected}]{\setlength{\rightskip}{0pt plus 5cm}void ConfigDialog::serverConnected (quint32 {\em sessid})\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_config_dialog_5611fa4c9de2827139161cd75a7f4be6}
 
 
 Wywołaj, żeby poinformować okno o nawiązaniu połączenia. 
 
-Już podłączone w konstruktorze \hypertarget{class_config_dialog_a7782fa76c40b70438677baff0c2622f2}{
+Już podłączone w konstruktorze \hypertarget{class_config_dialog_7782fa76c40b70438677baff0c2622f2}{
 \index{ConfigDialog@{ConfigDialog}!serverDisconnected@{serverDisconnected}}
 \index{serverDisconnected@{serverDisconnected}!ConfigDialog@{ConfigDialog}}
-\subsubsection[{serverDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void ConfigDialog::serverDisconnected ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
-\label{class_config_dialog_a7782fa76c40b70438677baff0c2622f2}
+\subsubsection[{serverDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void ConfigDialog::serverDisconnected ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_config_dialog_7782fa76c40b70438677baff0c2622f2}
 
 
 Wywołaj, żeby poinformować okno o rozwiązaniu połączenia. 
@@ -115,14 +111,16 @@ Wywołaj, żeby poinformować okno o rozwiązaniu połączenia.
 Już podłączone w konstruktorze 
 
 \subsection{Dokumentacja przyjaciół i funkcji związanych}
-\hypertarget{class_config_dialog_a3b0963bb150b18a9cbd3b46187f7ea26}{
+\hypertarget{class_config_dialog_3b0963bb150b18a9cbd3b46187f7ea26}{
 \index{ConfigDialog@{ConfigDialog}!CameraNotConnectedBlocker::canConnect@{CameraNotConnectedBlocker::canConnect}}
 \index{CameraNotConnectedBlocker::canConnect@{CameraNotConnectedBlocker::canConnect}!ConfigDialog@{ConfigDialog}}
-\subsubsection[{CameraNotConnectedBlocker::canConnect}]{\setlength{\rightskip}{0pt plus 5cm}bool CameraNotConnectedBlocker::canConnect ()\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
-\label{class_config_dialog_a3b0963bb150b18a9cbd3b46187f7ea26}
+\subsubsection[{CameraNotConnectedBlocker::canConnect}]{\setlength{\rightskip}{0pt plus 5cm}bool CameraNotConnectedBlocker::canConnect ()\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{class_config_dialog_3b0963bb150b18a9cbd3b46187f7ea26}
+
+
 Pozwala na dostęp do tego obiektu z metody sprawdzającej czy jest podłączona kamerka. 
 
-Dokumentacja dla tej klasy została wygenerowana z plików:\begin{DoxyCompactItemize}
+Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
 configdialog.h\item 
-configdialog.cpp\end{DoxyCompactItemize}
+configdialog.cpp\end{CompactItemize}
