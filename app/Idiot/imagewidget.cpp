@@ -12,7 +12,8 @@ ImageWidget::ImageWidget(QWidget *parent) :
 	pen.setStyle(Qt::SolidLine);
 	pen.setWidth(3);
 	pen.setBrush(Qt::SolidPattern);
-	colorNames = QColor::colorNames();
+        colorNames = QColor::colorNames();
+        colorNames.removeOne(QString("black"));
 }
 
 ImageWidget::~ImageWidget() {
@@ -35,7 +36,7 @@ void ImageWidget::setBObs(quint32 sessid, BObList *list) {
 
 void ImageWidget::paintEvent(QPaintEvent *ev) {
 	QPainter paint(this);
-
+        paint.fillRect(0,0,640,480, Qt::black);
 	QMapIterator<quint32, BObList*> listIt(boblists);
 	while (listIt.hasNext()) {
 		listIt.next();
@@ -56,4 +57,14 @@ void ImageWidget::paintEvent(QPaintEvent *ev) {
 			}
 		}
 	}
+}
+
+void ImageWidget::mouseReleaseEvent(QMouseEvent *) {
+    QMapIterator<quint32, BObList*> it(boblists);
+    while(it.hasNext()) {
+            it.next();
+            if(it.value()) delete it.value();
+    }
+    boblists.clear();
+    update();
 }

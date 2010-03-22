@@ -37,6 +37,9 @@ protected:
 	*/
 	void paintEvent(QPaintEvent *ev);
 
+        /*! \brief Klikniecie powoduje wyczyszczenie ekranu */
+        void mouseReleaseEvent(QMouseEvent *);
+
 private:
 	QMap<quint32, BObList*> boblists;
 	QPen pen;
