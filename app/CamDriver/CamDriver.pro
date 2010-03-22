@@ -28,7 +28,7 @@ win32 {
         -lcvaux200 \
         -lhighgui200 \
         -lml200 \
-        -L"../ClientLib/debug" \
+        -L"../ClientLib/release" \
         -lClientLib
     INCLUDEPATH += "C:\Native\OpenCV20\include"
 }

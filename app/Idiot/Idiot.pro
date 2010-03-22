@@ -11,7 +11,7 @@ HEADERS += idiotwindow.h \
     imagewidget.h
 FORMS += idiotwindow.ui
 INCLUDEPATH += "../ClientLib"
-win32:LIBS += -L"../ClientLib/debug" \
+win32:LIBS += -L"../ClientLib/release" \
     -lClientLib
 unix:LIBS += -L"../ClientLib" \
     -lClientLib
